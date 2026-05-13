@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FiArrowRight, FiCheck, FiPhone } from "react-icons/fi";
+import { FiCheck, FiPhone } from "react-icons/fi";
 import { cabins } from "@/data/cabins";
 import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CabinCard from "@/components/cabins/CabinCard";
+import CabinsHeroSlideshow from "@/components/cabins/CabinsHeroSlideshow";
 
 export const metadata = {
   title: "Cabins",
@@ -16,54 +17,7 @@ export const metadata = {
 export default function CabinsPage() {
   return (
     <main>
-      <section className="relative -mt-20 min-h-[72vh] overflow-hidden bg-[var(--charcoal)] pt-20 text-white">
-        <Image
-          src="/images/cabins-hero.jpg"
-          alt="Creekside cabins in the Ouachita Mountains of Arkansas"
-          fill
-          priority
-          className="object-cover"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/58 to-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--charcoal)] via-transparent to-black/20" />
-
-        <Container className="relative z-10 flex min-h-[calc(72vh-5rem)] items-center py-20">
-          <div className="max-w-4xl">
-            <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-              <span className="h-px w-10 bg-[var(--gold)]" />
-              The Cabins
-            </p>
-
-            <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[0.92] tracking-[-0.06em] text-white md:text-7xl">
-              Four quiet cabins tucked along Collier Creek.
-            </h1>
-
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/88">
-              Secluded cabin rentals in the Ouachita Mountains near the Caddo
-              River, built for simple, peaceful stays in Southwest Arkansas.
-            </p>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href={site.phoneHref}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--gold)] px-6 py-4 text-sm font-black text-black shadow-lg transition hover:-translate-y-0.5"
-              >
-                <FiPhone />
-                Call for Availability
-              </Link>
-
-              <Link
-                href="#cabins"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--forest)]"
-              >
-                View Cabins
-                <FiArrowRight />
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <CabinsHeroSlideshow />
 
       <section className="section bg-[var(--cream)]">
         <Container>
@@ -104,34 +58,90 @@ export default function CabinsPage() {
         </Container>
       </section>
 
-      <section className="relative min-h-[58vh] overflow-hidden bg-[var(--charcoal)]">
-        <Image
-          src="/images/cabins-creek-wide.jpg"
-          alt="Quiet creekside setting at At Living Water Cabins"
-          fill
-          className="object-cover"
-        />
+<section className="relative overflow-hidden bg-[var(--forest)]">
+  <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-black/25" />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/82 via-black/45 to-black/15" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+<div
+  className="absolute -left-20 -top-20 hidden h-80 w-80 overflow-hidden border border-white/10 shadow-2xl md:block"
+  style={{
+    clipPath:
+      "polygon(0% 0%, 100% 0%, 96% 9%, 100% 18%, 94% 28%, 99% 39%, 92% 50%, 97% 62%, 91% 74%, 96% 86%, 88% 100%, 0% 100%)",
+  }}
+>
+  <Image
+    src="/images/cabins/River3.jpg"
+    alt="Creekside view near At Living Water Cabins"
+    fill
+    className="object-cover"
+  />
+  <div className="absolute inset-0 bg-black/35" />
+</div>
 
-        <Container className="relative z-10 flex min-h-[58vh] items-center py-20">
-          <div className="max-w-3xl">
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-              Creekside Setting
+  <div className="absolute -right-20 top-10 h-64 w-64 rounded-full bg-[var(--gold)]/10 blur-3xl" />
+  <div className="absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-[var(--gold)]/10 blur-3xl" />
+
+  <Container className="relative z-10 py-20">
+    <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+      <div className="max-w-3xl">
+        <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
+          Creekside Setting
+        </p>
+
+        <h2 className="mt-5 text-4xl font-black leading-tight tracking-[-0.05em] text-white md:text-6xl">
+          Close enough to explore. Quiet enough to disappear for a while.
+        </h2>
+
+        <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/80">
+          Stay tucked away near Collier Creek with easy access to the Caddo
+          River, Mount Ida, Glenwood, and the Ouachita Mountains.
+        </p>
+
+        <div className="mt-8 h-1 w-24 rounded-full bg-[var(--gold)]" />
+      </div>
+
+      <div className="grid gap-4">
+        <div className="rounded-[2rem] border border-white/10 bg-white/[0.07] p-6 shadow-2xl backdrop-blur">
+          <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--gold)]">
+            River Access
+          </p>
+          <h3 className="mt-3 text-2xl font-black text-white">
+            Close to the Caddo River
+          </h3>
+          <p className="mt-3 text-sm font-semibold leading-7 text-white/70">
+            A strong basecamp for floating, fishing, and weekend trips around
+            Southwest Arkansas.
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.07] p-6 shadow-2xl backdrop-blur">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--gold)]">
+              Location
             </p>
-
-            <h2 className="mt-5 text-4xl font-black leading-tight tracking-[-0.05em] text-white md:text-6xl">
-              Close enough to explore. Quiet enough to disappear for a while.
-            </h2>
-
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/86">
-              Stay tucked away near Collier Creek with easy access to the Caddo
-              River, Mount Ida, Glenwood, and the Ouachita Mountains.
+            <h3 className="mt-3 text-xl font-black text-white">
+              Glenwood & Mount Ida
+            </h3>
+            <p className="mt-3 text-sm font-semibold leading-7 text-white/70">
+              Easy access to nearby towns, local stops, and scenic drives.
             </p>
           </div>
-        </Container>
-      </section>
+
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.07] p-6 shadow-2xl backdrop-blur">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--gold)]">
+              Setting
+            </p>
+            <h3 className="mt-3 text-xl font-black text-white">
+              Quiet Collier Creek
+            </h3>
+            <p className="mt-3 text-sm font-semibold leading-7 text-white/70">
+              Peaceful mornings, wooded surroundings, and room to slow down.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
 
       <section id="cabins" className="section bg-[var(--background)]">
         <Container>

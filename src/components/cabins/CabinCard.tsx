@@ -1,16 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight, FiHome, FiUsers } from "react-icons/fi";
+import type { Cabin } from "@/data/cabins";
 
 type CabinCardProps = {
-  cabin: {
-    slug: string;
-    name: string;
-    summary: string;
-    details: {
-      sleeps: string;
-      bed: string;
-    };
-  };
+  cabin: Cabin;
 };
 
 export default function CabinCard({ cabin }: CabinCardProps) {
@@ -19,9 +13,19 @@ export default function CabinCard({ cabin }: CabinCardProps) {
       href={`/cabins/${cabin.slug}`}
       className="group overflow-hidden rounded-[2rem] border border-[var(--border)] bg-white shadow-[var(--shadow-soft)] transition hover:-translate-y-1 hover:shadow-[var(--shadow)]"
     >
-      <div className="relative aspect-[4/3] bg-gradient-to-br from-[var(--sand)] to-[var(--stone)]">
-        <div className="absolute inset-0 grid place-items-center text-xs font-black uppercase tracking-[0.2em] text-[var(--forest)]/45">
-          Cabin Image
+      <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-[var(--sand)] to-[var(--stone)]">
+        <Image
+          src={cabin.image}
+          alt={`${cabin.name} cabin`}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover transition duration-500 group-hover:scale-105"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent opacity-80" />
+
+        <div className="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-[var(--forest)] shadow-lg backdrop-blur">
+          View Cabin
         </div>
       </div>
 

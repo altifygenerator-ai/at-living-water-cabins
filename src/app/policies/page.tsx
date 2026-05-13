@@ -121,52 +121,85 @@ export default function PoliciesPage() {
   return (
     <main>
       <section className="relative -mt-20 min-h-[74vh] overflow-hidden bg-[var(--charcoal)] pt-20 text-white">
-        <Image
-          src="/images/policies-hero.jpg"
-          alt="Peaceful cabin setting at At Living Water Cabins"
-          fill
-          priority
-          className="object-cover"
-        />
+  <div className="absolute inset-0 bg-gradient-to-br from-[var(--charcoal)] via-[var(--forest)] to-black" />
+  <div className="absolute inset-0 bg-black/5" />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/58 to-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--charcoal)] via-transparent to-black/20" />
+  <div className="absolute -right-20 top-24 hidden h-[520px] w-[58vw] max-w-4xl lg:block">
+    <div className="absolute left-10 top-10 h-[420px] w-[290px] -rotate-6 overflow-hidden rounded-[2.25rem] border border-white/10 shadow-2xl">
+      <Image
+        src="/images/cabins/PeacePorchRiver.jpg"
+        alt="Quiet creekside cabin porch"
+        fill
+        priority
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-black/15" />
+    </div>
 
-        <Container className="relative z-10 flex min-h-[calc(74vh-5rem)] items-center py-20">
-          <div className="max-w-4xl">
-            <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-              <span className="h-px w-10 bg-[var(--gold)]" />
-              Policies
-            </p>
+    <div className="absolute left-[260px] top-0 h-[500px] w-[340px] rotate-3 overflow-hidden rounded-[2.75rem] border border-white/10 shadow-2xl">
+      <Image
+        src="/images/cabins/LoveScenic4.jpg"
+        alt="Creekside cabin setting"
+        fill
+        priority
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-black/20" />
+    </div>
 
-            <h1 className="mt-5 text-5xl font-black leading-[0.92] tracking-[-0.06em] text-white md:text-7xl">
-              Clear details before you book.
-            </h1>
+    <div className="absolute bottom-4 left-[110px] h-[210px] w-[300px] rotate-[-2deg] overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl">
+      <Image
+        src="/images/cabins/HopeView3.jpg"
+        alt="Cabin view at At Living Water Cabins"
+        fill
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-black/25" />
+    </div>
+  </div>
 
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/88">
-              Reservation, cancellation, check-in, pet, smoking, and privacy
-              policies for your stay at At Living Water Cabins.
-            </p>
+  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/15" />
+  <div className="absolute inset-0 bg-gradient-to-t from-[var(--charcoal)] via-transparent to-transparent" />
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href={site.phoneHref}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--gold)] px-6 py-4 text-sm font-black text-black shadow-lg transition hover:-translate-y-0.5"
-              >
-                <FiPhone />
-                Questions? Call Us
-              </Link>
+  <div className="absolute left-0 top-0 h-full w-1/2 bg-gradient-to-r from-black/25 to-transparent" />
+  <div className="absolute bottom-16 left-10 hidden h-24 w-24 rounded-full border border-[var(--gold)]/20 md:block" />
+  <div className="absolute bottom-24 left-24 hidden h-8 w-8 rounded-full bg-[var(--gold)]/25 md:block" />
 
-              <Link
-                href="/cabins"
-                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--forest)]"
-              >
-                View Cabins
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </section>
+  <Container className="relative z-10 flex min-h-[calc(74vh-5rem)] items-center py-20">
+    <div className="max-w-4xl">
+      <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
+        <span className="h-px w-10 bg-[var(--gold)]" />
+        Policies
+      </p>
+
+      <h1 className="mt-5 text-5xl font-black leading-[0.92] tracking-[-0.06em] text-white md:text-7xl">
+        Clear details before you book.
+      </h1>
+
+      <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/88">
+        Reservation, cancellation, check-in, pet, smoking, and privacy
+        policies for your stay at At Living Water Cabins.
+      </p>
+
+      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <Link
+          href={site.phoneHref}
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--gold)] px-6 py-4 text-sm font-black text-black shadow-lg transition hover:-translate-y-0.5"
+        >
+          <FiPhone />
+          Questions? Call Us
+        </Link>
+
+        <Link
+          href="/cabins"
+          className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--forest)]"
+        >
+          View Cabins
+        </Link>
+      </div>
+    </div>
+  </Container>
+</section>
 
       <section className="section bg-[var(--cream)]">
         <Container>
@@ -282,7 +315,7 @@ export default function PoliciesPage() {
 
       <section className="relative min-h-[56vh] overflow-hidden bg-[var(--charcoal)]">
         <Image
-          src="/images/policies-break.jpg"
+          src="/images/cabins/riverflowers.jpg"
           alt="Quiet creekside cabin stay in Arkansas"
           fill
           className="object-cover"

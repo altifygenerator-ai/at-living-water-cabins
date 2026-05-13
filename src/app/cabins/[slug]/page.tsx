@@ -27,7 +27,7 @@ export default async function CabinPage({ params }: Props) {
   if (!cabin) notFound();
 
   const galleryImages = cabin.images?.length
-    ? cabin.images.slice(0, 8)
+    ? cabin.images.slice(0, 16)
     : Array(8).fill(cabin.image);
 
   return (

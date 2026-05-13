@@ -71,7 +71,7 @@ export default function AmenitiesPage() {
     <main>
       <section className="relative -mt-20 min-h-[78vh] overflow-hidden bg-[var(--charcoal)] pt-20 text-white">
         <Image
-          src="/images/amenities-hero.jpg"
+          src="/images/cabins/HopeLivingroom2.jpg"
           alt="Cabin amenities at At Living Water Cabins"
           fill
           priority
@@ -178,7 +178,7 @@ export default function AmenitiesPage() {
 
       <section className="relative min-h-[60vh] overflow-hidden bg-[var(--charcoal)]">
         <Image
-          src="/images/amenities-break.jpg"
+          src="/images/cabins/LoveFire.jpg"
           alt="Outdoor amenities and creekside setting"
           fill
           className="object-cover"

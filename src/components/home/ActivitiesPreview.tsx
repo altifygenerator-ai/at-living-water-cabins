@@ -23,32 +23,43 @@ export default function ActivitiesPreview() {
     <section className="section bg-[var(--cream)]">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[var(--sand)] to-[var(--stone)] p-8 md:p-10">
-            <div className="absolute right-6 top-6 hidden size-24 rounded-full border border-[var(--forest)]/10 md:block" />
-            <div className="absolute bottom-8 right-12 hidden size-12 rounded-full bg-[var(--gold)]/30 md:block" />
+          <div className="relative overflow-hidden rounded-[2rem] bg-[var(--charcoal)] p-8 md:p-10">
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: "url('/images/cabins/AreaView1.jpg')",
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/50 to-black/25" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--water-dark)]">
-              Nearby Adventures
-            </p>
+            
+            
 
-            <h2 className="mt-4 max-w-2xl text-4xl font-black leading-tight text-[var(--forest)] md:text-6xl">
-              Close to rivers, trails, lakes, and quiet Arkansas views.
-            </h2>
+            <div className="relative z-10">
+              <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
+                Nearby Adventures
+              </p>
 
-            <p className="mt-5 max-w-2xl text-base font-semibold leading-8 text-[var(--forest)]/70">
-              Stay tucked away near Collier Creek while still being close to
-              the best parts of Southwest Arkansas.
-            </p>
+              <h2 className="mt-4 max-w-2xl text-4xl font-black leading-tight text-white md:text-6xl">
+                Close to rivers, trails, lakes, and quiet Arkansas views.
+              </h2>
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {activities.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl bg-white/70 px-4 py-3 text-sm font-black text-[var(--forest)] shadow-sm"
-                >
-                  {item}
-                </div>
-              ))}
+              <p className="mt-5 max-w-2xl text-base font-semibold leading-8 text-white/80">
+                Stay tucked away near Collier Creek while still being close to
+                the best parts of Southwest Arkansas.
+              </p>
+
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                {activities.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-white/15 bg-white/15 px-4 py-3 text-sm font-black text-white shadow-sm backdrop-blur"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 

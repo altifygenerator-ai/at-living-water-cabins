@@ -97,7 +97,7 @@ export default function LocalActivitiesPage() {
     <main>
       <section className="relative -mt-20 min-h-[78vh] overflow-hidden bg-[var(--charcoal)] pt-20 text-white">
         <Image
-          src="/images/activities-hero.jpg"
+          src="/images/cabins/ScenicOverlook3.jpg"
           alt="Outdoor activities near At Living Water Cabins in Arkansas"
           fill
           priority
@@ -220,7 +220,7 @@ export default function LocalActivitiesPage() {
 
       <section className="relative min-h-[60vh] overflow-hidden bg-[var(--charcoal)]">
         <Image
-          src="/images/activities-break.jpg"
+          src="/images/cabins/LovePorch4.jpg"
           alt="Ouachita Mountains and Arkansas outdoor activities"
           fill
           className="object-cover"
