@@ -1,21 +1,21 @@
 import HeroB from "@/components/home/HeroB";
+import StayDetailsStrip from "@/components/home/StayDetailsStrip";
+import RetreatIntro from "@/components/home/RetreatIntro";
 import FeaturedCabins from "@/components/home/FeaturedCabins";
-import AmenitiesPreview from "@/components/home/AmenitiesPreview";
-import TrustBar from "@/components/sections/TrustBar";
-import ActivitiesPreview from "@/components/home/ActivitiesPreview";
-import CTASection from "@/components/home/CTASection";
 import VideoBreakSection from "@/components/home/VideoBreakSection";
+import StayExperience from "@/components/home/StayExperience";
+import CTASection from "@/components/home/CTASection";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main>
+    <>
       <HeroB />
-      <TrustBar />
+      <StayDetailsStrip />
+      <RetreatIntro />
       <FeaturedCabins />
       <VideoBreakSection />
-      <AmenitiesPreview />
-      <ActivitiesPreview />
+      <StayExperience />
       <CTASection />
-    </main>
+    </>
   );
 }

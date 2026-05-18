@@ -10,52 +10,52 @@ import Button from "@/components/ui/Button";
 
 export default function HeroB() {
   return (
-    <section className="relative -mt-20 min-h-screen overflow-hidden bg-[var(--charcoal)] pt-20">
+    <section className="relative -mt-20 min-h-screen overflow-hidden bg-[var(--espresso)] pt-20">
       <Image
-        src={site.hero.image}
-        alt={site.hero.imageAlt}
+        src="/images/hero/hero.jpg"
+        alt="Creekside cabin stay at At Living Water Cabins"
         fill
         priority
         className="object-cover"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/62 to-black/25" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[var(--charcoal)] via-transparent to-black/25" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.92),rgba(32,20,13,.58),rgba(32,20,13,.08))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,10,6,.18),transparent,rgba(17,10,6,.88))]" />
 
       <Container className="relative z-10 flex min-h-[calc(100vh-5rem)] items-center">
         <motion.div
-          className="max-w-5xl py-24"
+          className="max-w-4xl py-24"
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ease: "easeOut" }}
         >
           <motion.p
-            className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]"
+            className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.28em] text-[var(--copper)]"
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.1 }}
           >
-            <span className="h-px w-10 bg-[var(--gold)]" />
-            Creekside Cabin Rentals in Arkansas
+            <span className="h-px w-10 bg-[var(--copper)]" />
+            Private creekside stays
           </motion.p>
 
           <motion.h1
-            className="mt-6 max-w-5xl text-[clamp(3rem,6vw,6.5rem)] font-black leading-[0.86] tracking-[-0.075em] text-white text-balance"
+            className="mt-6 max-w-4xl text-[clamp(3.35rem,7vw,7.15rem)] font-black leading-[0.84] tracking-[-0.085em] text-[var(--paper)] text-balance"
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.18 }}
           >
-            A Quiet Creekside Escape in the Ouachita Mountains
+            A stay that feels tucked away from everything.
           </motion.h1>
 
           <motion.p
-            className="mt-7 max-w-2xl text-lg font-medium leading-8 text-white/90 md:text-xl"
+            className="mt-7 max-w-2xl text-lg font-medium leading-8 text-white/84 md:text-xl"
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.26 }}
           >
-            Cabins and a family lodge between Glenwood and Mount Ida, Arkansas —
-            built for slow mornings, creek views, and real time away.
+            Cabins and a family lodge along Collier Creek, made for slow
+            mornings, scenic views, and peaceful time near Glenwood.
           </motion.p>
 
           <motion.div
@@ -65,17 +65,17 @@ export default function HeroB() {
             transition={{ duration: 0.65, delay: 0.34 }}
           >
             <Button href="/cabins">
-              View Cabins
+              View the Cabins
               <FiArrowRight />
             </Button>
 
-            <Button href="/family-lodge" variant="secondary">
-              View Family Lodge
+            <Button href={site.phoneHref} variant="secondary">
+              Call to Book
             </Button>
           </motion.div>
 
           <motion.div
-            className="mt-10 flex flex-col gap-3 text-sm font-black text-white/88 sm:flex-row sm:items-center sm:gap-7"
+            className="mt-10 grid max-w-2xl gap-3 rounded-[1.5rem] border border-white/12 bg-white/[0.08] p-4 text-sm font-bold text-white/82 backdrop-blur md:grid-cols-2"
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.42 }}
@@ -84,12 +84,12 @@ export default function HeroB() {
               href={site.phoneHref}
               className="flex items-center gap-2 transition hover:text-white"
             >
-              <FiPhone className="text-[var(--gold)]" />
-              Call to book: {site.phone}
+              <FiPhone className="text-[var(--copper)]" />
+              {site.phone}
             </Link>
 
-            <p className="flex items-center gap-2 text-white/88">
-              <FiMapPin className="text-[var(--gold)]" />
+            <p className="flex items-center gap-2">
+              <FiMapPin className="text-[var(--copper)]" />
               {site.area}, Arkansas
             </p>
           </motion.div>

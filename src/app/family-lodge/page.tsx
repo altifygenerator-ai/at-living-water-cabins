@@ -1,107 +1,193 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FiCheck, FiPhone, FiUsers, FiHome, FiCoffee } from "react-icons/fi";
+import { FiArrowRight, FiClock, FiHome, FiPhone, FiUsers } from "react-icons/fi";
 import { site } from "@/data/site";
-import { familyLodge } from "@/data/familylodge";
 import Container from "@/components/ui/Container";
-import CabinGallery from "@/components/cabins/CabinGallery";
 
 export const metadata = {
-  title: "Family Lodge",
+  title: "Family Lodge Coming Soon",
   description:
-    "Stay at the Family Lodge at At Living Water Cabins near Glenwood and Mount Ida, Arkansas. Spacious 3 bedroom, 2 bath lodge overlooking the creek.",
+    "The Family Lodge at At Living Water Cabins is planned as a future larger-stay option. View current cabins or call with questions about future availability.",
 };
+
+const comingSoonDetails = [
+  {
+    label: "Status",
+    value: "Coming Soon",
+    icon: FiClock,
+  },
+  {
+    label: "Best For",
+    value: "Future larger stays",
+    icon: FiUsers,
+  },
+  {
+    label: "Photos",
+    value: "Coming later",
+    icon: FiHome,
+  },
+];
 
 export default function FamilyLodgePage() {
   return (
     <main>
-      <section className="relative -mt-20 min-h-screen overflow-hidden bg-[var(--charcoal)] pt-20 text-white">
+      <section className="relative -mt-20 min-h-screen overflow-hidden bg-[var(--espresso)] pt-20 text-white">
         <Image
-          src={familyLodge.heroImage}
-          alt="Family Lodge overlooking the creek in Arkansas"
+          src="/images/cabins/PeacePorchRiver.jpg"
+          alt="Creekside setting at At Living Water Cabins"
           fill
           priority
           className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/58 to-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--charcoal)] via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.94),rgba(38,23,15,.66),rgba(38,23,15,.14))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,10,6,.18),transparent,rgba(17,10,6,.88))]" />
+
+        <div className="absolute right-8 top-32 hidden w-[38vw] max-w-xl lg:block">
+          <div className="relative ml-auto h-[390px] w-[290px] rotate-3 overflow-hidden rounded-[2rem] border border-white/12 shadow-2xl">
+            <Image
+              src="/images/cabins/LoveBridge.jpg"
+              alt="Bridge near At Living Water Cabins"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="relative -mt-20 h-[235px] w-[350px] -rotate-3 overflow-hidden rounded-[1.75rem] border border-white/12 shadow-2xl">
+            <Image
+              src="/images/cabins/riverflowers.jpg"
+              alt="Creekside flowers near At Living Water Cabins"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
 
         <Container className="relative z-10 flex min-h-[calc(100vh-5rem)] items-center py-20">
           <div className="max-w-4xl">
-            <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-              <span className="h-px w-10 bg-[var(--gold)]" />
-              The Family Lodge
+            <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.28em] text-[var(--copper)]">
+              <span className="h-px w-10 bg-[var(--copper)]" />
+              Family Lodge
             </p>
 
-            <h1 className="mt-5 text-5xl font-black leading-[0.92] tracking-[-0.06em] text-white md:text-7xl">
-              More room to gather, relax, and enjoy the creek.
+            <h1 className="mt-5 text-[clamp(3.3rem,7vw,7.1rem)] font-black leading-[0.84] tracking-[-0.085em] text-[var(--paper)] text-balance">
+              A larger lodge stay is planned for the future.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/88">
-              {familyLodge.summary}
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/84 md:text-xl">
+              The Family Lodge is currently private and not available for guest
+              reservations. Once it becomes available, this page will be updated
+              with real photos, full details, rates, and booking information.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="#booking"
-                className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-6 py-4 text-sm font-black text-black shadow-lg transition hover:-translate-y-0.5"
+                href="/cabins"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--paper)] px-6 py-4 text-sm font-black text-[var(--espresso)] shadow-lg transition hover:-translate-y-0.5 hover:bg-[var(--copper)] hover:text-white"
               >
-                Check Availability
+                View Current Cabins
+                <FiArrowRight />
               </Link>
 
               <Link
                 href={site.phoneHref}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--forest)]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--espresso)]"
               >
                 <FiPhone />
-                Call Now
+                Call With Questions
               </Link>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="section bg-[var(--cream)]">
+      <section className="relative z-20 -mt-12">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-            <CabinGallery
-              images={familyLodge.images}
-              cabinName={familyLodge.name}
-            />
+          <div className="grid overflow-hidden rounded-[1.75rem] border border-[rgba(38,23,15,0.14)] bg-[rgba(255,249,239,0.95)] shadow-[var(--shadow)] backdrop-blur md:grid-cols-3">
+            {comingSoonDetails.map((item) => {
+              const Icon = item.icon;
 
+              return (
+                <div
+                  key={item.label}
+                  className="border-b border-[rgba(38,23,15,0.1)] p-5 md:border-b-0 md:border-r last:md:border-r-0"
+                >
+                  <Icon className="text-2xl text-[var(--copper)]" />
+
+                  <p className="mt-4 text-[0.68rem] font-black uppercase tracking-[0.2em] text-[var(--copper)]">
+                    {item.label}
+                  </p>
+
+                  <p className="mt-2 text-base font-black tracking-[-0.03em] text-[var(--espresso)]">
+                    {item.value}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
+
+      <section className="section bg-[var(--linen)]">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-                Lodge Details
-              </p>
+              <p className="eyebrow">Future Stay Option</p>
 
-              <h2 className="mt-4 text-4xl font-black leading-tight text-[var(--forest)] md:text-5xl">
-                A spacious lodge with room for everyone.
+              <h2 className="mt-5 text-[clamp(2.8rem,5.5vw,5.3rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--espresso)] text-balance">
+                More room is coming later.
               </h2>
 
-              <p className="mt-5 text-base font-semibold leading-8 text-[var(--muted)]">
-                {familyLodge.description}
+              <p className="mt-6 max-w-2xl text-base font-medium leading-8 text-[var(--muted)]">
+                The Family Lodge is planned as a future larger-stay option at
+                At Living Water Cabins. For now, the lodge is being used
+                privately, so we are not showing interior photos, rates, or
+                booking options until it is actually ready for guests.
               </p>
 
-              <div className="mt-8 grid gap-3 rounded-[2rem] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-soft)]">
-                <p className="flex items-center gap-3 font-black text-[var(--forest)]">
-                  <FiUsers className="text-[var(--gold)]" />
-                  {familyLodge.details.sleeps}
+              <p className="mt-4 max-w-2xl text-base font-medium leading-8 text-[var(--muted)]">
+                If you are planning ahead for a larger group, you can still call
+                with questions. Otherwise, Love, Faith, Hope, and Peace are the
+                current cabin stays available to view.
+              </p>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/cabins"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--espresso)] px-6 py-3 text-sm font-black text-[var(--paper)] transition hover:-translate-y-0.5 hover:bg-[var(--wood)]"
+                >
+                  View Current Cabins
+                  <FiArrowRight />
+                </Link>
+
+                <Link
+                  href={site.phoneHref}
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--border)] bg-[var(--paper)] px-6 py-3 text-sm font-black text-[var(--espresso)] transition hover:-translate-y-0.5 hover:bg-white"
+                >
+                  <FiPhone />
+                  Call With Questions
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative min-h-[620px] overflow-hidden rounded-[2.15rem] shadow-[var(--shadow-soft)]">
+              <Image
+                src="/images/cabins/LoveScenic7.jpg"
+                alt="Scenic creekside setting at At Living Water Cabins"
+                fill
+                className="object-cover"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/62 via-transparent to-transparent" />
+
+              <div className="absolute bottom-6 left-6 right-6 rounded-[1.5rem] border border-white/12 bg-black/28 p-5 text-white backdrop-blur">
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--copper)]">
+                  Photos Coming Later
                 </p>
 
-                <p className="flex items-center gap-3 font-black text-[var(--forest)]">
-                  <FiHome className="text-[var(--gold)]" />
-                  {familyLodge.details.bedrooms}
-                </p>
-
-                <p className="flex items-center gap-3 font-black text-[var(--forest)]">
-                  <FiCheck className="text-[var(--gold)]" />
-                  {familyLodge.details.bathrooms}
-                </p>
-
-                <p className="flex items-center gap-3 font-black text-[var(--forest)]">
-                  <FiCoffee className="text-[var(--gold)]" />
-                  {familyLodge.details.beds}
+                <p className="mt-2 text-sm font-semibold leading-7 text-white/82">
+                  We’ll add real lodge photos and full guest details once the
+                  lodge is ready to be shown publicly.
                 </p>
               </div>
             </div>
@@ -109,132 +195,47 @@ export default function FamilyLodgePage() {
         </Container>
       </section>
 
-      <section className="section bg-[var(--background)]">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-                What’s Included
-              </p>
-
-              <h2 className="mt-4 text-4xl font-black leading-tight text-[var(--forest)] md:text-5xl">
-                Everything families need for a comfortable stay.
-              </h2>
-
-              <p className="mt-5 text-base font-semibold leading-8 text-[var(--muted)]">
-                The lodge gives guests more space to cook, gather, sit outside,
-                park easily, and enjoy the creek views together.
-              </p>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {familyLodge.features.map((feature) => (
-                <div
-                  key={feature}
-                  className="flex items-center gap-3 rounded-[1.5rem] border border-[var(--border)] bg-white p-4 shadow-[var(--shadow-soft)]"
-                >
-                  <span className="grid size-9 shrink-0 place-items-center rounded-full bg-[var(--forest)] text-white">
-                    <FiCheck size={16} />
-                  </span>
-
-                  <p className="text-sm font-black text-[var(--forest)]">
-                    {feature}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="relative min-h-[60vh] overflow-hidden bg-[var(--charcoal)]">
+      <section className="relative min-h-[650px] overflow-hidden bg-[var(--espresso)]">
         <Image
-          src={familyLodge.images[1] ?? familyLodge.heroImage}
-          alt="Family Lodge porch and creek view"
+          src="/images/cabins/River3.jpg"
+          alt="Creekside view near At Living Water Cabins"
           fill
           className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/15" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.84),rgba(17,10,6,.42),rgba(17,10,6,.12))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(17,10,6,.72))]" />
 
-        <Container className="relative z-10 flex min-h-[60vh] items-center py-20">
+        <Container className="relative z-10 flex min-h-[650px] items-end pb-14 md:pb-20">
           <div className="max-w-3xl">
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-              Room to Slow Down
+            <p className="text-xs font-black uppercase tracking-[0.26em] text-[var(--copper)]">
+              Current Stays Available
             </p>
 
-            <h2 className="mt-5 text-4xl font-black leading-tight tracking-[-0.05em] text-white md:text-6xl">
-              Porch space, creek views, and quiet Arkansas evenings.
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+              The cabins are ready when you are.
             </h2>
 
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/86">
-              Spend the day exploring Southwest Arkansas, then come back to a
-              lodge made for cooking, gathering, and relaxing outside.
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/78">
+              While the lodge is not currently available, the creekside cabins
+              are the best place to start for current availability and booking.
             </p>
-          </div>
-        </Container>
-      </section>
 
-      <section id="booking" className="section bg-[var(--cream)]">
-        <Container>
-          <div className="grid gap-8 rounded-[2.5rem] bg-[var(--forest)] p-8 text-white shadow-[var(--shadow)] md:p-12 lg:grid-cols-[1fr_0.75fr] lg:items-start">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-                Booking
-              </p>
-
-              <h2 className="mt-4 text-4xl font-black leading-tight text-white md:text-5xl">
-                Check availability for the {familyLodge.name}.
-              </h2>
-
-              <p className="mt-5 max-w-2xl text-base font-medium leading-8 text-white/78">
-                Online booking will be added here once the OwnerRez booking
-                widget is connected. For now, guests can call directly to check
-                dates, ask questions, and reserve their stay.
-              </p>
-
-              <div className="mt-8 rounded-[2rem] border border-dashed border-white/20 bg-white/[0.06] p-6">
-                <p className="text-sm font-black uppercase tracking-[0.18em] text-[var(--gold)]">
-                  OwnerRez Widget Space
-                </p>
-                <p className="mt-3 text-sm font-semibold leading-7 text-white/70">
-                  This area is reserved for the Family Lodge booking widget once
-                  the property embed code is ready.
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.07] p-6 backdrop-blur">
-              <p className="text-sm font-bold text-white/68">
-                Lodge Rates
-              </p>
-
-              <p className="mt-3 text-3xl font-black text-white">
-                {familyLodge.rates.base}
-              </p>
-
-              <div className="mt-5 grid gap-3 text-sm font-semibold leading-7 text-white/72">
-                <p>{familyLodge.rates.minimum}</p>
-                <p>{familyLodge.rates.exceptions}</p>
-                <p>{familyLodge.rates.guests}</p>
-                <p>{familyLodge.rates.children}</p>
-                <p>{familyLodge.rates.note}</p>
-              </div>
-
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href={site.phoneHref}
-                className="mt-7 flex items-center gap-3 text-2xl font-black text-white transition hover:text-[var(--gold)]"
+                href="/cabins"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--paper)] px-6 py-4 text-sm font-black text-[var(--espresso)] transition hover:bg-[var(--copper)] hover:text-white"
               >
-                <FiPhone className="text-[var(--gold)]" />
-                {site.phone}
+                View Cabins
+                <FiArrowRight />
               </Link>
 
               <Link
-                href="/contact"
-                className="mt-7 inline-flex rounded-full bg-white px-6 py-3 text-sm font-black text-[var(--forest)] transition hover:bg-[var(--gold)] hover:text-black"
+                href={site.phoneHref}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:bg-white hover:text-[var(--espresso)]"
               >
-                Contact & Directions
+                <FiPhone />
+                {site.phone}
               </Link>
             </div>
           </div>

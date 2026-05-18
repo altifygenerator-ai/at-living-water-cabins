@@ -4,12 +4,11 @@ import {
   FiArrowRight,
   FiCompass,
   FiMapPin,
-  FiSun,
   FiPhone,
+  FiSun,
 } from "react-icons/fi";
 import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
-import SectionHeading from "@/components/ui/SectionHeading";
 
 export const metadata = {
   title: "Local Activities",
@@ -21,6 +20,7 @@ const activityGroups = [
   {
     direction: "North",
     title: "Mount Ida, Lake Ouachita, and the Ouachita River",
+    image: "/images/lake-ouatchita.jpg",
     text: "Head north for crystal mines, river floats, hiking, biking, lake days, fishing, and scenic trails around Mount Ida and Lake Ouachita.",
     items: [
       "Dig for crystals around Mount Ida",
@@ -35,6 +35,7 @@ const activityGroups = [
   {
     direction: "South",
     title: "Caddo River, Glenwood, and Murfreesboro",
+    image: "/images/caddo-river.jpg",
     text: "Go south for Caddo River floats, golf, diamonds, Lake Greeson, ATV trails, boating, and more Southwest Arkansas adventure.",
     items: [
       "Canoe, kayak, or tube float on the Caddo River",
@@ -48,7 +49,8 @@ const activityGroups = [
   },
   {
     direction: "East",
-    title: "Hot Springs National Park",
+    title: "Bathhouse Row, Hot Springs National Park, Magic Springs",
+    image: "/images/bathhouse-row.jpg",
     text: "Drive east for Hot Springs, bathhouses, family attractions, museums, antique shopping, and a full day of exploring.",
     items: [
       "Relax in Hot Springs National Park",
@@ -62,6 +64,7 @@ const activityGroups = [
   {
     direction: "West",
     title: "Little Missouri Falls, Queen Wilhelmina, and ATV Country",
+    image: "/images/little-missouri.jpg",
     text: "Go west for waterfalls, hiking, state parks, local museums, and some of the best ATV and dirt bike riding in the Ouachita National Forest.",
     items: [
       "Little Missouri Falls",
@@ -76,17 +79,17 @@ const activityGroups = [
 
 const quickHighlights = [
   {
-    title: "River Days",
+    title: "River days",
     text: "Float, canoe, or kayak the Caddo River and Ouachita River.",
     icon: FiCompass,
   },
   {
-    title: "Trails & Forest",
+    title: "Trails & forest",
     text: "Hike, bike, ride, and explore the Ouachita National Forest.",
     icon: FiSun,
   },
   {
-    title: "Easy Day Trips",
+    title: "Easy day trips",
     text: "Hot Springs, Mount Ida, Glenwood, and Murfreesboro are all within reach.",
     icon: FiMapPin,
   },
@@ -95,7 +98,7 @@ const quickHighlights = [
 export default function LocalActivitiesPage() {
   return (
     <main>
-      <section className="relative -mt-20 min-h-[78vh] overflow-hidden bg-[var(--charcoal)] pt-20 text-white">
+      <section className="relative -mt-20 min-h-[82vh] overflow-hidden bg-[var(--espresso)] pt-20 text-white">
         <Image
           src="/images/cabins/ScenicOverlook3.jpg"
           alt="Outdoor activities near At Living Water Cabins in Arkansas"
@@ -104,37 +107,56 @@ export default function LocalActivitiesPage() {
           className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/58 to-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--charcoal)] via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.92),rgba(38,23,15,.62),rgba(38,23,15,.12))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,10,6,.18),transparent,rgba(17,10,6,.86))]" />
 
-        <Container className="relative z-10 flex min-h-[calc(78vh-5rem)] items-center py-20">
+        <div className="absolute right-8 top-32 hidden w-[38vw] max-w-xl lg:block">
+          <div className="relative ml-auto h-[390px] w-[290px] rotate-3 overflow-hidden rounded-[2rem] border border-white/12 shadow-2xl">
+            <Image
+              src="/images/cabins/LoveBridge.jpg"
+              alt="Bridge near At Living Water Cabins"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="relative -mt-20 h-[235px] w-[350px] -rotate-3 overflow-hidden rounded-[1.75rem] border border-white/12 shadow-2xl">
+            <Image
+              src="/images/cabins/riverflowers.jpg"
+              alt="Creekside flowers near the cabins"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+
+        <Container className="relative z-10 flex min-h-[calc(82vh-5rem)] items-center py-20">
           <div className="max-w-4xl">
-            <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-              <span className="h-px w-10 bg-[var(--gold)]" />
-              Local Activities
+            <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.28em] text-[var(--copper)]">
+              <span className="h-px w-10 bg-[var(--copper)]" />
+              Around the Area
             </p>
 
-            <h1 className="mt-5 text-5xl font-black leading-[0.92] tracking-[-0.06em] text-white md:text-7xl">
-              Explore Southwest Arkansas or just slow down.
+            <h1 className="mt-5 text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.84] tracking-[-0.085em] text-[var(--paper)] text-balance">
+              Adventure when you want it. Quiet when you get back.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/88">
-              At Living Water Cabins sits between rivers, lakes, trails, crystal
-              mines, state parks, Hot Springs, and quiet places to do absolutely
-              nothing.
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/84 md:text-xl">
+              Float rivers, dig crystals, visit Hot Springs, explore the forest,
+              or do absolutely nothing beside the water.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/cabins"
-                className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-6 py-4 text-sm font-black text-black shadow-lg transition hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center rounded-full bg-[var(--paper)] px-6 py-4 text-sm font-black text-[var(--espresso)] shadow-lg transition hover:-translate-y-0.5 hover:bg-[var(--copper)] hover:text-white"
               >
                 View Cabins
               </Link>
 
               <Link
                 href={site.phoneHref}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--forest)]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--espresso)]"
               >
                 <FiPhone />
                 Call Now
@@ -144,26 +166,24 @@ export default function LocalActivitiesPage() {
         </Container>
       </section>
 
-      <section className="section bg-[var(--cream)]">
+      <section className="relative z-20 -mt-12">
         <Container>
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid overflow-hidden rounded-[1.75rem] border border-[rgba(38,23,15,0.14)] bg-[rgba(255,249,239,0.95)] shadow-[var(--shadow)] backdrop-blur lg:grid-cols-3">
             {quickHighlights.map((item) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={item.title}
-                  className="rounded-[2rem] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-soft)]"
+                  className="border-b border-[rgba(38,23,15,0.1)] p-5 lg:border-b-0 lg:border-r last:lg:border-r-0"
                 >
-                  <div className="grid size-12 place-items-center rounded-full bg-[var(--forest)] text-white">
-                    <Icon size={20} />
-                  </div>
+                  <Icon className="text-2xl text-[var(--copper)]" />
 
-                  <h2 className="mt-5 text-2xl font-black text-[var(--forest)]">
+                  <p className="mt-4 text-[0.68rem] font-black uppercase tracking-[0.2em] text-[var(--copper)]">
                     {item.title}
-                  </h2>
+                  </p>
 
-                  <p className="mt-3 text-sm font-semibold leading-7 text-[var(--muted)]">
+                  <p className="mt-2 text-sm font-bold leading-6 text-[var(--espresso)]">
                     {item.text}
                   </p>
                 </div>
@@ -173,169 +193,223 @@ export default function LocalActivitiesPage() {
         </Container>
       </section>
 
-      <section className="section bg-[var(--background)]">
+      <section className="section bg-[var(--linen)]">
         <Container>
-          <SectionHeading
-            eyebrow="Around the Area"
-            title="A central spot for Arkansas adventure."
-            text="Head north, south, east, or west and you’ll find rivers, lakes, trails, parks, small towns, and scenic places worth exploring."
-          />
+          <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+            <div className="lg:sticky lg:top-28">
+              <p className="eyebrow">From the Cabin</p>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {activityGroups.map((group) => (
-              <div
-                key={group.direction}
-                className="rounded-[2rem] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-soft)] md:p-8"
-              >
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--gold)]">
-                  {group.direction} of At Living Water Cabins
-                </p>
+              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+                Pick a direction and make a day of it.
+              </h2>
 
-                <h2 className="mt-4 text-3xl font-black leading-tight text-[var(--forest)]">
-                  {group.title}
-                </h2>
+              <p className="mt-6 max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
+                At Living Water Cabins gives you a quiet place to land between
+                river days, lake trips, scenic drives, crystal mines, trails, and
+                small-town exploring.
+              </p>
 
-                <p className="mt-4 text-sm font-semibold leading-7 text-[var(--muted)]">
-                  {group.text}
-                </p>
+              <div className="mt-8 relative min-h-[320px] overflow-hidden rounded-[1.9rem] shadow-[var(--shadow-soft)]">
+                <Image
+                  src="/images/cabins/LovePorch4.jpg"
+                  alt="Cabin porch after a day exploring Arkansas"
+                  fill
+                  className="object-cover"
+                />
 
-                <div className="mt-6 grid gap-3">
-                  {group.items.map((item) => (
-                    <p
-                      key={item}
-                      className="flex items-start gap-3 text-sm font-black text-[var(--forest)]"
-                    >
-                      <span className="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-[var(--forest)] text-xs text-white">
-                        <FiArrowRight size={13} />
-                      </span>
-                      {item}
-                    </p>
-                  ))}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+                <div className="absolute bottom-5 left-5 right-5">
+                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[var(--copper)]">
+                    Best Part
+                  </p>
+                  <p className="mt-2 text-2xl font-black leading-tight tracking-[-0.05em] text-white">
+                    You get to come back to quiet.
+                  </p>
                 </div>
               </div>
-            ))}
+            </div>
+
+            <div className="divide-y divide-[var(--border)] border-y border-[var(--border)]">
+              {activityGroups.map((group, index) => (
+                <article
+                  key={group.direction}
+                  className="grid gap-7 py-12 md:grid-cols-[0.42fr_1fr]"
+                >
+                  <div className="relative min-h-[260px] overflow-hidden rounded-[1.75rem] shadow-[var(--shadow-soft)] md:min-h-[320px]">
+                    <Image
+                      src={group.image}
+                      alt={group.title}
+                      fill
+                      className="object-cover"
+                    />
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+
+                    <p className="absolute bottom-4 left-4 rounded-full bg-[var(--paper)]/92 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-[var(--espresso)] shadow-lg backdrop-blur">
+                      {group.direction}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--copper)]">
+                      {group.direction} of At Living Water Cabins
+                    </p>
+
+                    <h2 className="mt-4 text-[clamp(2rem,3.3vw,3.4rem)] font-black leading-[0.94] tracking-[-0.065em] text-[var(--espresso)] text-balance">
+                      {group.title}
+                    </h2>
+
+                    <p className="mt-4 max-w-2xl text-sm font-semibold leading-7 text-[var(--muted)] md:text-base md:leading-8">
+                      {group.text}
+                    </p>
+
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {group.items.map((item) => (
+                        <span
+                          key={item}
+                          className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--paper)] px-3 py-2 text-xs font-black uppercase tracking-[0.1em] text-[var(--espresso)]"
+                        >
+                          <FiArrowRight className="text-[var(--copper)]" />
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
 
-      <section className="relative min-h-[60vh] overflow-hidden bg-[var(--charcoal)]">
+      <section className="relative min-h-[640px] overflow-hidden bg-[var(--espresso)]">
         <Image
-          src="/images/cabins/LovePorch4.jpg"
-          alt="Ouachita Mountains and Arkansas outdoor activities"
+          src="/images/cabins/River3.jpg"
+          alt="River day near At Living Water Cabins"
           fill
           className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/15" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.82),rgba(17,10,6,.4),rgba(17,10,6,.12))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(17,10,6,.68))]" />
 
-        <Container className="relative z-10 flex min-h-[60vh] items-center py-20">
+        <Container className="relative z-10 flex min-h-[640px] items-end pb-14 md:pb-20">
           <div className="max-w-3xl">
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
+            <p className="text-xs font-black uppercase tracking-[0.26em] text-[var(--copper)]">
               Stay Close to It All
             </p>
 
-            <h2 className="mt-5 text-4xl font-black leading-tight tracking-[-0.05em] text-white md:text-6xl">
-              Come back to quiet after a full day out.
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+              Go out for the day. Come back to the creek.
             </h2>
 
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/86">
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/78">
               Spend the day floating rivers, digging crystals, hiking trails, or
-              visiting Hot Springs — then settle back in near the creek.
+              visiting Hot Springs — then settle back into a quieter place.
             </p>
           </div>
         </Container>
       </section>
 
-      <section className="section bg-[var(--cream)]">
+      <section className="section bg-[var(--paper)]">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-                Helpful Resource
-              </p>
+              <p className="eyebrow">Plan Your Stay</p>
 
-              <h2 className="mt-4 text-4xl font-black leading-tight text-[var(--forest)] md:text-5xl">
-                Want more ideas for the Ouachita Region?
+              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+                You do not have to choose between adventure and rest.
               </h2>
 
-              <p className="mt-5 text-base font-semibold leading-8 text-[var(--muted)]">
-                Use the Arkansas tourism site to explore more trails, rivers,
-                parks, small towns, and regional activities near your stay.
+              <p className="mt-6 max-w-2xl text-base font-medium leading-8 text-[var(--muted)]">
+                Make it a packed weekend or keep it simple. Either way, the
+                cabins give you a peaceful home base close to the area’s rivers,
+                trails, lakes, parks, and small towns.
               </p>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/cabins"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--espresso)] px-6 py-3 text-sm font-black text-[var(--paper)] transition hover:-translate-y-0.5 hover:bg-[var(--wood)]"
+                >
+                  View Cabins
+                  <FiArrowRight />
+                </Link>
+
+                <Link
+                  href={site.phoneHref}
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--border)] bg-[var(--linen)] px-6 py-3 text-sm font-black text-[var(--espresso)] transition hover:-translate-y-0.5 hover:bg-white"
+                >
+                  <FiPhone />
+                  Call for Availability
+                </Link>
+              </div>
             </div>
 
-            <div className="rounded-[2rem] border border-[var(--border)] bg-white p-8 shadow-[var(--shadow-soft)]">
-              <p className="text-sm font-bold text-[var(--muted)]">
-                Regional activity planning
-              </p>
+            <div className="relative min-h-[520px] overflow-hidden rounded-[2rem] shadow-[var(--shadow-soft)]">
+              <Image
+                src="/images/cabins/PeacePorchRiver.jpg"
+                alt="Quiet porch near the creek"
+                fill
+                className="object-cover"
+              />
 
-              <h3 className="mt-3 text-3xl font-black text-[var(--forest)]">
-                Ouachita Region of Arkansas
-              </h3>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
 
-              <p className="mt-4 text-sm font-semibold leading-7 text-[var(--muted)]">
-                Add the official tourism link here once confirmed, or link this
-                to a curated local activities resource page.
-              </p>
-
-              <Link
-                href="/contact"
-                className="mt-7 inline-flex rounded-full bg-[var(--forest)] px-6 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[var(--charcoal)]"
-              >
-                Ask About the Area
-              </Link>
+              <div className="absolute bottom-6 left-6 right-6 rounded-[1.5rem] border border-white/12 bg-black/28 p-5 text-white backdrop-blur">
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--copper)]">
+                  After the Adventure
+                </p>
+                <p className="mt-2 text-sm font-semibold leading-7 text-white/82">
+                  The cabin is not just where you sleep. It is part of the trip.
+                </p>
+              </div>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="section bg-[var(--background)]">
-        <Container>
-          <div className="grid gap-8 rounded-[2.5rem] bg-[var(--forest)] p-8 text-white shadow-[var(--shadow)] md:p-12 lg:grid-cols-[1fr_0.7fr] lg:items-center">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-                Ready to Visit?
-              </p>
+      <section className="relative min-h-[600px] overflow-hidden bg-[var(--espresso)]">
+        <Image
+          src="/images/cabins/PeaceView3.jpg"
+          alt="Cabin booking call to action"
+          fill
+          className="object-cover"
+        />
 
-              <h2 className="mt-4 text-4xl font-black leading-tight text-white md:text-5xl">
-                Pick your cabin and plan the kind of trip you want.
-              </h2>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.88),rgba(17,10,6,.58),rgba(17,10,6,.25))]" />
 
-              <p className="mt-5 max-w-2xl text-base font-medium leading-8 text-white/78">
-                Adventure-packed weekend or quiet cabin stay — either way,
-                At Living Water Cabins gives you a central place to land.
-              </p>
-            </div>
+        <Container className="relative z-10 flex min-h-[600px] items-center py-20">
+          <div className="max-w-3xl">
+            <p className="text-xs font-black uppercase tracking-[0.26em] text-[var(--copper)]">
+              Ready to Visit?
+            </p>
 
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.07] p-6 backdrop-blur">
-              <p className="text-sm font-bold text-white/68">
-                Call for availability
-              </p>
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+              Pick your cabin and plan the kind of trip you want.
+            </h2>
+
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/78">
+              Adventure-packed weekend or quiet cabin stay — either way, At
+              Living Water Cabins gives you a peaceful place to land.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/cabins"
+                className="inline-flex items-center justify-center rounded-full bg-[var(--paper)] px-6 py-4 text-sm font-black text-[var(--espresso)] transition hover:bg-[var(--copper)] hover:text-white"
+              >
+                View Cabins
+              </Link>
 
               <Link
                 href={site.phoneHref}
-                className="mt-3 flex items-center gap-3 text-2xl font-black text-white transition hover:text-[var(--gold)]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:bg-white hover:text-[var(--espresso)]"
               >
-                <FiPhone className="text-[var(--gold)]" />
+                <FiPhone />
                 {site.phone}
               </Link>
-
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col">
-                <Link
-                  href="/cabins"
-                  className="inline-flex justify-center rounded-full bg-white px-6 py-3 text-sm font-black text-[var(--forest)] transition hover:bg-[var(--gold)] hover:text-black"
-                >
-                  View Cabins
-                </Link>
-
-                <Link
-                  href="/family-lodge"
-                  className="inline-flex justify-center rounded-full border border-white/15 bg-white/10 px-6 py-3 text-sm font-black text-white transition hover:bg-white hover:text-[var(--forest)]"
-                >
-                  View Family Lodge
-                </Link>
-              </div>
             </div>
           </div>
         </Container>

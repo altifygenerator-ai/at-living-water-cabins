@@ -10,7 +10,6 @@ import {
 } from "react-icons/fi";
 import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
-import SectionHeading from "@/components/ui/SectionHeading";
 
 export const metadata = {
   title: "Policies",
@@ -120,107 +119,92 @@ const policySections = [
 export default function PoliciesPage() {
   return (
     <main>
-      <section className="relative -mt-20 min-h-[74vh] overflow-hidden bg-[var(--charcoal)] pt-20 text-white">
-  <div className="absolute inset-0 bg-gradient-to-br from-[var(--charcoal)] via-[var(--forest)] to-black" />
-  <div className="absolute inset-0 bg-black/5" />
+      <section className="relative -mt-20 min-h-[78vh] overflow-hidden bg-[var(--espresso)] pt-20 text-white">
+        <Image
+          src="/images/cabins/PeacePorchRiver.jpg"
+          alt="Quiet creekside cabin porch"
+          fill
+          priority
+          className="object-cover"
+        />
 
-  <div className="absolute -right-20 top-24 hidden h-[520px] w-[58vw] max-w-4xl lg:block">
-    <div className="absolute left-10 top-10 h-[420px] w-[290px] -rotate-6 overflow-hidden rounded-[2.25rem] border border-white/10 shadow-2xl">
-      <Image
-        src="/images/cabins/PeacePorchRiver.jpg"
-        alt="Quiet creekside cabin porch"
-        fill
-        priority
-        className="object-cover"
-      />
-      <div className="absolute inset-0 bg-black/15" />
-    </div>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.92),rgba(38,23,15,.68),rgba(38,23,15,.18))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,10,6,.2),transparent,rgba(17,10,6,.86))]" />
 
-    <div className="absolute left-[260px] top-0 h-[500px] w-[340px] rotate-3 overflow-hidden rounded-[2.75rem] border border-white/10 shadow-2xl">
-      <Image
-        src="/images/cabins/LoveScenic4.jpg"
-        alt="Creekside cabin setting"
-        fill
-        priority
-        className="object-cover"
-      />
-      <div className="absolute inset-0 bg-black/20" />
-    </div>
+        <div className="absolute right-6 top-32 hidden w-[38vw] max-w-xl lg:block">
+          <div className="relative ml-auto h-[380px] w-[280px] rotate-3 overflow-hidden rounded-[2rem] border border-white/12 shadow-2xl">
+            <Image
+              src="/images/cabins/LoveScenic4.jpg"
+              alt="Creekside cabin setting"
+              fill
+              className="object-cover"
+            />
+          </div>
 
-    <div className="absolute bottom-4 left-[110px] h-[210px] w-[300px] rotate-[-2deg] overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl">
-      <Image
-        src="/images/cabins/HopeView3.jpg"
-        alt="Cabin view at At Living Water Cabins"
-        fill
-        className="object-cover"
-      />
-      <div className="absolute inset-0 bg-black/25" />
-    </div>
-  </div>
+          <div className="relative -mt-20 h-[230px] w-[330px] -rotate-3 overflow-hidden rounded-[1.75rem] border border-white/12 shadow-2xl">
+            <Image
+              src="/images/cabins/HopeView3.jpg"
+              alt="Cabin view at At Living Water Cabins"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
 
-  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/15" />
-  <div className="absolute inset-0 bg-gradient-to-t from-[var(--charcoal)] via-transparent to-transparent" />
+        <Container className="relative z-10 flex min-h-[calc(78vh-5rem)] items-center py-20">
+          <div className="max-w-4xl">
+            <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.28em] text-[var(--copper)]">
+              <span className="h-px w-10 bg-[var(--copper)]" />
+              Before You Book
+            </p>
 
-  <div className="absolute left-0 top-0 h-full w-1/2 bg-gradient-to-r from-black/25 to-transparent" />
-  <div className="absolute bottom-16 left-10 hidden h-24 w-24 rounded-full border border-[var(--gold)]/20 md:block" />
-  <div className="absolute bottom-24 left-24 hidden h-8 w-8 rounded-full bg-[var(--gold)]/25 md:block" />
+            <h1 className="mt-5 text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.84] tracking-[-0.085em] text-[var(--paper)] text-balance">
+              Clear details for an easier stay.
+            </h1>
 
-  <Container className="relative z-10 flex min-h-[calc(74vh-5rem)] items-center py-20">
-    <div className="max-w-4xl">
-      <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-        <span className="h-px w-10 bg-[var(--gold)]" />
-        Policies
-      </p>
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/84 md:text-xl">
+              Reservation, cancellation, check-in, pet, smoking, and privacy
+              policies for your stay at At Living Water Cabins.
+            </p>
 
-      <h1 className="mt-5 text-5xl font-black leading-[0.92] tracking-[-0.06em] text-white md:text-7xl">
-        Clear details before you book.
-      </h1>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href={site.phoneHref}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--paper)] px-6 py-4 text-sm font-black text-[var(--espresso)] shadow-lg transition hover:-translate-y-0.5 hover:bg-[var(--copper)] hover:text-white"
+              >
+                <FiPhone />
+                Questions? Call Us
+              </Link>
 
-      <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/88">
-        Reservation, cancellation, check-in, pet, smoking, and privacy
-        policies for your stay at At Living Water Cabins.
-      </p>
+              <Link
+                href="/cabins"
+                className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--espresso)]"
+              >
+                View Cabins
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
 
-      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-        <Link
-          href={site.phoneHref}
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--gold)] px-6 py-4 text-sm font-black text-black shadow-lg transition hover:-translate-y-0.5"
-        >
-          <FiPhone />
-          Questions? Call Us
-        </Link>
-
-        <Link
-          href="/cabins"
-          className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--forest)]"
-        >
-          View Cabins
-        </Link>
-      </div>
-    </div>
-  </Container>
-</section>
-
-      <section className="section bg-[var(--cream)]">
+      <section className="relative z-20 -mt-12">
         <Container>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid overflow-hidden rounded-[1.75rem] border border-[rgba(38,23,15,0.14)] bg-[rgba(255,249,239,0.95)] shadow-[var(--shadow)] backdrop-blur md:grid-cols-4">
             {quickPolicies.map((item) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={item.title}
-                  className="rounded-[2rem] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-soft)]"
+                  className="border-b border-[rgba(38,23,15,0.1)] p-5 md:border-b-0 md:border-r last:md:border-r-0"
                 >
-                  <div className="grid size-12 place-items-center rounded-full bg-[var(--forest)] text-white">
-                    <Icon size={20} />
-                  </div>
+                  <Icon className="text-2xl text-[var(--copper)]" />
 
-                  <h2 className="mt-5 text-2xl font-black text-[var(--forest)]">
+                  <p className="mt-4 text-[0.68rem] font-black uppercase tracking-[0.2em] text-[var(--copper)]">
                     {item.title}
-                  </h2>
+                  </p>
 
-                  <p className="mt-3 text-sm font-semibold leading-7 text-[var(--muted)]">
+                  <p className="mt-2 text-sm font-black leading-6 tracking-[-0.02em] text-[var(--espresso)]">
                     {item.text}
                   </p>
                 </div>
@@ -230,81 +214,105 @@ export default function PoliciesPage() {
         </Container>
       </section>
 
-      <section className="section bg-[var(--background)]">
+      <section className="section bg-[var(--linen)]">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-            <div className="lg:sticky lg:top-28">
-              <SectionHeading
-                eyebrow="Before You Stay"
-                title="The important details, cleaned up and easy to read."
-                text="These policies keep expectations clear for reservations, cancellations, pets, smoking, payments, and check-in."
-              />
+          <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
+            <aside className="lg:sticky lg:top-28">
+              <p className="eyebrow">Stay Details</p>
 
-              <div className="mt-8 rounded-[2rem] bg-[var(--forest)] p-6 text-white shadow-[var(--shadow-soft)]">
-                <p className="text-xs font-black uppercase tracking-[0.2em] text-[var(--gold)]">
-                  Need Clarification?
-                </p>
+              <h2 className="mt-5 text-[clamp(2.6rem,5vw,4.8rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+                The important stuff, without the mess.
+              </h2>
 
-                <p className="mt-3 text-sm font-semibold leading-7 text-white/75">
-                  Policies can depend on stay dates, payment method, and
-                  property. Call if you have questions before booking.
-                </p>
+              <p className="mt-5 max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
+                These policies help keep expectations clear before you reserve.
+                Some details may depend on stay dates, payment method, pets, and
+                property type.
+              </p>
 
-                <Link
-                  href={site.phoneHref}
-                  className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-black text-[var(--forest)] transition hover:bg-[var(--gold)] hover:text-black"
-                >
-                  <FiPhone />
-                  {site.phone}
-                </Link>
+              <div className="mt-8 overflow-hidden rounded-[1.75rem] bg-[var(--espresso)] shadow-[var(--shadow-soft)]">
+                <div className="relative min-h-[220px]">
+                  <Image
+                    src="/images/cabins/riverflowers.jpg"
+                    alt="Creekside flowers at At Living Water Cabins"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/20" />
+                </div>
+
+                <div className="p-6 text-white">
+                  <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--copper)]">
+                    Need Clarification?
+                  </p>
+
+                  <p className="mt-3 text-sm font-semibold leading-7 text-white/72">
+                    Call before booking if you have questions about pets,
+                    payments, cancellation details, or which cabin is the best
+                    fit.
+                  </p>
+
+                  <Link
+                    href={site.phoneHref}
+                    className="mt-5 inline-flex items-center gap-2 rounded-full bg-[var(--paper)] px-5 py-3 text-sm font-black text-[var(--espresso)] transition hover:bg-[var(--copper)] hover:text-white"
+                  >
+                    <FiPhone />
+                    {site.phone}
+                  </Link>
+                </div>
               </div>
-            </div>
+            </aside>
 
-            <div className="grid gap-6">
+            <div className="divide-y divide-[var(--border)] border-y border-[var(--border)]">
               {policySections.map((section) => {
                 const Icon = section.icon;
 
                 return (
                   <article
                     key={section.title}
-                    className="rounded-[2rem] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-soft)] md:p-8"
+                    className="grid gap-6 py-10 md:grid-cols-[0.28fr_1fr]"
                   >
-                    <div className="flex items-center gap-4">
-                      <div className="grid size-12 shrink-0 place-items-center rounded-full bg-[var(--forest)] text-white">
-                        <Icon size={20} />
+                    <div>
+                      <div className="inline-flex items-center gap-3 rounded-full bg-[var(--paper)] px-4 py-2 shadow-[var(--shadow-soft)]">
+                        <Icon className="text-[var(--copper)]" />
+                        <span className="text-[0.68rem] font-black uppercase tracking-[0.18em] text-[var(--espresso)]">
+                          Policy
+                        </span>
                       </div>
+                    </div>
 
-                      <h2 className="text-3xl font-black text-[var(--forest)]">
+                    <div>
+                      <h2 className="text-[clamp(2rem,3vw,3.2rem)] font-black leading-[0.94] tracking-[-0.06em] text-[var(--espresso)]">
                         {section.title}
                       </h2>
-                    </div>
 
-                    <div className="mt-6 grid gap-4">
-                      {section.paragraphs.map((paragraph) => (
-                        <p
-                          key={paragraph}
-                          className="text-sm font-semibold leading-7 text-[var(--muted)]"
-                        >
-                          {paragraph}
-                        </p>
-                      ))}
-                    </div>
-
-                    {section.bullets && (
-                      <div className="mt-6 grid gap-3 rounded-[1.5rem] bg-[var(--cream)] p-5">
-                        {section.bullets.map((bullet) => (
+                      <div className="mt-6 grid gap-4">
+                        {section.paragraphs.map((paragraph) => (
                           <p
-                            key={bullet}
-                            className="flex gap-3 text-sm font-black leading-7 text-[var(--forest)]"
+                            key={paragraph}
+                            className="text-sm font-semibold leading-7 text-[var(--muted)] md:text-base md:leading-8"
                           >
-                            <span className="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-[var(--forest)] text-white">
-                              <FiCheckCircle size={13} />
-                            </span>
-                            {bullet}
+                            {paragraph}
                           </p>
                         ))}
                       </div>
-                    )}
+
+                      {section.bullets && (
+                        <div className="mt-7 grid gap-3 rounded-[1.5rem] bg-[var(--paper)] p-5 shadow-[var(--shadow-soft)]">
+                          {section.bullets.map((bullet) => (
+                            <p
+                              key={bullet}
+                              className="flex gap-3 text-sm font-bold leading-7 text-[var(--espresso)]"
+                            >
+                              <span className="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-[var(--espresso)] text-white">
+                                <FiCheckCircle size={13} />
+                              </span>
+                              {bullet}
+                            </p>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </article>
                 );
               })}
@@ -313,81 +321,47 @@ export default function PoliciesPage() {
         </Container>
       </section>
 
-      <section className="relative min-h-[56vh] overflow-hidden bg-[var(--charcoal)]">
+      <section className="relative min-h-[620px] overflow-hidden bg-[var(--espresso)]">
         <Image
-          src="/images/cabins/riverflowers.jpg"
-          alt="Quiet creekside cabin stay in Arkansas"
+          src="/images/cabins/PeaceView1.jpg"
+          alt="Quiet cabin stay at At Living Water Cabins"
           fill
           className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/15" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.86),rgba(17,10,6,.48),rgba(17,10,6,.2))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(17,10,6,.64))]" />
 
-        <Container className="relative z-10 flex min-h-[56vh] items-center py-20">
+        <Container className="relative z-10 flex min-h-[620px] items-end pb-14 md:pb-20">
           <div className="max-w-3xl">
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-              Simple Expectations
+            <p className="text-xs font-black uppercase tracking-[0.26em] text-[var(--copper)]">
+              Book Direct
             </p>
 
-            <h2 className="mt-5 text-4xl font-black leading-tight tracking-[-0.05em] text-white md:text-6xl">
-              Clear policies make for easier stays.
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+              Questions are easier before the trip.
             </h2>
 
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/86">
-              Review the details before booking, then call if anything needs to
-              be clarified for your trip.
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/78">
+              Call to check availability, confirm details, and make sure the
+              cabin or lodge is the right fit for your stay.
             </p>
-          </div>
-        </Container>
-      </section>
 
-      <section className="section bg-[var(--cream)]">
-        <Container>
-          <div className="grid gap-8 rounded-[2.5rem] bg-[var(--forest)] p-8 text-white shadow-[var(--shadow)] md:p-12 lg:grid-cols-[1fr_0.7fr] lg:items-center">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-                Ready to Book?
-              </p>
-
-              <h2 className="mt-4 text-4xl font-black leading-tight text-white md:text-5xl">
-                Call to check availability and confirm details.
-              </h2>
-
-              <p className="mt-5 max-w-2xl text-base font-medium leading-8 text-white/78">
-                For reservation questions, pet questions, cancellation details,
-                or property-specific rules, give us a call before booking.
-              </p>
-            </div>
-
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.07] p-6 backdrop-blur">
-              <p className="text-sm font-bold text-white/68">
-                Best way to reach us
-              </p>
-
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={site.phoneHref}
-                className="mt-3 flex items-center gap-3 text-2xl font-black text-white transition hover:text-[var(--gold)]"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--paper)] px-6 py-4 text-sm font-black text-[var(--espresso)] transition hover:bg-[var(--copper)] hover:text-white"
               >
-                <FiPhone className="text-[var(--gold)]" />
+                <FiPhone />
                 {site.phone}
               </Link>
 
-              <div className="mt-6 flex flex-col gap-3">
-                <Link
-                  href="/cabins"
-                  className="inline-flex justify-center rounded-full bg-white px-6 py-3 text-sm font-black text-[var(--forest)] transition hover:bg-[var(--gold)] hover:text-black"
-                >
-                  View Cabins
-                </Link>
-
-                <Link
-                  href="/family-lodge"
-                  className="inline-flex justify-center rounded-full border border-white/15 bg-white/10 px-6 py-3 text-sm font-black text-white transition hover:bg-white hover:text-[var(--forest)]"
-                >
-                  View Family Lodge
-                </Link>
-              </div>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full border border-white/18 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:bg-white hover:text-[var(--espresso)]"
+              >
+                Contact & Directions
+              </Link>
             </div>
           </div>
         </Container>

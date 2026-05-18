@@ -1,33 +1,49 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f2e8;
-  --foreground: #17211b;
+  --background: #f4eadc;
+  --foreground: #211811;
 
-  --forest: #123327;
-  --forest-2: #1d4a37;
-  --pine: #2e6b4f;
-  --moss: #8fa46f;
+  /* Boutique cabin neutrals */
+  --linen: #f4eadc;
+  --paper: #fff9ef;
+  --cream: #f8f0e4;
+  --sand: #e5d1b8;
+  --stone: #c6ad8f;
 
-  --cream: #f7f2e8;
-  --sand: #e8dcc8;
-  --stone: #d6c8b4;
+  /* Main brand colors */
+  --espresso: #26170f;
+  --wood-dark: #3b2417;
+  --wood: #765033;
+  --cedar: #9a6540;
+  --copper: #c18455;
+  --clay: #aa6844;
 
-  --charcoal: #111816;
-  --muted: #68736c;
+  /* Creek / natural support colors */
+  --creek: #9abfba;
+  --creek-dark: #426d67;
+  --creek-deep: #203f3c;
 
-  --water: #8ccfc0;
-  --water-dark: #287a70;
+  /* Aliases so older components do not break */
+  --forest: #26170f;
+  --forest-2: #3b2417;
+  --pine: #426d67;
+  --moss: #858f6a;
+  --water: #9abfba;
+  --water-dark: #426d67;
+  --water-deep: #203f3c;
+  --gold: #c18455;
 
-  --gold: #c7964b;
+  --charcoal: #120d09;
+  --muted: #75685d;
   --white: #ffffff;
 
-  --border: rgba(18, 51, 39, 0.14);
-  --shadow: 0 24px 70px rgba(17, 24, 22, 0.16);
-  --shadow-soft: 0 14px 40px rgba(17, 24, 22, 0.1);
+  --border: rgba(38, 23, 15, 0.14);
+  --shadow: 0 30px 90px rgba(38, 23, 15, 0.2);
+  --shadow-soft: 0 18px 45px rgba(38, 23, 15, 0.11);
 
-  --radius: 1.5rem;
-  --radius-lg: 2rem;
+  --radius: 1.25rem;
+  --radius-lg: 1.75rem;
 }
 
 * {
@@ -41,8 +57,9 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(140, 207, 192, 0.22), transparent 34rem),
-    linear-gradient(180deg, #fbf7ef 0%, var(--background) 45%, #efe4d2 100%);
+    radial-gradient(circle at top left, rgba(154, 191, 186, 0.18), transparent 34rem),
+    radial-gradient(circle at bottom right, rgba(193, 132, 85, 0.16), transparent 34rem),
+    linear-gradient(180deg, #fff9ef 0%, var(--background) 48%, #e6d1b7 100%);
   color: var(--foreground);
   font-family: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   text-rendering: geometricPrecision;
@@ -50,8 +67,8 @@ body {
 }
 
 ::selection {
-  background: var(--forest);
-  color: var(--cream);
+  background: var(--espresso);
+  color: var(--linen);
 }
 
 a {
@@ -78,7 +95,7 @@ h3,
 h4 {
   margin: 0;
   font-family: var(--font-heading), Georgia, serif;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.055em;
 }
 
 p {
@@ -92,7 +109,7 @@ p {
 }
 
 .section {
-  padding-block: clamp(4rem, 8vw, 7rem);
+  padding-block: clamp(4.5rem, 8vw, 7.5rem);
 }
 
 .section-tight {
@@ -103,10 +120,10 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--water-dark);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
+  color: var(--copper);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
@@ -115,7 +132,7 @@ p {
   width: 2rem;
   height: 1px;
   background: currentColor;
-  opacity: 0.65;
+  opacity: 0.7;
 }
 
 .btn {
@@ -125,8 +142,8 @@ p {
   justify-content: center;
   gap: 0.6rem;
   border-radius: 999px;
-  padding: 0.9rem 1.35rem;
-  font-weight: 800;
+  padding: 0.95rem 1.4rem;
+  font-weight: 900;
   line-height: 1;
   transition:
     transform 180ms ease,
@@ -141,33 +158,32 @@ p {
 }
 
 .btn-primary {
-  background: var(--forest);
-  color: var(--cream);
-  box-shadow: 0 18px 36px rgba(18, 51, 39, 0.22);
+  background: var(--espresso);
+  color: var(--linen);
+  box-shadow: 0 18px 40px rgba(38, 23, 15, 0.26);
 }
 
 .btn-primary:hover {
-  background: var(--charcoal);
+  background: var(--wood);
 }
 
 .btn-secondary {
-  border: 1px solid rgba(18, 51, 39, 0.18);
-  background: rgba(255, 255, 255, 0.62);
-  color: var(--forest);
-  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 249, 239, 0.12);
+  color: var(--white);
+  backdrop-filter: blur(16px);
 }
 
 .btn-secondary:hover {
-  border-color: rgba(18, 51, 39, 0.32);
-  background: var(--white);
+  border-color: rgba(255, 255, 255, 0.46);
+  background: rgba(255, 249, 239, 0.2);
 }
 
 .card {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--paper);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(18px);
 }
 
 .dark-card {
@@ -175,15 +191,15 @@ p {
   border-radius: var(--radius-lg);
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent),
-    var(--forest);
-  color: var(--cream);
+    linear-gradient(135deg, var(--espresso), var(--creek-deep));
+  color: var(--linen);
   box-shadow: var(--shadow);
 }
 
 .dark-card p,
 .dark-card h2,
 .dark-card h3 {
-  color: var(--cream);
+  color: var(--linen);
 }
 
 .image-wrap {
@@ -200,8 +216,8 @@ p {
 }
 
 .glass {
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 249, 239, 0.52);
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(18px);
 }
@@ -215,7 +231,7 @@ p {
 }
 
 .focus-ring:focus-visible {
-  outline: 3px solid rgba(140, 207, 192, 0.85);
+  outline: 3px solid rgba(193, 132, 85, 0.85);
   outline-offset: 4px;
 }
 

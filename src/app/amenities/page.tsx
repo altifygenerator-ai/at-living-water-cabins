@@ -11,7 +11,6 @@ import {
 } from "react-icons/fi";
 import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
-import SectionHeading from "@/components/ui/SectionHeading";
 
 export const metadata = {
   title: "Amenities",
@@ -50,18 +49,18 @@ const outdoorAmenities = [
 
 const highlights = [
   {
-    title: "Fully Equipped Kitchens",
-    text: "Bring the food and appetite — the cabins and lodge are set up with the basics you need to cook and serve meals.",
+    title: "Cook and settle in",
+    text: "Fully equipped kitchens make it easy to bring food, cook simple meals, and enjoy the cabin without needing to leave for every bite.",
     icon: FiCoffee,
   },
   {
-    title: "Comfortable Indoor Spaces",
-    text: "Heat and air, satellite TV, ceiling fans, and simple comforts make it easy to settle in after a day outside.",
+    title: "Comfort inside",
+    text: "Heat and air, ceiling fans, satellite TV, games, and practical supplies help the cabins feel easy from the moment you arrive.",
     icon: FiHome,
   },
   {
-    title: "Outdoor Room to Relax",
-    text: "Porches, grills, fire rings, picnic tables, and trails help keep the stay connected to the creek and mountain setting.",
+    title: "Room outside",
+    text: "Porches, grills, fire rings, picnic tables, trails, and creekside air make the outdoor space part of the stay.",
     icon: FiMap,
   },
 ];
@@ -69,7 +68,7 @@ const highlights = [
 export default function AmenitiesPage() {
   return (
     <main>
-      <section className="relative -mt-20 min-h-[78vh] overflow-hidden bg-[var(--charcoal)] pt-20 text-white">
+      <section className="relative -mt-20 min-h-[82vh] overflow-hidden bg-[var(--espresso)] pt-20 text-white">
         <Image
           src="/images/cabins/HopeLivingroom2.jpg"
           alt="Cabin amenities at At Living Water Cabins"
@@ -78,37 +77,57 @@ export default function AmenitiesPage() {
           className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/58 to-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--charcoal)] via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.92),rgba(38,23,15,.64),rgba(38,23,15,.12))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,10,6,.18),transparent,rgba(17,10,6,.86))]" />
 
-        <Container className="relative z-10 flex min-h-[calc(78vh-5rem)] items-center py-20">
+        <div className="absolute right-8 top-32 hidden w-[38vw] max-w-xl lg:block">
+          <div className="relative ml-auto h-[390px] w-[290px] rotate-3 overflow-hidden rounded-[2rem] border border-white/12 shadow-2xl">
+            <Image
+              src="/images/cabins/LoveKitchen.jpg"
+              alt="Cabin kitchen amenities"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="relative -mt-20 h-[235px] w-[350px] -rotate-3 overflow-hidden rounded-[1.75rem] border border-white/12 shadow-2xl">
+            <Image
+              src="/images/cabins/LoveFire.jpg"
+              alt="Outdoor fire ring at At Living Water Cabins"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+
+        <Container className="relative z-10 flex min-h-[calc(82vh-5rem)] items-center py-20">
           <div className="max-w-4xl">
-            <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-              <span className="h-px w-10 bg-[var(--gold)]" />
+            <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.28em] text-[var(--copper)]">
+              <span className="h-px w-10 bg-[var(--copper)]" />
               Amenities
             </p>
 
-            <h1 className="mt-5 text-5xl font-black leading-[0.92] tracking-[-0.06em] text-white md:text-7xl">
-              The simple comforts that make a cabin stay easy.
+            <h1 className="mt-5 text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.84] tracking-[-0.085em] text-[var(--paper)] text-balance">
+              Easy comforts for a slower stay.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/88">
-              Fully equipped kitchens, comfortable indoor spaces, porches,
-              grills, fire rings, trails, and everything you need to show up
-              ready to relax.
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/84 md:text-xl">
+              Kitchens, porches, grills, fire rings, trails, and simple comforts
+              that make it easier to show up, settle in, and enjoy your time
+              near the water.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/cabins"
-                className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-6 py-4 text-sm font-black text-black shadow-lg transition hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center rounded-full bg-[var(--paper)] px-6 py-4 text-sm font-black text-[var(--espresso)] shadow-lg transition hover:-translate-y-0.5 hover:bg-[var(--copper)] hover:text-white"
               >
                 View Cabins
               </Link>
 
               <Link
                 href={site.phoneHref}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--forest)]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--espresso)]"
               >
                 <FiPhone />
                 Call Now
@@ -118,26 +137,24 @@ export default function AmenitiesPage() {
         </Container>
       </section>
 
-      <section className="section bg-[var(--cream)]">
+      <section className="relative z-20 -mt-12">
         <Container>
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid overflow-hidden rounded-[1.75rem] border border-[rgba(38,23,15,0.14)] bg-[rgba(255,249,239,0.95)] shadow-[var(--shadow)] backdrop-blur lg:grid-cols-3">
             {highlights.map((item) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={item.title}
-                  className="rounded-[2rem] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-soft)]"
+                  className="border-b border-[rgba(38,23,15,0.1)] p-5 lg:border-b-0 lg:border-r last:lg:border-r-0"
                 >
-                  <div className="grid size-12 place-items-center rounded-full bg-[var(--forest)] text-white">
-                    <Icon size={20} />
-                  </div>
+                  <Icon className="text-2xl text-[var(--copper)]" />
 
-                  <h2 className="mt-5 text-2xl font-black text-[var(--forest)]">
+                  <p className="mt-4 text-[0.68rem] font-black uppercase tracking-[0.2em] text-[var(--copper)]">
                     {item.title}
-                  </h2>
+                  </p>
 
-                  <p className="mt-3 text-sm font-semibold leading-7 text-[var(--muted)]">
+                  <p className="mt-2 text-sm font-bold leading-6 text-[var(--espresso)]">
                     {item.text}
                   </p>
                 </div>
@@ -147,36 +164,62 @@ export default function AmenitiesPage() {
         </Container>
       </section>
 
-      <section className="section bg-[var(--background)]">
+      <section className="section bg-[var(--linen)]">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-            <SectionHeading
-              eyebrow="Cabin & Lodge Amenities"
-              title="Bring food. We’ll handle the rest."
-              text="The cabins and lodge include the practical comforts guests need for a clean, easy stay in the Ouachita Mountains."
-            />
+          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+            <div>
+              <p className="eyebrow">Inside the Cabins</p>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              {cabinAmenities.map((amenity) => (
-                <div
-                  key={amenity}
-                  className="flex items-center gap-3 rounded-[1.5rem] border border-[var(--border)] bg-white p-4 shadow-[var(--shadow-soft)]"
-                >
-                  <span className="grid size-9 shrink-0 place-items-center rounded-full bg-[var(--forest)] text-white">
-                    <FiCheck size={16} />
-                  </span>
+              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+                Bring food. The basics are already here.
+              </h2>
 
-                  <p className="text-sm font-black text-[var(--forest)]">
+              <p className="mt-6 max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
+                The cabins and lodge are set up for practical, comfortable
+                stays. Cook simple meals, relax inside after a day out, and keep
+                the trip easy without packing every little thing.
+              </p>
+
+              <div className="mt-8 grid gap-x-8 gap-y-5 sm:grid-cols-2">
+                {cabinAmenities.map((amenity) => (
+                  <p
+                    key={amenity}
+                    className="flex gap-3 border-t border-[var(--border)] pt-4 text-sm font-bold leading-7 text-[var(--espresso)]"
+                  >
+                    <span className="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-[var(--espresso)] text-white">
+                      <FiCheck size={13} />
+                    </span>
                     {amenity}
                   </p>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            <div className="relative min-h-[620px] overflow-hidden rounded-[2.15rem] shadow-[var(--shadow-soft)]">
+              <Image
+                src="/images/cabins/LoveKitchen.jpg"
+                alt="Fully equipped cabin kitchen"
+                fill
+                className="object-cover"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/62 via-transparent to-transparent" />
+
+              <div className="absolute bottom-6 left-6 right-6 rounded-[1.5rem] border border-white/12 bg-black/28 p-5 text-white backdrop-blur">
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--copper)]">
+                  Simple Stay Setup
+                </p>
+                <p className="mt-2 text-sm font-semibold leading-7 text-white/82">
+                  Kitchens, supplies, comfortable spaces, and the little basics
+                  that make the cabin feel easy.
+                </p>
+              </div>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="relative min-h-[60vh] overflow-hidden bg-[var(--charcoal)]">
+      <section className="relative min-h-[650px] overflow-hidden bg-[var(--espresso)]">
         <Image
           src="/images/cabins/LoveFire.jpg"
           alt="Outdoor amenities and creekside setting"
@@ -184,111 +227,122 @@ export default function AmenitiesPage() {
           className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/15" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.82),rgba(17,10,6,.4),rgba(17,10,6,.12))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(17,10,6,.7))]" />
 
-        <Container className="relative z-10 flex min-h-[60vh] items-center py-20">
+        <Container className="relative z-10 flex min-h-[650px] items-end pb-14 md:pb-20">
           <div className="max-w-3xl">
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
+            <p className="text-xs font-black uppercase tracking-[0.26em] text-[var(--copper)]">
               Outside Your Door
             </p>
 
-            <h2 className="mt-5 text-4xl font-black leading-tight tracking-[-0.05em] text-white md:text-6xl">
-              Porches, trails, fire rings, and room to be outside.
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+              The outdoor space is part of the stay.
             </h2>
 
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/86">
-              The best part of staying here is not just what’s inside. It’s the
-              quiet creekside setting, fresh air, and space to slow down.
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/78">
+              Porches, grills, fire rings, picnic tables, walking trails, and
+              quiet room to spend more time outside.
             </p>
           </div>
         </Container>
       </section>
 
-      <section className="section bg-[var(--cream)]">
+      <section className="section bg-[var(--paper)]">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-                Campsite & Outdoor Amenities
-              </p>
+          <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div className="relative min-h-[580px] overflow-hidden rounded-[2rem] shadow-[var(--shadow-soft)]">
+              <Image
+                src="/images/cabins/PeacePorchRiver.jpg"
+                alt="Large porch overlooking the water"
+                fill
+                className="object-cover"
+              />
 
-              <h2 className="mt-4 text-4xl font-black leading-tight text-[var(--forest)] md:text-5xl">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/58 via-transparent to-transparent" />
+
+              <div className="absolute bottom-6 left-6 right-6 rounded-[1.5rem] border border-white/12 bg-black/28 p-5 text-white backdrop-blur">
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--copper)]">
+                  Porches & Creek Air
+                </p>
+                <p className="mt-2 text-sm font-semibold leading-7 text-white/82">
+                  Sit outside, grill, walk, play, or just enjoy the quiet around
+                  the property.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <p className="eyebrow">Outdoor Amenities</p>
+
+              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
                 Built for evenings outside and quiet mornings near the water.
               </h2>
 
-              <p className="mt-5 text-base font-semibold leading-8 text-[var(--muted)]">
+              <p className="mt-6 max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
                 Whether you’re grilling, walking the trails, playing games, or
-                sitting by the fire, the outdoor spaces are part of the stay.
+                sitting by the fire, the outdoor areas help make the cabin feel
+                like more than just a place to sleep.
               </p>
-            </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              {outdoorAmenities.map((amenity) => (
-                <div
-                  key={amenity}
-                  className="flex items-center gap-3 rounded-[1.5rem] border border-[var(--border)] bg-white p-4 shadow-[var(--shadow-soft)]"
-                >
-                  <span className="grid size-9 shrink-0 place-items-center rounded-full bg-[var(--forest)] text-white">
-                    <FiCheck size={16} />
-                  </span>
-
-                  <p className="text-sm font-black text-[var(--forest)]">
+              <div className="mt-8 grid gap-x-8 gap-y-5 sm:grid-cols-2">
+                {outdoorAmenities.map((amenity) => (
+                  <p
+                    key={amenity}
+                    className="flex gap-3 border-t border-[var(--border)] pt-4 text-sm font-bold leading-7 text-[var(--espresso)]"
+                  >
+                    <span className="mt-1 grid size-6 shrink-0 place-items-center rounded-full bg-[var(--espresso)] text-white">
+                      <FiCheck size={13} />
+                    </span>
                     {amenity}
                   </p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="section bg-[var(--background)]">
-        <Container>
-          <div className="grid gap-8 rounded-[2.5rem] bg-[var(--forest)] p-8 text-white shadow-[var(--shadow)] md:p-12 lg:grid-cols-[1fr_0.7fr] lg:items-center">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-                Ready to Stay?
-              </p>
+      <section className="relative min-h-[600px] overflow-hidden bg-[var(--espresso)]">
+        <Image
+          src="/images/cabins/PeaceView2.jpg"
+          alt="Cabin booking call to action"
+          fill
+          className="object-cover"
+        />
 
-              <h2 className="mt-4 text-4xl font-black leading-tight text-white md:text-5xl">
-                Pick your cabin, pack your food, and settle in.
-              </h2>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.88),rgba(17,10,6,.58),rgba(17,10,6,.25))]" />
 
-              <p className="mt-5 max-w-2xl text-base font-medium leading-8 text-white/78">
-                Call year-round for availability, reservations, and questions
-                about what’s included during your stay.
-              </p>
-            </div>
+        <Container className="relative z-10 flex min-h-[600px] items-center py-20">
+          <div className="max-w-3xl">
+            <p className="text-xs font-black uppercase tracking-[0.26em] text-[var(--copper)]">
+              Ready to Stay?
+            </p>
 
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.07] p-6 backdrop-blur">
-              <p className="text-sm font-bold text-white/68">
-                Call for availability
-              </p>
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+              Pick your cabin, pack your food, and settle in.
+            </h2>
+
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/78">
+              Call year-round for availability, reservations, and questions
+              about what’s included during your stay.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/cabins"
+                className="inline-flex items-center justify-center rounded-full bg-[var(--paper)] px-6 py-4 text-sm font-black text-[var(--espresso)] transition hover:bg-[var(--copper)] hover:text-white"
+              >
+                View Cabins
+              </Link>
 
               <Link
                 href={site.phoneHref}
-                className="mt-3 flex items-center gap-3 text-2xl font-black text-white transition hover:text-[var(--gold)]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:bg-white hover:text-[var(--espresso)]"
               >
-                <FiPhone className="text-[var(--gold)]" />
+                <FiPhone />
                 {site.phone}
               </Link>
-
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col">
-                <Link
-                  href="/cabins"
-                  className="inline-flex justify-center rounded-full bg-white px-6 py-3 text-sm font-black text-[var(--forest)] transition hover:bg-[var(--gold)] hover:text-black"
-                >
-                  View Cabins
-                </Link>
-
-                <Link
-                  href="/family-lodge"
-                  className="inline-flex justify-center rounded-full border border-white/15 bg-white/10 px-6 py-3 text-sm font-black text-white transition hover:bg-white hover:text-[var(--forest)]"
-                >
-                  View Family Lodge
-                </Link>
-              </div>
             </div>
           </div>
         </Container>

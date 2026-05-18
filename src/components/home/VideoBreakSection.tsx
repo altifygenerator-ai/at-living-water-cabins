@@ -1,56 +1,32 @@
-import Link from "next/link";
+import Container from "@/components/ui/Container";
 
 export default function VideoBreakSection() {
   return (
-    <section className="relative my-16 overflow-hidden bg-stone-950 md:my-24">
-      <div className="relative h-[520px] w-full md:h-[620px]">
+    <section className="relative overflow-hidden bg-[var(--espresso)] py-0">
+      <div className="relative min-h-[680px] overflow-hidden">
         <video
           className="absolute inset-0 h-full w-full object-cover"
-          src="/videos/cabin-video.mov"
+          src="/videos/cabin-video.MOV"
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
         />
 
-        <div className="absolute inset-0 bg-black/45" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/65" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.28)_70%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.78),rgba(17,10,6,.24)),linear-gradient(180deg,transparent,rgba(17,10,6,.62))]" />
 
-        <div className="relative z-10 flex h-full items-center justify-center px-5 text-center">
-          <div className="mx-auto max-w-3xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-white/75 md:text-sm">
-              At Living Water Cabins
+        <Container className="relative z-10 flex min-h-[680px] items-end pb-14 md:pb-20">
+          <div>
+            <p className="max-w-3xl text-[clamp(3rem,7vw,6.6rem)] font-black leading-[0.88] tracking-[-0.08em] text-white text-balance">
+              Scenic days outside. Quiet evenings back at the cabin.
             </p>
 
-            <h2 className="text-4xl font-semibold tracking-tight text-white md:text-6xl">
-              Slow mornings. Quiet water. Peaceful nights.
-            </h2>
-
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/85 md:text-lg">
-              Step away from the noise and settle into a cabin stay made for
-              relaxing, reconnecting, and enjoying the simple beauty of the
-              Ouachita Mountains.
+            <p className="mt-6 max-w-xl text-lg font-medium leading-8 text-white/76">
+              The kind of place that makes the stay feel like part of the trip,
+              not just where you sleep.
             </p>
-
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link
-                href="/cabins"
-                className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-stone-950 transition hover:bg-white/90"
-              >
-                View Cabins
-              </Link>
-
-              <Link
-                href="/contact"
-                className="rounded-full border border-white/40 px-7 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white hover:bg-white/10"
-              >
-                Plan Your Stay
-              </Link>
-            </div>
           </div>
-        </div>
+        </Container>
       </div>
     </section>
   );

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { FiPhone, FiMapPin, FiMail, FiArrowRight } from "react-icons/fi";
 import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
-import SectionHeading from "@/components/ui/SectionHeading";
 
 export const metadata = {
   title: "Contact",
@@ -14,105 +13,197 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <main>
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-[var(--charcoal)] py-24 text-white md:py-32">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(199,150,75,0.18),transparent_34rem)]" />
+      <section className="relative -mt-20 min-h-[82vh] overflow-hidden bg-[var(--espresso)] pt-20 text-white">
+        <Image
+          src="/images/cabins/PeacePorchRiver.jpg"
+          alt="Creekside porch at At Living Water Cabins"
+          fill
+          priority
+          className="object-cover"
+        />
 
-        <Container className="relative z-10">
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-            Contact
-          </p>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.94),rgba(38,23,15,.66),rgba(38,23,15,.14))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,10,6,.18),transparent,rgba(17,10,6,.86))]" />
 
-          <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[0.95] tracking-[-0.06em] md:text-7xl">
-            Get in touch and plan your stay.
-          </h1>
+        <div className="absolute right-8 top-32 hidden w-[38vw] max-w-xl lg:block">
+          <div className="relative ml-auto h-[390px] w-[290px] rotate-3 overflow-hidden rounded-[2rem] border border-white/12 shadow-2xl">
+            <Image
+              src="/images/cabins/LoveBridge.jpg"
+              alt="Bridge near At Living Water Cabins"
+              fill
+              className="object-cover"
+            />
+          </div>
 
-          <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/82">
-            Call for availability, directions, or questions about the cabins and
-            your trip to the Ouachita Mountains.
-          </p>
+          <div className="relative -mt-20 h-[235px] w-[350px] -rotate-3 overflow-hidden rounded-[1.75rem] border border-white/12 shadow-2xl">
+            <Image
+              src="/images/cabins/riverflowers.jpg"
+              alt="Creekside flowers near At Living Water Cabins"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+
+        <Container className="relative z-10 flex min-h-[calc(82vh-5rem)] items-center py-20">
+          <div className="max-w-4xl">
+            <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.28em] text-[var(--copper)]">
+              <span className="h-px w-10 bg-[var(--copper)]" />
+              Contact & Booking
+            </p>
+
+            <h1 className="mt-5 text-[clamp(3.3rem,7vw,7.1rem)] font-black leading-[0.84] tracking-[-0.085em] text-[var(--paper)] text-balance">
+              Call, ask questions, and plan your stay.
+            </h1>
+
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/84 md:text-xl">
+              Reach out for availability, reservations, directions, cabin
+              questions, or help choosing the right stay for your trip.
+            </p>
+
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href={site.phoneHref}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--paper)] px-6 py-4 text-sm font-black text-[var(--espresso)] shadow-lg transition hover:-translate-y-0.5 hover:bg-[var(--copper)] hover:text-white"
+              >
+                <FiPhone />
+                Call {site.phone}
+              </Link>
+
+              <Link
+                href="/cabins"
+                className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--espresso)]"
+              >
+                View Cabins
+              </Link>
+            </div>
+          </div>
         </Container>
       </section>
 
-      {/* CONTACT INFO */}
-      <section className="section bg-[var(--cream)]">
+      <section className="relative z-20 -mt-12">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
-            <div>
-              <SectionHeading
-                eyebrow="Contact Info"
-                title="Reach out anytime."
-                text="We’re available year-round to help with reservations, directions, and planning your stay."
-              />
+          <div className="grid overflow-hidden rounded-[1.75rem] border border-[rgba(38,23,15,0.14)] bg-[rgba(255,249,239,0.95)] shadow-[var(--shadow)] backdrop-blur md:grid-cols-3">
+            <Link
+              href={site.phoneHref}
+              className="group border-b border-[rgba(38,23,15,0.1)] p-5 transition hover:bg-white md:border-b-0 md:border-r"
+            >
+              <FiPhone className="text-2xl text-[var(--copper)]" />
 
-              <div className="mt-8 grid gap-5">
-                <Link
-                  href={site.phoneHref}
-                  className="flex items-center gap-4 rounded-[1.5rem] border border-[var(--border)] bg-white p-5 shadow-[var(--shadow-soft)] transition hover:-translate-y-1"
-                >
-                  <FiPhone className="text-2xl text-[var(--gold)]" />
-                  <div>
-                    <p className="text-sm font-semibold text-[var(--muted)]">
-                      Call
-                    </p>
-                    <p className="text-lg font-black text-[var(--forest)]">
-                      {site.phone}
-                    </p>
-                  </div>
-                </Link>
+              <p className="mt-4 text-[0.68rem] font-black uppercase tracking-[0.2em] text-[var(--copper)]">
+                Call Direct
+              </p>
 
-                <div className="flex gap-4 rounded-[1.5rem] border border-[var(--border)] bg-white p-5 shadow-[var(--shadow-soft)]">
-                  <FiMapPin className="text-2xl text-[var(--gold)]" />
-                  <div>
-                    <p className="text-sm font-semibold text-[var(--muted)]">
-                      Property Location
-                    </p>
-                    <p className="text-lg font-black text-[var(--forest)]">
-                      {site.address.property}
-                    </p>
-                  </div>
-                </div>
+              <p className="mt-2 text-base font-black tracking-[-0.03em] text-[var(--espresso)]">
+                {site.phone}
+              </p>
+            </Link>
 
-                <div className="flex gap-4 rounded-[1.5rem] border border-[var(--border)] bg-white p-5 shadow-[var(--shadow-soft)]">
-                  <FiMail className="text-2xl text-[var(--gold)]" />
-                  <div>
-                    <p className="text-sm font-semibold text-[var(--muted)]">
-                      Questions
-                    </p>
-                    <p className="text-sm font-semibold text-[var(--forest)]">
-                      Call or use the form to ask anything about your stay.
-                    </p>
-                  </div>
+            <div className="border-b border-[rgba(38,23,15,0.1)] p-5 md:border-b-0 md:border-r">
+              <FiMapPin className="text-2xl text-[var(--copper)]" />
+
+              <p className="mt-4 text-[0.68rem] font-black uppercase tracking-[0.2em] text-[var(--copper)]">
+                Property Location
+              </p>
+
+              <p className="mt-2 text-base font-black tracking-[-0.03em] text-[var(--espresso)]">
+                {site.address.property}
+              </p>
+            </div>
+
+            <div className="p-5">
+              <FiMail className="text-2xl text-[var(--copper)]" />
+
+              <p className="mt-4 text-[0.68rem] font-black uppercase tracking-[0.2em] text-[var(--copper)]">
+                Questions
+              </p>
+
+              <p className="mt-2 text-base font-black tracking-[-0.03em] text-[var(--espresso)]">
+                Use the form or call for the fastest help.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="section bg-[var(--linen)]">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div className="lg:sticky lg:top-28">
+              <p className="eyebrow">Start Here</p>
+
+              <h2 className="mt-5 text-[clamp(2.8rem,5.5vw,5.3rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--espresso)] text-balance">
+                The easiest way to book is still a quick call.
+              </h2>
+
+              <p className="mt-6 max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
+                Call to check availability, ask about cabin options, confirm
+                directions, or talk through what kind of stay you’re planning.
+              </p>
+
+              <div className="mt-8 relative min-h-[360px] overflow-hidden rounded-[1.9rem] shadow-[var(--shadow-soft)]">
+                <Image
+                  src="/images/cabins/LovePorch4.jpg"
+                  alt="Porch view at At Living Water Cabins"
+                  fill
+                  className="object-cover"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/62 via-transparent to-transparent" />
+
+                <div className="absolute bottom-5 left-5 right-5 rounded-[1.4rem] border border-white/12 bg-black/28 p-5 text-white backdrop-blur">
+                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[var(--copper)]">
+                    Direct Booking
+                  </p>
+
+                  <p className="mt-2 text-sm font-semibold leading-7 text-white/82">
+                    Ask about dates, cabin fit, lodge details, pet questions,
+                    and property directions before you head this way.
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* FORM */}
-            <div className="rounded-[2rem] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-soft)] md:p-8">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--gold)]">
+            <div className="rounded-[2rem] border border-[var(--border)] bg-[var(--paper)] p-6 shadow-[var(--shadow-soft)] md:p-8">
+              <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--copper)]">
                 Send a Message
               </p>
 
-              <form className="mt-6 grid gap-4">
+              <h3 className="mt-4 text-[clamp(2.2rem,4vw,3.6rem)] font-black leading-[0.9] tracking-[-0.07em] text-[var(--espresso)] text-balance">
+                Tell us what kind of stay you’re planning.
+              </h3>
+
+              <p className="mt-4 max-w-xl text-sm font-semibold leading-7 text-[var(--muted)]">
+                This form can be wired into your contact API later. For now,
+                the call button is the strongest booking action.
+              </p>
+
+              <form className="mt-8 grid gap-4">
                 <input
                   type="text"
                   placeholder="Name"
-                  className="rounded-xl border border-[var(--border)] px-4 py-3"
+                  className="rounded-2xl border border-[var(--border)] bg-white px-4 py-4 text-sm font-semibold text-[var(--espresso)] outline-none transition focus:border-[var(--copper)]"
                 />
 
                 <input
                   type="email"
                   placeholder="Email"
-                  className="rounded-xl border border-[var(--border)] px-4 py-3"
+                  className="rounded-2xl border border-[var(--border)] bg-white px-4 py-4 text-sm font-semibold text-[var(--espresso)] outline-none transition focus:border-[var(--copper)]"
+                />
+
+                <input
+                  type="text"
+                  placeholder="Preferred dates or cabin"
+                  className="rounded-2xl border border-[var(--border)] bg-white px-4 py-4 text-sm font-semibold text-[var(--espresso)] outline-none transition focus:border-[var(--copper)]"
                 />
 
                 <textarea
                   placeholder="Message"
-                  rows={4}
-                  className="rounded-xl border border-[var(--border)] px-4 py-3"
+                  rows={5}
+                  className="rounded-2xl border border-[var(--border)] bg-white px-4 py-4 text-sm font-semibold text-[var(--espresso)] outline-none transition focus:border-[var(--copper)]"
                 />
 
-                <button className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[var(--forest)] px-6 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[var(--charcoal)]">
+                <button className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[var(--espresso)] px-6 py-4 text-sm font-black text-[var(--paper)] transition hover:-translate-y-0.5 hover:bg-[var(--wood)]">
                   Send Message
                   <FiArrowRight />
                 </button>
@@ -122,73 +213,121 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      {/* IMAGE BREAK */}
-      <section className="relative min-h-[60vh] overflow-hidden bg-[var(--charcoal)]">
+      <section className="relative min-h-[650px] overflow-hidden bg-[var(--espresso)]">
         <Image
-          src="/images/contact-creek.jpg"
+          src="/images/cabins/River3.jpg"
           alt="Creekside view at At Living Water Cabins"
           fill
           className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/15" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.84),rgba(17,10,6,.42),rgba(17,10,6,.12))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(17,10,6,.7))]" />
 
-        <Container className="relative z-10 flex min-h-[60vh] items-center py-20">
+        <Container className="relative z-10 flex min-h-[650px] items-end pb-14 md:pb-20">
           <div className="max-w-3xl">
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
+            <p className="text-xs font-black uppercase tracking-[0.26em] text-[var(--copper)]">
               Getting Here
             </p>
 
-            <h2 className="mt-5 text-4xl font-black leading-tight text-white md:text-6xl">
-              Easy to find, hard to leave.
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+              Easy to find. Hard to leave.
             </h2>
 
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/86">
-              Located between Glenwood and Mount Ida, with quick access to the
-              Caddo River and Ouachita Mountains.
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/78">
+              Located in Norman, Arkansas, with access to Glenwood, Mount Ida,
+              the Caddo River, and the surrounding Ouachita scenery.
             </p>
           </div>
         </Container>
       </section>
 
-      {/* MAP / DIRECTIONS */}
-      <section className="section bg-[var(--background)]">
+      <section className="section bg-[var(--paper)]">
         <Container>
-          <SectionHeading
-            eyebrow="Directions"
-            title="Find us in Norman, Arkansas."
-            text="Use your preferred map app for directions or call if you need help getting here."
-          />
+          <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+            <div>
+              <p className="eyebrow">Directions</p>
 
-          <div className="mt-8 rounded-[2rem] overflow-hidden border border-[var(--border)] shadow-[var(--shadow-soft)]">
-            <iframe
-              src="https://www.google.com/maps?q=Norman,Arkansas&output=embed"
-              className="w-full h-[400px] border-0"
-              loading="lazy"
-            />
+              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+                Find us in Norman, Arkansas.
+              </h2>
+
+              <p className="mt-6 max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
+                Use your preferred map app for directions. If you need help
+                finding the property, call before you head this way.
+              </p>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href={site.phoneHref}
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--espresso)] px-6 py-3 text-sm font-black text-[var(--paper)] transition hover:-translate-y-0.5 hover:bg-[var(--wood)]"
+                >
+                  <FiPhone />
+                  Call for Directions
+                </Link>
+
+                <Link
+                  href="/cabins"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--border)] bg-[var(--linen)] px-6 py-3 text-sm font-black text-[var(--espresso)] transition hover:-translate-y-0.5 hover:bg-white"
+                >
+                  View Cabins
+                  <FiArrowRight />
+                </Link>
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-[2rem] border border-[var(--border)] shadow-[var(--shadow-soft)]">
+              <iframe
+                src="https://www.google.com/maps?q=Norman,Arkansas&output=embed"
+                className="h-[460px] w-full border-0"
+                loading="lazy"
+              />
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="section bg-[var(--cream)]">
-        <Container>
-          <div className="rounded-[2rem] bg-[var(--forest)] p-8 text-white text-center shadow-[var(--shadow)]">
-            <h2 className="text-3xl font-black md:text-4xl">
-              Ready to check availability?
-            </h2>
+      <section className="relative min-h-[600px] overflow-hidden bg-[var(--espresso)]">
+        <Image
+          src="/images/cabins/LoveScenic8.jpg"
+          alt="Cabin booking call to action"
+          fill
+          className="object-cover"
+        />
 
-            <p className="mt-4 text-white/80">
-              Give us a call and we’ll help you find the right cabin and dates.
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.9),rgba(17,10,6,.58),rgba(17,10,6,.24))]" />
+
+        <Container className="relative z-10 flex min-h-[600px] items-center py-20">
+          <div className="max-w-3xl">
+            <p className="text-xs font-black uppercase tracking-[0.26em] text-[var(--copper)]">
+              Ready to Check Availability?
             </p>
 
-            <Link
-              href={site.phoneHref}
-              className="mt-6 inline-flex rounded-full bg-white px-6 py-3 text-sm font-black text-[var(--forest)] transition hover:bg-[var(--gold)] hover:text-black"
-            >
-              {site.phone}
-            </Link>
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+              Give us a call and we’ll help you find the right cabin.
+            </h2>
+
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/78">
+              Ask about dates, cabins, lodge details, rates, pet questions, or
+              anything else you need before booking.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href={site.phoneHref}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--paper)] px-6 py-4 text-sm font-black text-[var(--espresso)] transition hover:bg-[var(--copper)] hover:text-white"
+              >
+                <FiPhone />
+                {site.phone}
+              </Link>
+
+              <Link
+                href="/cabins"
+                className="inline-flex items-center justify-center rounded-full border border-white/18 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:bg-white hover:text-[var(--espresso)]"
+              >
+                View Cabins
+              </Link>
+            </div>
           </div>
         </Container>
       </section>

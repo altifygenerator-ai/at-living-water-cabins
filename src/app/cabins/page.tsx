@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FiCheck, FiPhone } from "react-icons/fi";
+import { FiArrowRight, FiCheck, FiHome, FiPhone, FiUsers } from "react-icons/fi";
 import { cabins } from "@/data/cabins";
 import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
-import SectionHeading from "@/components/ui/SectionHeading";
-import CabinCard from "@/components/cabins/CabinCard";
 import CabinsHeroSlideshow from "@/components/cabins/CabinsHeroSlideshow";
 
 export const metadata = {
@@ -14,198 +12,317 @@ export const metadata = {
     "View creekside cabin rentals near Glenwood and Mount Ida, Arkansas. Love, Faith, Hope, and Peace cabins are tucked along Collier Creek near the Caddo River.",
 };
 
+const standardDetails = [
+  "One bedroom",
+  "One full bathroom",
+  "Queen bed",
+  "Queen sleeper sofa",
+  "Fully equipped kitchen",
+  "TVs in bedroom and living room",
+];
+
+const featuredImages: Record<string, { image: string; accent: string; vibe: string }> = {
+  love: {
+    image: "/images/cabins/LoveScenic7.jpg",
+    accent: "/images/cabins/LoveRoom2.jpg",
+    vibe: "Warm, scenic, and easy to settle into.",
+  },
+  faith: {
+    image: "/images/cabins/FaithRiverView.jpg",
+    accent: "/images/cabins/FaithPorch3.jpg",
+    vibe: "Porch views and that tucked-away creekside feel.",
+  },
+  hope: {
+    image: "/images/cabins/HopeView3.jpg",
+    accent: "/images/cabins/HopeLivingroom2.jpg",
+    vibe: "Cozy, comfortable, and made for quiet evenings.",
+  },
+  peace: {
+    image: "/images/cabins/PeaceView2.jpg",
+    accent: "/images/cabins/PeaceBedroom.jpg",
+    vibe: "Peaceful views with a simple cabin-stay rhythm.",
+  },
+};
+
 export default function CabinsPage() {
   return (
     <main>
       <CabinsHeroSlideshow />
 
-      <section className="section bg-[var(--cream)]">
+      <section className="relative z-20 -mt-12">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <SectionHeading
-              eyebrow="Cabin Details"
-              title="Clean, simple, creekside stays."
-              text="Each cabin is one bedroom and one bath, with a queen bed, queen sleeper sofa, full kitchen, air conditioning, and the essentials needed for a comfortable stay."
-            />
+          <div className="grid overflow-hidden rounded-[1.75rem] border border-[rgba(38,23,15,0.14)] bg-[rgba(255,249,239,0.95)] shadow-[var(--shadow)] backdrop-blur md:grid-cols-3 lg:grid-cols-6">
+            {standardDetails.map((item) => (
+              <div
+                key={item}
+                className="border-b border-[rgba(38,23,15,0.1)] p-5 md:border-r lg:border-b-0 last:border-r-0"
+              >
+                <FiCheck className="text-xl text-[var(--copper)]" />
 
-            <div className="rounded-[2rem] border border-[var(--border)] bg-white p-6 shadow-[var(--shadow-soft)] md:p-8">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--gold)]">
-                Standard Cabin Setup
+                <p className="mt-3 text-sm font-black leading-6 tracking-[-0.02em] text-[var(--espresso)]">
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="section bg-[var(--linen)]">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div>
+              <p className="eyebrow">Cabin Details</p>
+
+              <h1 className="mt-5 text-[clamp(2.9rem,5.8vw,5.6rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--espresso)] text-balance">
+                Clean, simple cabins made for a slower kind of stay.
+              </h1>
+
+              <p className="mt-6 max-w-2xl text-base font-medium leading-8 text-[var(--muted)]">
+                Love, Faith, Hope, and Peace each follow a similar one-bedroom
+                setup, so choosing your cabin is less about comparing a long
+                list of features and more about picking the stay that feels
+                right for your trip.
               </p>
 
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                {[
-                  "One bedroom",
-                  "One full bathroom",
-                  "Queen bed",
-                  "Queen sleeper sofa",
-                  "Fully equipped kitchen",
-                  "TVs in bedroom and living room",
-                ].map((item) => (
-                  <p
-                    key={item}
-                    className="flex items-center gap-3 text-sm font-black text-[var(--forest)]"
-                  >
-                    <span className="grid size-8 place-items-center rounded-full bg-[var(--forest)] text-white">
-                      <FiCheck size={15} />
-                    </span>
-                    {item}
-                  </p>
-                ))}
+              <p className="mt-4 max-w-2xl text-base font-medium leading-8 text-[var(--muted)]">
+                Each cabin includes the basics guests need to settle in: a queen
+                bed, queen sleeper sofa, full kitchen, bathroom, TVs, air
+                conditioning, and comfortable room to relax after time outside.
+              </p>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href={site.phoneHref}
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--espresso)] px-6 py-3 text-sm font-black text-[var(--paper)] transition hover:-translate-y-0.5 hover:bg-[var(--wood)]"
+                >
+                  <FiPhone />
+                  Call for Availability
+                </Link>
+
+                <Link
+                  href="#cabins"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--border)] bg-[var(--paper)] px-6 py-3 text-sm font-black text-[var(--espresso)] transition hover:-translate-y-0.5 hover:bg-white"
+                >
+                  View Cabins
+                  <FiArrowRight />
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative min-h-[620px] overflow-hidden rounded-[2.15rem] shadow-[var(--shadow-soft)]">
+              <Image
+                src="/images/cabins/PeacePorchRiver.jpg"
+                alt="Creekside cabin porch at At Living Water Cabins"
+                fill
+                className="object-cover"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/62 via-transparent to-transparent" />
+
+              <div className="absolute bottom-6 left-6 right-6 rounded-[1.5rem] border border-white/12 bg-black/28 p-5 text-white backdrop-blur">
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--copper)]">
+                  Creekside Setting
+                </p>
+
+                <p className="mt-2 text-sm font-semibold leading-7 text-white/82">
+                  Quiet porches, wooded views, and a peaceful place to come
+                  back to after the day winds down.
+                </p>
               </div>
             </div>
           </div>
         </Container>
       </section>
 
-<section className="relative overflow-hidden bg-[var(--forest)]">
-  <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-black/25" />
+      <section className="relative min-h-[650px] overflow-hidden bg-[var(--espresso)]">
+        <Image
+          src="/images/cabins/River3.jpg"
+          alt="Creekside setting near At Living Water Cabins"
+          fill
+          className="object-cover"
+        />
 
-<div
-  className="absolute -left-20 -top-20 hidden h-80 w-80 overflow-hidden border border-white/10 shadow-2xl md:block"
-  style={{
-    clipPath:
-      "polygon(0% 0%, 100% 0%, 96% 9%, 100% 18%, 94% 28%, 99% 39%, 92% 50%, 97% 62%, 91% 74%, 96% 86%, 88% 100%, 0% 100%)",
-  }}
->
-  <Image
-    src="/images/cabins/River3.jpg"
-    alt="Creekside view near At Living Water Cabins"
-    fill
-    className="object-cover"
-  />
-  <div className="absolute inset-0 bg-black/35" />
-</div>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.84),rgba(17,10,6,.42),rgba(17,10,6,.14))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(17,10,6,.7))]" />
 
-  <div className="absolute -right-20 top-10 h-64 w-64 rounded-full bg-[var(--gold)]/10 blur-3xl" />
-  <div className="absolute -left-20 bottom-0 h-56 w-56 rounded-full bg-[var(--gold)]/10 blur-3xl" />
-
-  <Container className="relative z-10 py-20">
-    <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-      <div className="max-w-3xl">
-        <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
-          Creekside Setting
-        </p>
-
-        <h2 className="mt-5 text-4xl font-black leading-tight tracking-[-0.05em] text-white md:text-6xl">
-          Close enough to explore. Quiet enough to disappear for a while.
-        </h2>
-
-        <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/80">
-          Stay tucked away near Collier Creek with easy access to the Caddo
-          River, Mount Ida, Glenwood, and the Ouachita Mountains.
-        </p>
-
-        <div className="mt-8 h-1 w-24 rounded-full bg-[var(--gold)]" />
-      </div>
-
-      <div className="grid gap-4">
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.07] p-6 shadow-2xl backdrop-blur">
-          <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--gold)]">
-            River Access
-          </p>
-          <h3 className="mt-3 text-2xl font-black text-white">
-            Close to the Caddo River
-          </h3>
-          <p className="mt-3 text-sm font-semibold leading-7 text-white/70">
-            A strong basecamp for floating, fishing, and weekend trips around
-            Southwest Arkansas.
-          </p>
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.07] p-6 shadow-2xl backdrop-blur">
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--gold)]">
-              Location
+        <Container className="relative z-10 flex min-h-[650px] items-end pb-14 md:pb-20">
+          <div className="max-w-3xl">
+            <p className="text-xs font-black uppercase tracking-[0.26em] text-[var(--copper)]">
+              Creekside Setting
             </p>
-            <h3 className="mt-3 text-xl font-black text-white">
-              Glenwood & Mount Ida
-            </h3>
-            <p className="mt-3 text-sm font-semibold leading-7 text-white/70">
-              Easy access to nearby towns, local stops, and scenic drives.
+
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+              Close enough to explore. Quiet enough to disappear for a while.
+            </h2>
+
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/78">
+              Stay tucked near Collier Creek with access to the Caddo River,
+              Glenwood, Mount Ida, and the surrounding Ouachita scenery.
             </p>
-          </div>
-
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.07] p-6 shadow-2xl backdrop-blur">
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--gold)]">
-              Setting
-            </p>
-            <h3 className="mt-3 text-xl font-black text-white">
-              Quiet Collier Creek
-            </h3>
-            <p className="mt-3 text-sm font-semibold leading-7 text-white/70">
-              Peaceful mornings, wooded surroundings, and room to slow down.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </Container>
-</section>
-
-      <section id="cabins" className="section bg-[var(--background)]">
-        <Container>
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <SectionHeading
-              eyebrow="Choose Your Cabin"
-              title="Love, Faith, Hope, and Peace."
-              text="All four cabins share a similar layout, making it easy to choose the stay that fits your trip."
-            />
-
-            <Link
-              href={site.phoneHref}
-              className="inline-flex w-fit items-center gap-2 rounded-full bg-[var(--forest)] px-6 py-3 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[var(--charcoal)]"
-            >
-              <FiPhone />
-              {site.phone}
-            </Link>
-          </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {cabins.map((cabin) => (
-              <CabinCard key={cabin.slug} cabin={cabin} />
-            ))}
           </div>
         </Container>
       </section>
 
-      <section className="section bg-[var(--cream)]">
+      <section id="cabins" className="section bg-[var(--paper)]">
         <Container>
-          <div className="grid gap-8 rounded-[2.5rem] bg-[var(--forest)] p-8 text-white shadow-[var(--shadow)] md:p-12 lg:grid-cols-[1fr_0.7fr] lg:items-center">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
+          <div className="max-w-4xl">
+            <p className="eyebrow">Choose Your Cabin</p>
+
+            <h2 className="mt-5 text-[clamp(2.8rem,5.8vw,5.4rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+              Love, Faith, Hope, and Peace each have their own feel.
+            </h2>
+
+            <p className="mt-6 max-w-2xl text-base font-medium leading-8 text-[var(--muted)]">
+              All four cabins share a similar layout, but the views, porch
+              moments, and small details help each one feel a little different.
+            </p>
+          </div>
+
+          <div className="mt-16 space-y-24">
+            {cabins.map((cabin, index) => {
+              const reverse = index % 2 === 1;
+              const visuals =
+                featuredImages[cabin.slug] ??
+                featuredImages[cabin.name.toLowerCase()] ??
+                {
+                  image: cabin.image,
+                  accent: cabin.image,
+                  vibe: "A quiet, comfortable cabin stay near the water.",
+                };
+
+              return (
+                <article
+                  key={cabin.slug}
+                  className="grid gap-10 lg:grid-cols-2 lg:items-center"
+                >
+                  <div className={reverse ? "lg:order-2" : ""}>
+                    <div className="relative">
+                      <div className="relative min-h-[500px] overflow-hidden rounded-[2.15rem] shadow-[var(--shadow-soft)] md:min-h-[640px]">
+                        <Image
+                          src={visuals.image}
+                          alt={`${cabin.name} cabin at At Living Water Cabins`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+
+                      <div className="absolute -bottom-8 right-5 hidden h-44 w-44 overflow-hidden rounded-[1.4rem] border-4 border-[var(--paper)] shadow-[var(--shadow)] md:block">
+                        <Image
+                          src={visuals.accent}
+                          alt={`${cabin.name} cabin detail`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={reverse ? "lg:order-1" : ""}>
+                    <p className="eyebrow">Cabin Stay</p>
+
+                    <h3 className="mt-5 text-[clamp(2.5rem,5vw,4.8rem)] font-black leading-[0.9] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+                      {cabin.name}
+                    </h3>
+
+                    <p className="mt-5 max-w-xl text-lg font-black leading-8 text-[var(--wood)]">
+                      {visuals.vibe}
+                    </p>
+
+                    <p className="mt-4 max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
+                      {cabin.summary}
+                    </p>
+
+                    <div className="mt-7 flex flex-wrap gap-2 text-xs font-black uppercase tracking-[0.12em] text-[var(--creek-deep)]">
+                      <span className="inline-flex items-center gap-2 rounded-full bg-[var(--creek)]/18 px-3 py-2">
+                        <FiUsers className="text-[var(--copper)]" />
+                        {cabin.details.sleeps}
+                      </span>
+
+                      <span className="inline-flex items-center gap-2 rounded-full bg-[var(--creek)]/18 px-3 py-2">
+                        <FiHome className="text-[var(--copper)]" />
+                        {cabin.details.bed}
+                      </span>
+                    </div>
+
+                    <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                      <Link
+                        href={`/cabins/${cabin.slug}`}
+                        className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--espresso)] px-6 py-3 text-sm font-black text-[var(--paper)] transition hover:-translate-y-0.5 hover:bg-[var(--wood)]"
+                      >
+                        View {cabin.name}
+                        <FiArrowRight />
+                      </Link>
+
+                      <Link
+                        href={site.phoneHref}
+                        className="inline-flex items-center justify-center rounded-full border border-[var(--border)] bg-[var(--linen)] px-6 py-3 text-sm font-black text-[var(--espresso)] transition hover:-translate-y-0.5 hover:bg-white"
+                      >
+                        Call for Availability
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
+
+      <section className="relative min-h-[620px] overflow-hidden bg-[var(--espresso)]">
+        <Image
+          src="/images/cabins/PeaceView1.jpg"
+          alt="Cabin rates and booking at At Living Water Cabins"
+          fill
+          className="object-cover"
+        />
+
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.9),rgba(17,10,6,.58),rgba(17,10,6,.24))]" />
+
+        <Container className="relative z-10 flex min-h-[620px] items-center py-20">
+          <div className="grid w-full gap-10 lg:grid-cols-[1fr_0.7fr] lg:items-center">
+            <div className="max-w-3xl">
+              <p className="text-xs font-black uppercase tracking-[0.26em] text-[var(--copper)]">
                 Cabin Rates
               </p>
 
-              <h2 className="mt-4 text-4xl font-black leading-tight text-white md:text-5xl">
+              <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
                 {site.cabinsInfo.rates.base} with a{" "}
                 {site.cabinsInfo.rates.minimum}.
               </h2>
 
-              <div className="mt-6 grid gap-3 text-sm font-semibold leading-7 text-white/78">
+              <div className="mt-6 grid gap-3 text-base font-medium leading-8 text-white/78">
                 <p>{site.cabinsInfo.rates.holidays}</p>
                 <p>{site.cabinsInfo.rates.extraGuest}</p>
                 <p>{site.cabinsInfo.rates.note}</p>
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-6">
-              <p className="text-sm font-bold text-white/70">
+            <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.08] p-6 text-white backdrop-blur">
+              <p className="text-sm font-bold text-white/64">
                 Ready to check dates?
               </p>
 
               <Link
                 href={site.phoneHref}
-                className="mt-3 flex items-center gap-3 text-2xl font-black text-white transition hover:text-[var(--gold)]"
+                className="mt-3 flex items-center gap-3 text-3xl font-black tracking-[-0.04em] text-white transition hover:text-[var(--copper)]"
               >
-                <FiPhone className="text-[var(--gold)]" />
+                <FiPhone className="text-[var(--copper)]" />
                 {site.phone}
               </Link>
 
-              <p className="mt-5 text-sm font-semibold leading-7 text-white/70">
+              <p className="mt-5 text-sm font-semibold leading-7 text-white/68">
                 Call year-round for availability and reservations. Online
-                booking will be added here once the booking system is connected.
+                booking can be added once a booking system is connected.
               </p>
+
+              <Link
+                href="/contact"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--paper)] px-6 py-3 text-sm font-black text-[var(--espresso)] transition hover:bg-[var(--copper)] hover:text-white"
+              >
+                Contact & Directions
+                <FiArrowRight />
+              </Link>
             </div>
           </div>
         </Container>

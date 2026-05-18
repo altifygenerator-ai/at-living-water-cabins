@@ -1,152 +1,149 @@
-"use client";
-
-import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { FiArrowRight, FiUsers, FiHome, FiX } from "react-icons/fi";
-import { cabins } from "@/data/cabins";
+import { FiArrowRight, FiHome, FiUsers } from "react-icons/fi";
 import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
-import SectionHeading from "@/components/ui/SectionHeading";
+
+const stays = [
+  {
+    name: "Peace Cabin",
+    image: "/images/cabins/PeaceView2.jpg",
+    accent: "/images/cabins/PeaceBedroom.jpg",
+    eyebrow: "Featured Cabin",
+    title: "A peaceful cabin with scenic views and room to settle in.",
+    text: "Peace is ideal for guests wanting that classic quiet-cabin feel with comfortable interior space and a strong connection to the outdoors.",
+    href: "/cabins/peace",
+    metaOne: "One-bedroom cabin",
+    metaTwo: "Scenic views",
+  },
+  {
+    name: "Faith Cabin",
+    image: "/images/cabins/FaithRiverView.jpg",
+    accent: "/images/cabins/FaithPorch3.jpg",
+    eyebrow: "Creekside Feel",
+    title: "Porch space, river views, and that tucked-away feeling.",
+    text: "Faith brings in some of the most scenic property energy with porch moments, creekside atmosphere, and a peaceful setting close to the water.",
+    href: "/cabins/faith",
+    metaOne: "One-bedroom cabin",
+    metaTwo: "Creekside setting",
+  },
+  {
+    name: "Hope Cabin",
+    image: "/images/cabins/HopeView3.jpg",
+    accent: "/images/cabins/HopeLivingroom2.jpg",
+    eyebrow: "Cozy & Comfortable",
+    title: "A relaxed place to come back to after the day outside.",
+    text: "Hope keeps the stay warm and easy with comfortable interior spaces, simple cabin charm, and a quiet home-base feel.",
+    href: "/cabins/hope",
+    metaOne: "One-bedroom cabin",
+    metaTwo: "Comfortable interior",
+  },
+  {
+    name: "Family Lodge",
+    image: "/images/cabins/LoveScenic7.jpg",
+    accent: "/images/cabins/LoveRoom2.jpg",
+    eyebrow: "For More Room",
+    title: "A lodge option for families and bigger stays.",
+    text: "The family lodge gives guests more room to gather while still keeping the same peaceful, scenic feel of the property.",
+    href: "/family-lodge",
+    metaOne: "Family space",
+    metaTwo: "Lodge stay",
+  },
+];
 
 export default function FeaturedCabins() {
-  const [openImage, setOpenImage] = useState<{
-    src: string;
-    alt: string;
-  } | null>(null);
-
   return (
-    <section className="section bg-[var(--cream)]">
+    <section className="section bg-[var(--paper)]">
       <Container>
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <SectionHeading
-            eyebrow="The Cabins"
-            title="Four quiet cabins along Collier Creek"
-            text="Love, Faith, Hope, and Peace are cozy one-bedroom cabins tucked into the Ouachita Mountains near the Caddo River."
-          />
+        <div className="max-w-4xl">
+          <p className="eyebrow">The Stays</p>
 
-          <Link
-            href="/cabins"
-            className="hidden rounded-full bg-[var(--forest)] px-6 py-3 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[var(--charcoal)] md:inline-flex"
-          >
-            View All Cabins
-          </Link>
+          <h2 className="mt-5 text-[clamp(2.8rem,5.8vw,5.4rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+            Not a lineup of listings. A collection of stays with their own feel.
+          </h2>
+
+          <p className="mt-6 max-w-2xl text-base font-medium leading-8 text-[var(--muted)]">
+            Each cabin has its own little personality, but the feeling stays
+            the same — quiet, scenic, comfortable, and close to the water.
+          </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {cabins.map((cabin) => {
-            const imageSrc = cabin.image;
+        <div className="mt-16 space-y-24">
+          {stays.map((stay, index) => {
+            const reverse = index % 2 === 1;
 
             return (
               <article
-                key={cabin.slug}
-                className="group overflow-hidden rounded-[2rem] border border-[var(--border)] bg-white shadow-[var(--shadow-soft)] transition hover:-translate-y-1 hover:shadow-[var(--shadow)]"
+                key={stay.name}
+                className="grid gap-10 lg:grid-cols-2 lg:items-center"
               >
-                <button
-                  type="button"
-                  onClick={() =>
-                    setOpenImage({
-                      src: imageSrc,
-                      alt: `${cabin.name} cabin`,
-                    })
-                  }
-                  className="relative block aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-[var(--sand)] to-[var(--stone)] text-left"
-                  aria-label={`Open image of ${cabin.name}`}
-                >
-                  <img
-                    src={imageSrc}
-                    alt={`${cabin.name} cabin`}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                  />
+                <div className={reverse ? "lg:order-2" : ""}>
+                  <div className="relative">
+                    <div className="relative min-h-[500px] overflow-hidden rounded-[2.15rem] shadow-[var(--shadow-soft)] md:min-h-[640px]">
+                      <Image
+                        src={stay.image}
+                        alt={stay.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
 
-                  <div className="absolute inset-0 bg-black/0 transition group-hover:bg-black/15" />
-
-                  <div className="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-[var(--forest)] opacity-0 shadow-lg backdrop-blur transition group-hover:opacity-100">
-                    View Image
+                    <div className="absolute -bottom-8 right-5 hidden h-44 w-44 overflow-hidden rounded-[1.4rem] border-4 border-[var(--paper)] shadow-[var(--shadow)] md:block">
+                      <Image
+                        src={stay.accent}
+                        alt={`${stay.name} detail`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
                   </div>
-                </button>
+                </div>
 
-                <div className="p-5">
-                  <Link href={`/cabins/${cabin.slug}`} className="block">
-                    <h3 className="text-2xl font-black text-[var(--forest)] transition hover:text-[var(--charcoal)]">
-                      {cabin.name}
-                    </h3>
-                  </Link>
+                <div className={reverse ? "lg:order-1" : ""}>
+                  <p className="eyebrow">{stay.eyebrow}</p>
 
-                  <p className="mt-3 text-sm font-semibold text-[var(--muted)]">
-                    {cabin.summary}
+                  <h3 className="mt-5 text-[clamp(2.4rem,4.8vw,4.6rem)] font-black leading-[0.9] tracking-[-0.07em] text-[var(--espresso)] text-balance">
+                    {stay.title}
+                  </h3>
+
+                  <p className="mt-6 max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
+                    {stay.text}
                   </p>
 
-                  <div className="mt-5 grid gap-2 text-sm font-black text-[var(--forest)]/80">
-                    <p className="flex items-center gap-2">
-                      <FiUsers className="text-[var(--gold)]" />
-                      {cabin.details.sleeps}
-                    </p>
+                  <div className="mt-7 flex flex-wrap gap-2 text-xs font-black uppercase tracking-[0.12em] text-[var(--creek-deep)]">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-[var(--creek)]/18 px-3 py-2">
+                      <FiHome className="text-[var(--copper)]" />
+                      {stay.metaOne}
+                    </span>
 
-                    <p className="flex items-center gap-2">
-                      <FiHome className="text-[var(--gold)]" />
-                      {cabin.details.bed}
-                    </p>
+                    <span className="inline-flex items-center gap-2 rounded-full bg-[var(--creek)]/18 px-3 py-2">
+                      <FiUsers className="text-[var(--copper)]" />
+                      {stay.metaTwo}
+                    </span>
                   </div>
 
-                  <Link
-                    href={`/cabins/${cabin.slug}`}
-                    className="mt-5 flex items-center gap-2 text-sm font-black text-[var(--forest)]"
-                  >
-                    View Cabin
-                    <FiArrowRight className="transition group-hover:translate-x-1" />
-                  </Link>
+                  <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <Link
+                      href={stay.href}
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--espresso)] px-6 py-3 text-sm font-black text-[var(--paper)] transition hover:-translate-y-0.5 hover:bg-[var(--wood)]"
+                    >
+                      View {stay.name}
+                      <FiArrowRight />
+                    </Link>
+
+                    <Link
+                      href={site.phoneHref}
+                      className="inline-flex items-center justify-center rounded-full border border-[var(--border)] bg-[var(--linen)] px-6 py-3 text-sm font-black text-[var(--espresso)] transition hover:-translate-y-0.5 hover:bg-white"
+                    >
+                      Call for Availability
+                    </Link>
+                  </div>
                 </div>
               </article>
             );
           })}
         </div>
-
-        <div className="mt-10 rounded-[2rem] bg-[var(--forest)] p-6 text-white md:flex md:items-center md:justify-between md:p-8">
-          <div>
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-[var(--gold)]">
-              Cabin Rates
-            </p>
-
-            <p className="mt-2 text-2xl font-black text-white">
-              {site.cabinsInfo.rates.base} · {site.cabinsInfo.rates.minimum}
-            </p>
-
-            <p className="mt-2 max-w-3xl text-sm font-medium text-white/75">
-              {site.cabinsInfo.rates.note}
-            </p>
-          </div>
-
-          <Link
-            href={site.phoneHref}
-            className="mt-6 inline-flex rounded-full bg-white px-6 py-3 text-sm font-black text-[var(--forest)] transition hover:bg-[var(--gold)] hover:text-black md:mt-0"
-          >
-            Call for Availability
-          </Link>
-        </div>
       </Container>
-
-      {openImage && (
-        <div
-          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/90 p-4"
-          onClick={() => setOpenImage(null)}
-        >
-          <button
-            type="button"
-            onClick={() => setOpenImage(null)}
-            className="absolute right-5 top-5 z-10 rounded-full bg-white/10 p-3 text-white backdrop-blur transition hover:bg-white/20"
-            aria-label="Close image"
-          >
-            <FiX className="text-2xl" />
-          </button>
-
-          <img
-            src={openImage.src}
-            alt={openImage.alt}
-            className="max-h-[90vh] max-w-[95vw] rounded-2xl object-contain shadow-2xl"
-            onClick={(event) => event.stopPropagation()}
-          />
-        </div>
-      )}
     </section>
   );
 }
