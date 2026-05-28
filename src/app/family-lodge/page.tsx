@@ -70,7 +70,7 @@ export default function FamilyLodgePage() {
               Family Lodge
             </p>
 
-            <h1 className="mt-5 text-[clamp(3.3rem,7vw,7.1rem)] font-black leading-[0.84] tracking-[-0.085em] text-[var(--paper)] text-balance">
+            <h1 className="mt-5 text-[clamp(3.3rem,7vw,7.1rem)] font-black leading-[1.03] tracking-[-0.085em] text-[var(--paper)] text-balance">
               A larger lodge stay is planned for the future.
             </h1>
 
@@ -134,7 +134,7 @@ export default function FamilyLodgePage() {
             <div>
               <p className="eyebrow">Future Stay Option</p>
 
-              <h2 className="mt-5 text-[clamp(2.8rem,5.5vw,5.3rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--espresso)] text-balance">
+              <h2 className="mt-5 text-[clamp(2.8rem,5.5vw,5.3rem)] font-black leading-[1.05] tracking-[-0.08em] text-[var(--espresso)] text-balance">
                 More room is coming later.
               </h2>
 
@@ -212,7 +212,7 @@ export default function FamilyLodgePage() {
               Current Stays Available
             </p>
 
-            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[1.05] tracking-[-0.08em] text-[var(--paper)] text-balance">
               The cabins are ready when you are.
             </h2>
 

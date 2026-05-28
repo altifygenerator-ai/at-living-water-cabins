@@ -6,6 +6,7 @@ import { cabins } from "@/data/cabins";
 import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
 import CabinGallery from "@/components/cabins/CabinGallery";
+import OwnerRezCabinWidget from "@/components/cabins/OwnerRezCabinWidget";
 
 type Props = {
   params: Promise<{
@@ -123,11 +124,11 @@ export default async function CabinPage({ params }: Props) {
               Creekside Cabin
             </p>
 
-            <h1 className="mt-5 text-[clamp(3.4rem,7vw,7.25rem)] font-black leading-[0.84] tracking-[-0.085em] text-[var(--paper)] text-balance">
+            <h1 className="mt-5 text-[clamp(3.4rem,7vw,7.25rem)] font-black leading-[1.02] tracking-[-0.075em] text-[var(--paper)] text-balance">
               {cabin.name}
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/84 md:text-xl">
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-white/84 md:mt-10 md:text-xl">
               {visuals.headline}
             </p>
 
@@ -191,11 +192,11 @@ export default async function CabinPage({ params }: Props) {
             <div>
               <p className="eyebrow">The Feel</p>
 
-              <h2 className="mt-5 text-[clamp(2.8rem,5.5vw,5.4rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--espresso)] text-balance">
+              <h2 className="mt-5 text-[clamp(2.8rem,5.5vw,5.4rem)] font-black leading-[1.06] tracking-[-0.07em] text-[var(--espresso)] text-balance">
                 {visuals.headline}
               </h2>
 
-              <p className="mt-6 max-w-2xl text-lg font-black leading-8 text-[var(--wood)]">
+              <p className="mt-8 max-w-2xl text-lg font-black leading-8 text-[var(--wood)] md:mt-10">
                 {visuals.vibe}
               </p>
 
@@ -253,11 +254,11 @@ export default async function CabinPage({ params }: Props) {
             <div className="lg:sticky lg:top-28">
               <p className="eyebrow">Photos</p>
 
-              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[1.06] tracking-[-0.065em] text-[var(--espresso)] text-balance">
                 Take a closer look before you book.
               </h2>
 
-              <p className="mt-6 max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
+              <p className="mt-8 max-w-xl text-base font-medium leading-8 text-[var(--muted)] md:mt-10">
                 Browse the cabin, views, porch spaces, and details so you know
                 what to expect when you arrive.
               </p>
@@ -285,11 +286,11 @@ export default async function CabinPage({ params }: Props) {
               Creekside Setting
             </p>
 
-            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[1.06] tracking-[-0.07em] text-[var(--paper)] text-balance">
               Quiet, simple, and built to slow things down.
             </h2>
 
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/78">
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-white/78 md:mt-10">
               Stay close to the creek with easy access to the Caddo River,
               Glenwood, Mount Ida, and the surrounding Ouachita scenery.
             </p>
@@ -303,11 +304,11 @@ export default async function CabinPage({ params }: Props) {
             <div>
               <p className="eyebrow">What’s Included</p>
 
-              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[1.06] tracking-[-0.065em] text-[var(--espresso)] text-balance">
                 Simple comforts without overcomplicating the stay.
               </h2>
 
-              <p className="mt-6 max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
+              <p className="mt-8 max-w-xl text-base font-medium leading-8 text-[var(--muted)] md:mt-10">
                 Each cabin includes the essentials guests need for a comfortable
                 creekside stay near the Caddo River and Ouachita Mountains.
               </p>
@@ -330,7 +331,10 @@ export default async function CabinPage({ params }: Props) {
         </Container>
       </section>
 
-      <section id="booking" className="relative min-h-[650px] overflow-hidden bg-[var(--espresso)]">
+      <section
+        id="booking"
+        className="relative min-h-[650px] overflow-hidden bg-[var(--espresso)]"
+      >
         <Image
           src={heroImage}
           alt={`Book ${cabin.name}`}
@@ -347,26 +351,19 @@ export default async function CabinPage({ params }: Props) {
                 Booking
               </p>
 
-              <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+              <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[1.06] tracking-[-0.07em] text-[var(--paper)] text-balance">
                 Check availability for {cabin.name}.
               </h2>
 
-              <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/78">
-                Call directly to check dates, ask questions, and reserve your
-                stay. Online booking space is ready for the OwnerRez widget once
-                the embed code is connected.
+              <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-white/78 md:mt-10">
+                Choose your dates, check availability, and book {cabin.name}{" "}
+                directly through At Living Water Cabins.
               </p>
 
-              <div className="mt-8 rounded-[1.75rem] border border-dashed border-white/20 bg-white/[0.07] p-6 backdrop-blur">
-                <p className="text-sm font-black uppercase tracking-[0.18em] text-[var(--copper)]">
-                  OwnerRez Widget Space
-                </p>
-
-                <p className="mt-3 text-sm font-semibold leading-7 text-white/70">
-                  This area is reserved for the live booking widget once the
-                  property embed code is ready.
-                </p>
-              </div>
+              <OwnerRezCabinWidget
+                cabinName={cabin.name}
+                widgetUrl={cabin.ownerRezWidgetUrl}
+              />
             </div>
 
             <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.08] p-6 text-white backdrop-blur">

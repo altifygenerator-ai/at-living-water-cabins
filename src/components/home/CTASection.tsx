@@ -26,7 +26,7 @@ export default function CTASection() {
                 Book Direct
               </p>
 
-              <h2 className="mt-4 max-w-3xl text-4xl font-black leading-[0.92] tracking-[-0.06em] text-[var(--paper)] md:text-6xl">
+              <h2 className="mt-4 max-w-3xl text-4xl font-black leading-[1.05] tracking-[-0.06em] text-[var(--paper)] md:text-6xl">
                 Ready to plan your stay?
               </h2>
 

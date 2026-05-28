@@ -1,10 +1,10 @@
 import Container from "@/components/ui/Container";
 
 const items = [
-  { label: "Stay Type", value: "Cabins & Family Lodge" },
-  { label: "Setting", value: "Along Collier Creek" },
-  { label: "Feel", value: "Quiet, Scenic, Private" },
-  { label: "Booking", value: "Call Direct" },
+  { label: "Stay Type", value: "Creekside Cabins" },
+  { label: "Setting", value: "Along Colliers Creek" },
+  { label: "Booking", value: "Book Direct Online" },
+  { label: "Cabins", value: "Faith, Hope, Love & Peace" },
 ];
 
 export default function StayDetailsStrip() {
@@ -21,7 +21,7 @@ export default function StayDetailsStrip() {
                 {item.label}
               </p>
 
-              <p className="mt-2 text-base font-black tracking-[-0.03em] text-[var(--espresso)]">
+              <p className="mt-2 text-base font-black leading-snug tracking-[-0.03em] text-[var(--espresso)]">
                 {item.value}
               </p>
             </div>

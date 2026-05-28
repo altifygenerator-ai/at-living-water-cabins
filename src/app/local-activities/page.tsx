@@ -137,7 +137,7 @@ export default function LocalActivitiesPage() {
               Around the Area
             </p>
 
-            <h1 className="mt-5 text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.84] tracking-[-0.085em] text-[var(--paper)] text-balance">
+            <h1 className="mt-5 text-[clamp(3.2rem,7vw,7rem)] font-black leading-[1.03] tracking-[-0.085em] text-[var(--paper)] text-balance">
               Adventure when you want it. Quiet when you get back.
             </h1>
 
@@ -199,7 +199,7 @@ export default function LocalActivitiesPage() {
             <div className="lg:sticky lg:top-28">
               <p className="eyebrow">From the Cabin</p>
 
-              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[1.05] tracking-[-0.075em] text-[var(--espresso)] text-balance">
                 Pick a direction and make a day of it.
               </h2>
 
@@ -256,7 +256,7 @@ export default function LocalActivitiesPage() {
                       {group.direction} of At Living Water Cabins
                     </p>
 
-                    <h2 className="mt-4 text-[clamp(2rem,3.3vw,3.4rem)] font-black leading-[0.94] tracking-[-0.065em] text-[var(--espresso)] text-balance">
+                    <h2 className="mt-4 text-[clamp(2rem,3.3vw,3.4rem)] font-black leading-[1.06] tracking-[-0.065em] text-[var(--espresso)] text-balance">
                       {group.title}
                     </h2>
 
@@ -300,7 +300,7 @@ export default function LocalActivitiesPage() {
               Stay Close to It All
             </p>
 
-            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[1.05] tracking-[-0.08em] text-[var(--paper)] text-balance">
               Go out for the day. Come back to the creek.
             </h2>
 
@@ -318,7 +318,7 @@ export default function LocalActivitiesPage() {
             <div>
               <p className="eyebrow">Plan Your Stay</p>
 
-              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[1.05] tracking-[-0.075em] text-[var(--espresso)] text-balance">
                 You do not have to choose between adventure and rest.
               </h2>
 
@@ -386,7 +386,7 @@ export default function LocalActivitiesPage() {
               Ready to Visit?
             </p>
 
-            <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[1.05] tracking-[-0.08em] text-[var(--paper)] text-balance">
               Pick your cabin and plan the kind of trip you want.
             </h2>
 

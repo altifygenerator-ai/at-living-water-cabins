@@ -32,7 +32,7 @@ export default function StayExperience() {
           <div>
             <p className="eyebrow">Why people love it here</p>
 
-            <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+            <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[1.05] tracking-[-0.075em] text-[var(--espresso)] text-balance">
               A stay with a little more personality to it.
             </h2>
 

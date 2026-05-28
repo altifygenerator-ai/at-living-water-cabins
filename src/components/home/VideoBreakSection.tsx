@@ -17,7 +17,7 @@ export default function VideoBreakSection() {
 
         <Container className="relative z-10 flex min-h-[680px] items-end pb-14 md:pb-20">
           <div>
-            <p className="max-w-3xl text-[clamp(3rem,7vw,6.6rem)] font-black leading-[0.88] tracking-[-0.08em] text-white text-balance">
+            <p className="max-w-3xl text-[clamp(3rem,7vw,6.6rem)] font-black leading-[1.05] tracking-[-0.08em] text-white text-balance">
               Scenic days outside. Quiet evenings back at the cabin.
             </p>
 

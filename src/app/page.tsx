@@ -4,6 +4,7 @@ import RetreatIntro from "@/components/home/RetreatIntro";
 import FeaturedCabins from "@/components/home/FeaturedCabins";
 import VideoBreakSection from "@/components/home/VideoBreakSection";
 import StayExperience from "@/components/home/StayExperience";
+import OwnerRezBookingSection from "@/components/home/OwnerRezBookingSection";
 import CTASection from "@/components/home/CTASection";
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
       <FeaturedCabins />
       <VideoBreakSection />
       <StayExperience />
+      <OwnerRezBookingSection />
       <CTASection />
     </>
   );

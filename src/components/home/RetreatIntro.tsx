@@ -51,7 +51,7 @@ export default function RetreatIntro() {
             <div className="mt-8">
               <p className="eyebrow">At Living Water Cabins</p>
 
-              <h2 className="mt-5 text-[clamp(2.7rem,5.4vw,5.2rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+              <h2 className="mt-5 text-[clamp(2.7rem,5.4vw,5.2rem)] font-black leading-[1.05] tracking-[-0.075em] text-[var(--espresso)] text-balance">
                 More view, less noise.
               </h2>
 

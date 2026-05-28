@@ -20,7 +20,7 @@ export default function LodgePreview() {
           <div className="flex flex-col justify-center p-7 md:p-10 lg:p-12">
             <p className="eyebrow">The Family Lodge</p>
 
-            <h2 className="mt-5 max-w-2xl text-[clamp(2.7rem,5.3vw,5.2rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+            <h2 className="mt-5 max-w-2xl text-[clamp(2.7rem,5.3vw,5.2rem)] font-black leading-[1.05] tracking-[-0.075em] text-[var(--espresso)] text-balance">
               More room for family time.
             </h2>
 

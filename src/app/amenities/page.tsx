@@ -107,7 +107,7 @@ export default function AmenitiesPage() {
               Amenities
             </p>
 
-            <h1 className="mt-5 text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.84] tracking-[-0.085em] text-[var(--paper)] text-balance">
+            <h1 className="mt-5 text-[clamp(3.2rem,7vw,7rem)] font-black leading-[1.03] tracking-[-0.085em] text-[var(--paper)] text-balance">
               Easy comforts for a slower stay.
             </h1>
 
@@ -170,7 +170,7 @@ export default function AmenitiesPage() {
             <div>
               <p className="eyebrow">Inside the Cabins</p>
 
-              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[1.05] tracking-[-0.075em] text-[var(--espresso)] text-balance">
                 Bring food. The basics are already here.
               </h2>
 
@@ -236,7 +236,7 @@ export default function AmenitiesPage() {
               Outside Your Door
             </p>
 
-            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[1.05] tracking-[-0.08em] text-[var(--paper)] text-balance">
               The outdoor space is part of the stay.
             </h2>
 
@@ -275,7 +275,7 @@ export default function AmenitiesPage() {
             <div>
               <p className="eyebrow">Outdoor Amenities</p>
 
-              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[1.05] tracking-[-0.075em] text-[var(--espresso)] text-balance">
                 Built for evenings outside and quiet mornings near the water.
               </h2>
 
@@ -319,7 +319,7 @@ export default function AmenitiesPage() {
               Ready to Stay?
             </p>
 
-            <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[1.05] tracking-[-0.08em] text-[var(--paper)] text-balance">
               Pick your cabin, pack your food, and settle in.
             </h2>
 

@@ -158,7 +158,7 @@ export default function PoliciesPage() {
               Before You Book
             </p>
 
-            <h1 className="mt-5 text-[clamp(3.2rem,7vw,7rem)] font-black leading-[0.84] tracking-[-0.085em] text-[var(--paper)] text-balance">
+            <h1 className="mt-5 text-[clamp(3.2rem,7vw,7rem)] font-black leading-[1.03] tracking-[-0.085em] text-[var(--paper)] text-balance">
               Clear details for an easier stay.
             </h1>
 
@@ -220,7 +220,7 @@ export default function PoliciesPage() {
             <aside className="lg:sticky lg:top-28">
               <p className="eyebrow">Stay Details</p>
 
-              <h2 className="mt-5 text-[clamp(2.6rem,5vw,4.8rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+              <h2 className="mt-5 text-[clamp(2.6rem,5vw,4.8rem)] font-black leading-[1.05] tracking-[-0.075em] text-[var(--espresso)] text-balance">
                 The important stuff, without the mess.
               </h2>
 
@@ -282,7 +282,7 @@ export default function PoliciesPage() {
                     </div>
 
                     <div>
-                      <h2 className="text-[clamp(2rem,3vw,3.2rem)] font-black leading-[0.94] tracking-[-0.06em] text-[var(--espresso)]">
+                      <h2 className="text-[clamp(2rem,3vw,3.2rem)] font-black leading-[1.06] tracking-[-0.06em] text-[var(--espresso)]">
                         {section.title}
                       </h2>
 
@@ -338,7 +338,7 @@ export default function PoliciesPage() {
               Book Direct
             </p>
 
-            <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[1.05] tracking-[-0.08em] text-[var(--paper)] text-balance">
               Questions are easier before the trip.
             </h2>
 

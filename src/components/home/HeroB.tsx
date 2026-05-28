@@ -40,7 +40,7 @@ export default function HeroB() {
           </motion.p>
 
           <motion.h1
-            className="mt-6 max-w-4xl text-[clamp(3.35rem,7vw,7.15rem)] font-black leading-[0.84] tracking-[-0.085em] text-[var(--paper)] text-balance"
+            className="mt-6 max-w-4xl text-[clamp(3.35rem,7vw,7.15rem)] font-black leading-[1.03] tracking-[-0.085em] text-[var(--paper)] text-balance"
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.18 }}

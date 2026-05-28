@@ -3,6 +3,7 @@ export type Cabin = {
   name: string;
   image: string;
   images?: string[];
+  ownerRezWidgetUrl?: string;
   summary: string;
   description: string;
   details: {
@@ -19,6 +20,8 @@ export const cabins: Cabin[] = [
     slug: "love",
     name: "Love Cabin",
     image: "/images/cabins/LoveScenic1.jpg",
+    ownerRezWidgetUrl:
+      "https://app.ownerrez.com/widgets/a9785f1219f14c70b20fb20298e09e03?view=form&propertyKey=0a6a0c1e301d4097b8eccac514e7eb0a",
     images: [
       "/images/cabins/LoveScenic1.jpg",
       "/images/cabins/LoveScenic2.jpg",
@@ -67,6 +70,8 @@ export const cabins: Cabin[] = [
     slug: "hope",
     name: "Hope Cabin",
     image: "/images/cabins/HopeView3.jpg",
+    ownerRezWidgetUrl:
+      "https://app.ownerrez.com/widgets/5fb98c3942f64220ab3f247621748664?view=form&propertyKey=a9fcb8069a214057bfde3bbb1124f889",
     images: [
       "/images/cabins/HopeView.jpg",
       "/images/cabins/HopeView2.jpg",
@@ -106,6 +111,8 @@ export const cabins: Cabin[] = [
     slug: "peace",
     name: "Peace Cabin",
     image: "/images/cabins/PeaceView2.jpg",
+    ownerRezWidgetUrl:
+      "https://app.ownerrez.com/widgets/cb072657b1ee47e49ae9d7992aca458f?view=form&propertyKey=89114ca5f27a40f1b5b32b25ebe54f5d",
     images: [
       "/images/cabins/PeaceView1.jpg",
       "/images/cabins/PeaceView2.jpg",
@@ -153,6 +160,8 @@ export const cabins: Cabin[] = [
     slug: "faith",
     name: "Faith Cabin",
     image: "/images/cabins/FaithPorch1.jpg",
+    ownerRezWidgetUrl:
+      "https://app.ownerrez.com/widgets/1d94f6effef84558a5d6a2f75fc06e44?view=form&propertyKey=80cf2336821c4f3c81c58ae89220ec51",
     images: [
       "/images/cabins/FaithScenic.jpg",
       "/images/cabins/FaithScenic2.jpg",
@@ -172,7 +181,7 @@ export const cabins: Cabin[] = [
     summary:
       "Comfortable one-bedroom cabin with full kitchen and space to unwind by the creek.",
     description:
-      "Faith Cabin features a one-bedroom, one-bath layout with a queen bed and sleeper sofa. The cabin includes a fully equipped kitchen, dining space, and comfortable seating, making it a great option for a relaxing stay in the Ouachita Mountains.",
+      "Just steps from Faith Cabin, you can relax in the cool, clear waters of Colliers Creek and enjoy the quiet beauty of the property. Spend the evening cooking your favorite barbecue on the grill or gathering around the open fire pit while listening to the sounds of nature. Take a walk around the property, wander along the creek, or visit the animals for a peaceful country touch. The porch at Faith Cabin is the perfect place to enjoy your morning coffee, slow down, and take in the beautiful setting.",
     details: {
       sleeps: "Up to 4 guests",
       bedrooms: 1,

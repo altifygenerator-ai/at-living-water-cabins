@@ -58,13 +58,12 @@ export default function FeaturedCabins() {
         <div className="max-w-4xl">
           <p className="eyebrow">The Stays</p>
 
-          <h2 className="mt-5 text-[clamp(2.8rem,5.8vw,5.4rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
-            Not a lineup of listings. A collection of stays with their own feel.
+          <h2 className="mt-5 text-[clamp(2.8rem,5.8vw,5.4rem)] font-black leading-[1.05] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+           Four creekside cabins, each with its own feel.
           </h2>
 
           <p className="mt-6 max-w-2xl text-base font-medium leading-8 text-[var(--muted)]">
-            Each cabin has its own little personality, but the feeling stays
-            the same — quiet, scenic, comfortable, and close to the water.
+           Choose the stay that fits your trip, from quiet porch mornings to easy evenings by the water.
           </p>
         </div>
 
@@ -102,7 +101,7 @@ export default function FeaturedCabins() {
                 <div className={reverse ? "lg:order-1" : ""}>
                   <p className="eyebrow">{stay.eyebrow}</p>
 
-                  <h3 className="mt-5 text-[clamp(2.4rem,4.8vw,4.6rem)] font-black leading-[0.9] tracking-[-0.07em] text-[var(--espresso)] text-balance">
+                  <h3 className="mt-5 text-[clamp(2.4rem,4.8vw,4.6rem)] font-black leading-[1.05] tracking-[-0.07em] text-[var(--espresso)] text-balance">
                     {stay.title}
                   </h3>
 

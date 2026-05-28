@@ -74,7 +74,7 @@ export default function CabinsPage() {
             <div>
               <p className="eyebrow">Cabin Details</p>
 
-              <h1 className="mt-5 text-[clamp(2.9rem,5.8vw,5.6rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--espresso)] text-balance">
+              <h1 className="mt-5 text-[clamp(2.9rem,5.8vw,5.6rem)] font-black leading-[1.05] tracking-[-0.08em] text-[var(--espresso)] text-balance">
                 Clean, simple cabins made for a slower kind of stay.
               </h1>
 
@@ -93,11 +93,11 @@ export default function CabinsPage() {
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href={site.phoneHref}
+                  href="/#book-direct"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--espresso)] px-6 py-3 text-sm font-black text-[var(--paper)] transition hover:-translate-y-0.5 hover:bg-[var(--wood)]"
                 >
-                  <FiPhone />
-                  Call for Availability
+                  Book Direct
+                  <FiArrowRight />
                 </Link>
 
                 <Link
@@ -152,7 +152,7 @@ export default function CabinsPage() {
               Creekside Setting
             </p>
 
-            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[1.05] tracking-[-0.08em] text-[var(--paper)] text-balance">
               Close enough to explore. Quiet enough to disappear for a while.
             </h2>
 
@@ -169,7 +169,7 @@ export default function CabinsPage() {
           <div className="max-w-4xl">
             <p className="eyebrow">Choose Your Cabin</p>
 
-            <h2 className="mt-5 text-[clamp(2.8rem,5.8vw,5.4rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+            <h2 className="mt-5 text-[clamp(2.8rem,5.8vw,5.4rem)] font-black leading-[1.05] tracking-[-0.075em] text-[var(--espresso)] text-balance">
               Love, Faith, Hope, and Peace each have their own feel.
             </h2>
 
@@ -221,7 +221,7 @@ export default function CabinsPage() {
                   <div className={reverse ? "lg:order-1" : ""}>
                     <p className="eyebrow">Cabin Stay</p>
 
-                    <h3 className="mt-5 text-[clamp(2.5rem,5vw,4.8rem)] font-black leading-[0.9] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+                    <h3 className="mt-5 text-[clamp(2.5rem,5vw,4.8rem)] font-black leading-[1.05] tracking-[-0.075em] text-[var(--espresso)] text-balance">
                       {cabin.name}
                     </h3>
 
@@ -255,10 +255,10 @@ export default function CabinsPage() {
                       </Link>
 
                       <Link
-                        href={site.phoneHref}
+                        href={`/cabins/${cabin.slug}#booking`}
                         className="inline-flex items-center justify-center rounded-full border border-[var(--border)] bg-[var(--linen)] px-6 py-3 text-sm font-black text-[var(--espresso)] transition hover:-translate-y-0.5 hover:bg-white"
                       >
-                        Call for Availability
+                        Check Availability
                       </Link>
                     </div>
                   </div>
@@ -286,7 +286,7 @@ export default function CabinsPage() {
                 Cabin Rates
               </p>
 
-              <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+              <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[1.05] tracking-[-0.08em] text-[var(--paper)] text-balance">
                 {site.cabinsInfo.rates.base} with a{" "}
                 {site.cabinsInfo.rates.minimum}.
               </h2>
@@ -312,15 +312,15 @@ export default function CabinsPage() {
               </Link>
 
               <p className="mt-5 text-sm font-semibold leading-7 text-white/68">
-                Call year-round for availability and reservations. Online
-                booking can be added once a booking system is connected.
+                Check availability online, book direct, or call with questions
+                before planning your stay.
               </p>
 
               <Link
-                href="/contact"
+                href="/#book-direct"
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--paper)] px-6 py-3 text-sm font-black text-[var(--espresso)] transition hover:bg-[var(--copper)] hover:text-white"
               >
-                Contact & Directions
+                Book Direct
                 <FiArrowRight />
               </Link>
             </div>

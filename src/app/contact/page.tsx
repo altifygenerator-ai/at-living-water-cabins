@@ -52,29 +52,31 @@ export default function ContactPage() {
               Contact & Booking
             </p>
 
-            <h1 className="mt-5 text-[clamp(3.3rem,7vw,7.1rem)] font-black leading-[0.84] tracking-[-0.085em] text-[var(--paper)] text-balance">
-              Call, ask questions, and plan your stay.
+            <h1 className="mt-5 text-[clamp(3.3rem,7vw,7.1rem)] font-black leading-[1.03] tracking-[-0.085em] text-[var(--paper)] text-balance">
+              Book direct, ask questions, and plan your stay.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/84 md:text-xl">
-              Reach out for availability, reservations, directions, cabin
-              questions, or help choosing the right stay for your trip.
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-white/84 md:mt-10 md:text-xl">
+              Book directly online, call with questions, or reach out for
+              directions, cabin details, and help choosing the right stay for
+              your trip.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                href={site.phoneHref}
+                href="#availability"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--paper)] px-6 py-4 text-sm font-black text-[var(--espresso)] shadow-lg transition hover:-translate-y-0.5 hover:bg-[var(--copper)] hover:text-white"
               >
-                <FiPhone />
-                Call {site.phone}
+                Check Availability
+                <FiArrowRight />
               </Link>
 
               <Link
-                href="/cabins"
-                className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--espresso)]"
+                href={site.phoneHref}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--espresso)]"
               >
-                View Cabins
+                <FiPhone />
+                Call {site.phone}
               </Link>
             </div>
           </div>
@@ -115,30 +117,32 @@ export default function ContactPage() {
               <FiMail className="text-2xl text-[var(--copper)]" />
 
               <p className="mt-4 text-[0.68rem] font-black uppercase tracking-[0.2em] text-[var(--copper)]">
-                Questions
+                Availability
               </p>
 
               <p className="mt-2 text-base font-black tracking-[-0.03em] text-[var(--espresso)]">
-                Use the form or call for the fastest help.
+                Check dates online or call for help.
               </p>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="section bg-[var(--linen)]">
+      <section id="availability" className="section bg-[var(--linen)]">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <div className="lg:sticky lg:top-28">
               <p className="eyebrow">Start Here</p>
 
-              <h2 className="mt-5 text-[clamp(2.8rem,5.5vw,5.3rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--espresso)] text-balance">
-                The easiest way to book is still a quick call.
+              <h2 className="mt-5 text-[clamp(2.8rem,5.5vw,5.3rem)] font-black leading-[1.08] tracking-[-0.07em] text-[var(--espresso)] text-balance">
+                Check open dates, then book direct or call with questions.
               </h2>
 
-              <p className="mt-6 max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
-                Call to check availability, ask about cabin options, confirm
-                directions, or talk through what kind of stay you’re planning.
+              <p className="mt-7 max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
+                Use the availability tool to see what cabins are open for your
+                dates. If you need help choosing a cabin, confirming directions,
+                asking about pets, or planning your stay, calling is still the
+                easiest way to get quick help.
               </p>
 
               <div className="mt-8 relative min-h-[360px] overflow-hidden rounded-[1.9rem] shadow-[var(--shadow-soft)]">
@@ -157,57 +161,53 @@ export default function ContactPage() {
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-7 text-white/82">
-                    Ask about dates, cabin fit, lodge details, pet questions,
-                    and property directions before you head this way.
+                    Check dates online, book direct, or call before you arrive
+                    if you need help with directions or cabin details.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-[var(--border)] bg-[var(--paper)] p-6 shadow-[var(--shadow-soft)] md:p-8">
+            <div className="rounded-[2rem] border border-[var(--border)] bg-[var(--paper)] p-4 shadow-[var(--shadow-soft)] md:p-6">
               <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--copper)]">
-                Send a Message
+                Check Availability
               </p>
 
-              <h3 className="mt-4 text-[clamp(2.2rem,4vw,3.6rem)] font-black leading-[0.9] tracking-[-0.07em] text-[var(--espresso)] text-balance">
-                Tell us what kind of stay you’re planning.
+              <h3 className="mt-4 text-[clamp(2.2rem,4vw,3.6rem)] font-black leading-[1.08] tracking-[-0.065em] text-[var(--espresso)] text-balance">
+                See what cabins are open.
               </h3>
 
-              <p className="mt-4 max-w-xl text-sm font-semibold leading-7 text-[var(--muted)]">
-                This form can be wired into your contact API later. For now,
-                the call button is the strongest booking action.
+              <p className="mt-5 max-w-xl text-sm font-semibold leading-7 text-[var(--muted)]">
+                Search available dates across At Living Water Cabins, then book
+                direct online or call if you need help choosing the right cabin.
               </p>
 
-              <form className="mt-8 grid gap-4">
-                <input
-                  type="text"
-                  placeholder="Name"
-                  className="rounded-2xl border border-[var(--border)] bg-white px-4 py-4 text-sm font-semibold text-[var(--espresso)] outline-none transition focus:border-[var(--copper)]"
+              <div className="mt-7 overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-white">
+                <iframe
+                  src="https://app.ownerrez.com/widgets/35bd4b1a3ab74902a39763fc8d7011a1?view=form"
+                  title="At Living Water Cabins Availability"
+                  className="-mt-36 h-[900px] w-full rounded-[1.5rem] border-0 bg-white"
+                  loading="lazy"
                 />
+              </div>
 
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="rounded-2xl border border-[var(--border)] bg-white px-4 py-4 text-sm font-semibold text-[var(--espresso)] outline-none transition focus:border-[var(--copper)]"
-                />
-
-                <input
-                  type="text"
-                  placeholder="Preferred dates or cabin"
-                  className="rounded-2xl border border-[var(--border)] bg-white px-4 py-4 text-sm font-semibold text-[var(--espresso)] outline-none transition focus:border-[var(--copper)]"
-                />
-
-                <textarea
-                  placeholder="Message"
-                  rows={5}
-                  className="rounded-2xl border border-[var(--border)] bg-white px-4 py-4 text-sm font-semibold text-[var(--espresso)] outline-none transition focus:border-[var(--copper)]"
-                />
-
-                <button className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[var(--espresso)] px-6 py-4 text-sm font-black text-[var(--paper)] transition hover:-translate-y-0.5 hover:bg-[var(--wood)]">
-                  Send Message
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/#book-direct"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--espresso)] px-6 py-4 text-sm font-black text-[var(--paper)] transition hover:-translate-y-0.5 hover:bg-[var(--wood)]"
+                >
+                  Book Direct
                   <FiArrowRight />
-                </button>
-              </form>
+                </Link>
+
+                <Link
+                  href={site.phoneHref}
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--border)] bg-white px-6 py-4 text-sm font-black text-[var(--espresso)] transition hover:-translate-y-0.5 hover:bg-[var(--linen)]"
+                >
+                  <FiPhone />
+                  Call Direct
+                </Link>
+              </div>
             </div>
           </div>
         </Container>
@@ -230,11 +230,11 @@ export default function ContactPage() {
               Getting Here
             </p>
 
-            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[1.08] tracking-[-0.07em] text-[var(--paper)] text-balance">
               Easy to find. Hard to leave.
             </h2>
 
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/78">
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-white/78 md:mt-10">
               Located in Norman, Arkansas, with access to Glenwood, Mount Ida,
               the Caddo River, and the surrounding Ouachita scenery.
             </p>
@@ -248,11 +248,11 @@ export default function ContactPage() {
             <div>
               <p className="eyebrow">Directions</p>
 
-              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[0.88] tracking-[-0.075em] text-[var(--espresso)] text-balance">
+              <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[1.08] tracking-[-0.065em] text-[var(--espresso)] text-balance">
                 Find us in Norman, Arkansas.
               </h2>
 
-              <p className="mt-6 max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
+              <p className="mt-7 max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
                 Use your preferred map app for directions. If you need help
                 finding the property, call before you head this way.
               </p>
@@ -303,22 +303,22 @@ export default function ContactPage() {
               Ready to Check Availability?
             </p>
 
-            <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[0.88] tracking-[-0.08em] text-[var(--paper)] text-balance">
-              Give us a call and we’ll help you find the right cabin.
+            <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[1.08] tracking-[-0.07em] text-[var(--paper)] text-balance">
+              Check dates online or call for help choosing the right cabin.
             </h2>
 
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/78">
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-white/78 md:mt-10">
               Ask about dates, cabins, lodge details, rates, pet questions, or
               anything else you need before booking.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href={site.phoneHref}
+                href="/#book-direct"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--paper)] px-6 py-4 text-sm font-black text-[var(--espresso)] transition hover:bg-[var(--copper)] hover:text-white"
               >
-                <FiPhone />
-                {site.phone}
+                Book Direct
+                <FiArrowRight />
               </Link>
 
               <Link

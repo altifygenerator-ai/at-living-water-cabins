@@ -37,7 +37,7 @@ export const site = {
     "Call for availability and reservations year-round.",
 
   rates: {
-    base: "$129 per night",
+    base: "$135 per night",
     minimum: "2 night minimum",
     holidays:
       "3 night minimum on major holidays including Memorial Day, Labor Day, Thanksgiving, and some peak weekends.",

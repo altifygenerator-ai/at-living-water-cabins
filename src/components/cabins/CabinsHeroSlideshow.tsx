@@ -81,7 +81,7 @@ export default function CabinsHeroSlideshow() {
             The Cabins
           </p>
 
-          <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[0.92] tracking-[-0.06em] text-white md:text-7xl">
+          <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[1.05] tracking-[-0.06em] text-white md:text-7xl">
             Four quiet cabins tucked along Collier Creek.
           </h1>
 
