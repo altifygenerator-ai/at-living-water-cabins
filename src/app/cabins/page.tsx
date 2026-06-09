@@ -75,15 +75,17 @@ export default function CabinsPage() {
               <p className="eyebrow">Cabin Details</p>
 
               <h1 className="mt-5 text-[clamp(2.9rem,5.8vw,5.6rem)] font-black leading-[1.05] tracking-[-0.08em] text-[var(--espresso)] text-balance">
-                Clean, simple cabins made for a slower kind of stay.
-              </h1>
+  Clean, simple cabins made for a slower kind of stay.
+</h1>
 
-              <p className="mt-6 max-w-2xl text-base font-medium leading-8 text-[var(--muted)]">
-                Love, Faith, Hope, and Peace each follow a similar one-bedroom
-                setup, so choosing your cabin is less about comparing a long
-                list of features and more about picking the stay that feels
-                right for your trip.
-              </p>
+<div className="pt-5">
+  <p className="max-w-2xl text-base font-medium leading-8 text-[var(--muted)]">
+    Love, Faith, Hope, and Peace each follow a similar one-bedroom
+    setup, so choosing your cabin is less about comparing a long
+    list of features and more about picking the stay that feels
+    right for your trip.
+  </p>
+</div>
 
               <p className="mt-4 max-w-2xl text-base font-medium leading-8 text-[var(--muted)]">
                 Each cabin includes the basics guests need to settle in: a queen

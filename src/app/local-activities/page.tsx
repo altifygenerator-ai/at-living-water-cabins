@@ -137,15 +137,16 @@ export default function LocalActivitiesPage() {
               Around the Area
             </p>
 
-            <h1 className="mt-5 text-[clamp(3.2rem,7vw,7rem)] font-black leading-[1.03] tracking-[-0.085em] text-[var(--paper)] text-balance">
-              Adventure when you want it. Quiet when you get back.
-            </h1>
+          <h1 className="mt-5 text-[clamp(3.2rem,7vw,7rem)] font-black leading-[1.03] tracking-[-0.085em] text-[var(--paper)] text-balance">
+  Adventure when you want it. Quiet when you get back.
+</h1>
 
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/84 md:text-xl">
-              Float rivers, dig crystals, visit Hot Springs, explore the forest,
-              or do absolutely nothing beside the water.
-            </p>
-
+<div className="pt-5">
+  <p className="max-w-2xl text-lg font-medium leading-8 text-white/84 md:text-xl">
+    Float rivers, dig crystals, visit Hot Springs, explore the forest,
+    or do absolutely nothing beside the water.
+  </p>
+</div>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/cabins"
@@ -154,13 +155,12 @@ export default function LocalActivitiesPage() {
                 View Cabins
               </Link>
 
-              <Link
-                href={site.phoneHref}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--espresso)]"
-              >
-                <FiPhone />
-                Call Now
-              </Link>
+           <Link
+  href="/#book-direct"
+  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--espresso)]"
+>
+  Book Now
+</Link>
             </div>
           </div>
         </Container>
@@ -200,14 +200,16 @@ export default function LocalActivitiesPage() {
               <p className="eyebrow">From the Cabin</p>
 
               <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[1.05] tracking-[-0.075em] text-[var(--espresso)] text-balance">
-                Pick a direction and make a day of it.
-              </h2>
+  Pick a direction and make a day of it.
+</h2>
 
-              <p className="mt-6 max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
-                At Living Water Cabins gives you a quiet place to land between
-                river days, lake trips, scenic drives, crystal mines, trails, and
-                small-town exploring.
-              </p>
+<div className="pt-5">
+  <p className="max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
+    At Living Water Cabins gives you a quiet place to land between
+    river days, lake trips, scenic drives, crystal mines, trails, and
+    small-town exploring.
+  </p>
+</div>
 
               <div className="mt-8 relative min-h-[320px] overflow-hidden rounded-[1.9rem] shadow-[var(--shadow-soft)]">
                 <Image
@@ -256,13 +258,15 @@ export default function LocalActivitiesPage() {
                       {group.direction} of At Living Water Cabins
                     </p>
 
-                    <h2 className="mt-4 text-[clamp(2rem,3.3vw,3.4rem)] font-black leading-[1.06] tracking-[-0.065em] text-[var(--espresso)] text-balance">
-                      {group.title}
-                    </h2>
+                <h2 className="mt-4 text-[clamp(2rem,3.3vw,3.4rem)] font-black leading-[1.06] tracking-[-0.065em] text-[var(--espresso)] text-balance">
+  {group.title}
+</h2>
 
-                    <p className="mt-4 max-w-2xl text-sm font-semibold leading-7 text-[var(--muted)] md:text-base md:leading-8">
-                      {group.text}
-                    </p>
+<div className="pt-5">
+  <p className="max-w-2xl text-sm font-semibold leading-7 text-[var(--muted)] md:text-base md:leading-8">
+    {group.text}
+  </p>
+</div>
 
                     <div className="mt-6 flex flex-wrap gap-2">
                       {group.items.map((item) => (
@@ -389,12 +393,12 @@ export default function LocalActivitiesPage() {
             <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[1.05] tracking-[-0.08em] text-[var(--paper)] text-balance">
               Pick your cabin and plan the kind of trip you want.
             </h2>
-
+<div className="pt-5">
             <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/78">
               Adventure-packed weekend or quiet cabin stay — either way, At
               Living Water Cabins gives you a peaceful place to land.
             </p>
-
+</div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/cabins"

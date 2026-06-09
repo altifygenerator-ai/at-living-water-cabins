@@ -57,12 +57,12 @@ export default function RetreatIntro() {
 
               <p className="mt-5 max-w-2xl text-base font-medium leading-8 text-[var(--muted)]">
                 At Living Water Cabins is built around the kind of stay people
-                actually want — peaceful surroundings, scenic outdoor space,
+                actually want: peaceful surroundings, scenic outdoor space,
                 comfortable cabins, and enough room to slow down for a while.
               </p>
 
               <p className="mt-4 max-w-2xl text-base font-medium leading-8 text-[var(--muted)]">
-                It should feel tucked away, warm, and personal — not like a
+                It should feel tucked away, warm, and personal, not like a
                 crowded resort or another tourism guide page.
               </p>
             </div>

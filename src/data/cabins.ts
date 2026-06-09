@@ -47,16 +47,19 @@ export const cabins: Cabin[] = [
       "/images/cabins/LoveRoom2.jpg",
     ],
     summary:
-      "Cozy creekside cabin with a queen bedroom, sleeper sofa, and fully equipped kitchen.",
+      "Cozy creekside cabin with a queen bedroom, pull-out sleeper sofa, and fully equipped kitchen.",
     description:
-      "The Love Cabin is a quiet one-bedroom, one-bath retreat tucked along Collier Creek. It features a queen bedroom, a comfortable living room with a sleeper sofa and seating, and a fully equipped kitchen with everything needed for meals. Enjoy a peaceful stay surrounded by the natural beauty of the Ouachita Mountains.",
+      "The Love Cabin is a quiet one-bedroom, one-bath retreat tucked along Collier Creek. It features a queen bedroom, a comfortable living room with a pull-out sleeper sofa, and a fully equipped kitchen with everything needed for meals. Love Cabin sleeps up to 4 guests and gives you a peaceful place to settle in surrounded by the natural beauty of the Ouachita Mountains.",
     details: {
       sleeps: "Up to 4 guests",
       bedrooms: 1,
       bathrooms: 1,
-      bed: "Queen bed + sleeper sofa",
+      bed: "Queen bed + pull-out sleeper sofa",
     },
     features: [
+      "Sleeps up to 4 guests",
+      "Queen bed",
+      "Pull-out sleeper sofa",
       "Fully equipped kitchen",
       "Microwave and coffee maker",
       "Living room seating",
@@ -89,16 +92,19 @@ export const cabins: Cabin[] = [
       "/images/cabins/HopeTable.jpg",
     ],
     summary:
-      "Secluded one-bedroom cabin with creek views and all the essentials for a relaxing stay.",
+      "Secluded one-bedroom cabin with creek views, a queen bed, sleeper sofa, and all the essentials for a relaxing stay.",
     description:
-      "Hope Cabin offers a peaceful one-bedroom, one-bath layout with a queen bed and sleeper sofa in the living room. The space includes a fully equipped kitchen, dining area, and comfortable seating, making it perfect for a quiet getaway near the Caddo River.",
+      "Hope Cabin offers a peaceful one-bedroom, one-bath layout with a queen bed and a pull-out sleeper sofa in the living room. The space includes a fully equipped kitchen, dining area, and comfortable seating, making it a good fit for up to 4 guests looking for a quiet getaway near the Caddo River.",
     details: {
       sleeps: "Up to 4 guests",
       bedrooms: 1,
       bathrooms: 1,
-      bed: "Queen bed + sleeper sofa",
+      bed: "Queen bed + pull-out sleeper sofa",
     },
     features: [
+      "Sleeps up to 4 guests",
+      "Queen bed",
+      "Pull-out sleeper sofa",
       "Fully equipped kitchen",
       "Dining table and seating",
       "TV in living room and bedroom",
@@ -138,16 +144,20 @@ export const cabins: Cabin[] = [
       "/images/cabins/PeacePorchStair.jpg",
     ],
     summary:
-      "Relaxing cabin along the creek with a simple, comfortable layout and full amenities.",
+      "Relaxing creekside cabin with a queen bed, queen daybed, full amenities, and a wheelchair ramp.",
     description:
-      "Peace Cabin is designed for a simple and relaxing stay, with a queen bedroom, sleeper sofa, and a fully equipped kitchen. The cabin includes a dining area, comfortable seating, and a full bathroom, all set in a quiet natural setting.",
+      "Peace Cabin is designed for a simple and relaxing stay, with a queen bed, queen daybed, and space for up to 4 guests. The cabin includes a fully equipped kitchen, dining area, comfortable seating, and a full bathroom, all set in a quiet natural setting. Peace Cabin is also the cabin with a wheelchair ramp, making it a helpful option for guests who need easier entry.",
     details: {
       sleeps: "Up to 4 guests",
       bedrooms: 1,
       bathrooms: 1,
-      bed: "Queen bed + sleeper sofa",
+      bed: "Queen bed + queen daybed",
     },
     features: [
+      "Sleeps up to 4 guests",
+      "Queen bed",
+      "Queen daybed",
+      "Wheelchair ramp",
       "Full kitchen setup",
       "Living room seating",
       "TV in living room and bedroom",
@@ -179,16 +189,19 @@ export const cabins: Cabin[] = [
       "/images/cabins/FaithStair2.jpg",
     ],
     summary:
-      "Comfortable one-bedroom cabin with full kitchen and space to unwind by the creek.",
+      "Comfortable one-bedroom cabin with a queen bed, sleeper sofa, full kitchen, and space to unwind by the creek.",
     description:
-      "Just steps from Faith Cabin, you can relax in the cool, clear waters of Colliers Creek and enjoy the quiet beauty of the property. Spend the evening cooking your favorite barbecue on the grill or gathering around the open fire pit while listening to the sounds of nature. Take a walk around the property, wander along the creek, or visit the animals for a peaceful country touch. The porch at Faith Cabin is the perfect place to enjoy your morning coffee, slow down, and take in the beautiful setting.",
+      "Just steps from Faith Cabin, you can relax in the cool, clear waters of Collier Creek and enjoy the quiet beauty of the property. Inside, Faith has a queen bed, a pull-out sleeper sofa, a full kitchen, and space for up to 4 guests. Spend the evening cooking your favorite barbecue on the grill or gathering around the open fire pit while listening to the sounds of nature. Take a walk around the property, wander along the creek, or visit the animals for a peaceful country touch. The porch at Faith Cabin is the perfect place to enjoy your morning coffee, slow down, and take in the beautiful setting.",
     details: {
       sleeps: "Up to 4 guests",
       bedrooms: 1,
       bathrooms: 1,
-      bed: "Queen bed + sleeper sofa",
+      bed: "Queen bed + pull-out sleeper sofa",
     },
     features: [
+      "Sleeps up to 4 guests",
+      "Queen bed",
+      "Pull-out sleeper sofa",
       "Fully equipped kitchen",
       "Dining table and seating",
       "TV in living room and bedroom",

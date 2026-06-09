@@ -24,13 +24,13 @@ export default function HeroB() {
 
       <Container className="relative z-10 flex min-h-[calc(100vh-5rem)] items-center">
         <motion.div
-          className="max-w-4xl py-24"
+          className="max-w-5xl py-24"
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ease: "easeOut" }}
         >
           <motion.p
-            className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.28em] text-[var(--copper)]"
+            className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.28em] text-[var(--copper)] md:text-sm"
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.1 }}
@@ -39,57 +39,66 @@ export default function HeroB() {
             Private creekside stays
           </motion.p>
 
-          <motion.h1
-            className="mt-6 max-w-4xl text-[clamp(3.35rem,7vw,7.15rem)] font-black leading-[1.03] tracking-[-0.085em] text-[var(--paper)] text-balance"
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.18 }}
-          >
-            A stay that feels tucked away from everything.
-          </motion.h1>
+         <motion.h1
+  className="mt-6 max-w-5xl text-[clamp(3.65rem,7.4vw,7.65rem)] font-black leading-[1.03] tracking-[-0.085em] text-[var(--paper)] text-balance"
+  initial={{ opacity: 0, y: 18 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.65, delay: 0.18 }}
+>
+  A stay that feels tucked away from everything.
+</motion.h1>
 
-          <motion.p
-            className="mt-7 max-w-2xl text-lg font-medium leading-8 text-white/84 md:text-xl"
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.26 }}
-          >
-            Cabins and a family lodge along Collier Creek, made for slow
-            mornings, scenic views, and peaceful time near Glenwood.
-          </motion.p>
+<motion.div
+  className="pt-5"
+  initial={{ opacity: 0, y: 18 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.65, delay: 0.26 }}
+>
+  <p className="max-w-3xl text-xl font-semibold leading-9 text-white/88 md:text-2xl md:leading-10">
+    Four creekside cabins along Collier Creek, made for slow mornings,
+    scenic views, and peaceful time near Glenwood.
+  </p>
+</motion.div>
+
+<motion.div
+  className="mt-12 flex flex-col gap-4 sm:flex-row"
+  initial={{ opacity: 0, y: 18 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.65, delay: 0.34 }}
+>
+  <Button
+    href="/cabins"
+    className="min-h-[4.35rem] px-10 py-5 text-lg"
+  >
+    View the Cabins
+    <FiArrowRight size={22} />
+  </Button>
+
+  <Button
+    href="/#book-direct"
+    variant="secondary"
+    className="min-h-[4.35rem] px-10 py-5 text-lg"
+  >
+    Book Direct
+  </Button>
+</motion.div>
 
           <motion.div
-            className="mt-10 flex flex-col gap-3 sm:flex-row"
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.34 }}
-          >
-            <Button href="/cabins">
-              View the Cabins
-              <FiArrowRight />
-            </Button>
-
-            <Button href={site.phoneHref} variant="secondary">
-              Call to Book
-            </Button>
-          </motion.div>
-
-          <motion.div
-            className="mt-10 grid max-w-2xl gap-3 rounded-[1.5rem] border border-white/12 bg-white/[0.08] p-4 text-sm font-bold text-white/82 backdrop-blur md:grid-cols-2"
+            className="mt-12 grid max-w-3xl gap-4 rounded-[1.75rem] border border-white/12 bg-white/[0.09] p-6 text-base font-black text-white/86 backdrop-blur md:grid-cols-2 md:p-7"
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.42 }}
           >
             <Link
               href={site.phoneHref}
-              className="flex items-center gap-2 transition hover:text-white"
+              className="flex items-center gap-3 transition hover:text-white"
             >
-              <FiPhone className="text-[var(--copper)]" />
+              <FiPhone className="text-[var(--copper)]" size={20} />
               {site.phone}
             </Link>
 
-            <p className="flex items-center gap-2">
-              <FiMapPin className="text-[var(--copper)]" />
+            <p className="flex items-center gap-3">
+              <FiMapPin className="text-[var(--copper)]" size={20} />
               {site.area}, Arkansas
             </p>
           </motion.div>

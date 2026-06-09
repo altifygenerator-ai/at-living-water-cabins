@@ -20,17 +20,17 @@ export const metadata = {
 const quickPolicies = [
   {
     title: "Check-in",
-    text: "3:00 PM CST",
+    text: "2:00 PM CST",
     icon: FiClock,
   },
   {
     title: "Check-out",
-    text: "10:00 AM CST",
+    text: "11:00 AM CST",
     icon: FiClock,
   },
   {
     title: "Reservations",
-    text: "50% down if more than 14 days out. Full payment within 14 days.",
+    text: "Guests pay in full when booking through OwnerRez or Airbnb.",
     icon: FiCreditCard,
   },
   {
@@ -41,17 +41,16 @@ const quickPolicies = [
 ];
 
 const policySections = [
-  {
-    title: "Reservations",
-    icon: FiCreditCard,
-    paragraphs: [
-      "We require full payment for all reservations made within 14 days of your arrival date by credit or debit card.",
-      "If reserving more than 14 days in advance, we require 50% of your total stay to secure the reservation. The remaining balance of the reserved stay will be charged to your credit or debit card on the day of your scheduled arrival.",
-      "If paying with anything other than credit or debit card, please ask for details and policies. Special payment policies may apply to holiday and discount specials.",
-      "We require credit or debit card information with all reservations, even if you choose to pay with cash, check, or money order.",
-      "No-shows will be charged 100% of the days reserved.",
-    ],
-  },
+{
+  title: "Reservations",
+  icon: FiCreditCard,
+  paragraphs: [
+    "Reservations are paid in full at the time of booking through OwnerRez or Airbnb.",
+    "Your booking is not considered confirmed until the reservation and payment are completed through the booking platform.",
+    "Guests booking through Airbnb will follow the payment process shown on Airbnb. Guests booking direct through OwnerRez will complete payment through the direct booking system.",
+    "No-shows will be charged 100% of the reservation.",
+  ],
+},
   {
     title: "General Policies",
     icon: FiShield,
@@ -66,32 +65,30 @@ const policySections = [
     title: "Check-In / Check-Out",
     icon: FiClock,
     paragraphs: [
-      "Check-in time is 3:00 PM CST.",
-      "Check-out time is 10:00 AM CST.",
-      "Please have all belongings out of the cabin by 10:00 AM so we have time to clean before the next guests arrive.",
+      "Check-in time is 2:00 PM CST.",
+      "Check-out time is 11:00 AM CST.",
+      "Please have all belongings out of the cabin by 11:00 AM so we have time to clean before the next guests arrive.",
     ],
   },
-  {
-    title: "Cancellations & Limited Refund Policy",
-    icon: FiAlertCircle,
-    paragraphs: [
-      "All sales are final within 14 days of arrival.",
-      "If something comes up and you are unable to stay any or all of the days reserved, you must reschedule or cancel at least 14 days before your arrival date to receive a refund.",
-      "If you cancel within 14 days before your stay, you forfeit your deposit unless we are able to re-book all the days you had reserved. If we re-book all reserved days, you will receive your deposit back minus a $30 booking/processing fee.",
-      "If you cancel more than 14 days before your arrival date, your deposit will be refunded less any processing fee charged by credit card or PayPal. You may also leave your deposit on file and apply it to another reservation once without incurring the fee.",
-      "To cancel, you must contact us by phone between 8:00 AM and 10:00 PM CST and receive a cancellation number. We do not accept cancellations by email.",
-      "All refunds will be made by crediting your credit card or by check payable to the name on the credit card or checking account.",
-      "There are no refunds for early departure. Deposits left on file are forfeited if not used within one year.",
-    ],
-  },
+{
+  title: "Cancellations & Refunds",
+  icon: FiAlertCircle,
+  paragraphs: [
+    "Guests receive a full refund when cancelling 14 days or more before the scheduled arrival date.",
+    "Cancellations made less than 14 days before arrival are not eligible for a refund unless otherwise approved by management.",
+    "Airbnb reservations must be cancelled through Airbnb and are subject to the cancellation terms shown on the Airbnb booking.",
+    "Direct bookings made through OwnerRez should be cancelled through the direct booking system or by contacting management for help.",
+    "There are no refunds for no-shows or early departures.",
+  ],
+},
   {
     title: "Smoking & Pet Policy",
     icon: FiCheckCircle,
     paragraphs: [
-      "The Family Lodge does not allow pets. Smoking is permitted outside only.",
+      "Smoking is permitted outside only.",
       "Love Cabin and Faith Cabin are no-smoking, no-pet environments inside and outside for guests who are allergic.",
       "Peace Cabin and Hope Cabin permit smoking outside only and are pet friendly, subject to the pet requirements below.",
-      "If you smoke inside any cabin or the lodge, bring unregistered guests, or bring unregistered pets, you will be billed an additional $100 and/or asked to leave with no refund.",
+      "If you smoke inside any cabin, bring unregistered guests, or bring unregistered pets, you will be billed an additional $100 and/or asked to leave with no refund.",
     ],
     bullets: [
       "Pet-friendly cabins are Peace and Hope, when available.",
@@ -161,12 +158,12 @@ export default function PoliciesPage() {
             <h1 className="mt-5 text-[clamp(3.2rem,7vw,7rem)] font-black leading-[1.03] tracking-[-0.085em] text-[var(--paper)] text-balance">
               Clear details for an easier stay.
             </h1>
-
+<div className="pt-5">
             <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/84 md:text-xl">
               Reservation, cancellation, check-in, pet, smoking, and privacy
               policies for your stay at At Living Water Cabins.
             </p>
-
+</div>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={site.phoneHref}
@@ -341,12 +338,12 @@ export default function PoliciesPage() {
             <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[1.05] tracking-[-0.08em] text-[var(--paper)] text-balance">
               Questions are easier before the trip.
             </h2>
-
+<div className="pt-5">
             <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/78">
               Call to check availability, confirm details, and make sure the
               cabin or lodge is the right fit for your stay.
             </p>
-
+</div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={site.phoneHref}

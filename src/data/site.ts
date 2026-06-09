@@ -10,7 +10,7 @@ export const site = {
   },
   nav: [
     { label: "Cabins", href: "/cabins" },
-    { label: "Family Lodge", href: "/family-lodge" },
+   
     { label: "Amenities", href: "/amenities" },
     { label: "Activities", href: "/local-activities" },
     { label: "Policies", href: "/policies" },
@@ -28,6 +28,7 @@ export const site = {
     "Family lodge sleeps up to 8",
     "Full kitchens",
     "Near Caddo River",
+    "Starlink WiFi",
   ],
   cabinsInfo: {
   intro:

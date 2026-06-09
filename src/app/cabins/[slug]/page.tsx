@@ -257,11 +257,12 @@ export default async function CabinPage({ params }: Props) {
               <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[1.06] tracking-[-0.065em] text-[var(--espresso)] text-balance">
                 Take a closer look before you book.
               </h2>
-
+<div className="pt-5">
               <p className="mt-8 max-w-xl text-base font-medium leading-8 text-[var(--muted)] md:mt-10">
                 Browse the cabin, views, porch spaces, and details so you know
                 what to expect when you arrive.
               </p>
+              </div>
             </div>
 
             <CabinGallery images={galleryImages} cabinName={cabin.name} />
@@ -289,11 +290,12 @@ export default async function CabinPage({ params }: Props) {
             <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[1.06] tracking-[-0.07em] text-[var(--paper)] text-balance">
               Quiet, simple, and built to slow things down.
             </h2>
-
+<div className="pt-5">
             <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-white/78 md:mt-10">
               Stay close to the creek with easy access to the Caddo River,
               Glenwood, Mount Ida, and the surrounding Ouachita scenery.
             </p>
+            </div>
           </div>
         </Container>
       </section>
@@ -307,11 +309,12 @@ export default async function CabinPage({ params }: Props) {
               <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[1.06] tracking-[-0.065em] text-[var(--espresso)] text-balance">
                 Simple comforts without overcomplicating the stay.
               </h2>
-
+<div className="pt-5">
               <p className="mt-8 max-w-xl text-base font-medium leading-8 text-[var(--muted)] md:mt-10">
                 Each cabin includes the essentials guests need for a comfortable
                 creekside stay near the Caddo River and Ouachita Mountains.
               </p>
+              </div>
             </div>
 
             <div className="grid gap-x-8 gap-y-5 sm:grid-cols-2">
@@ -354,12 +357,12 @@ export default async function CabinPage({ params }: Props) {
               <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[1.06] tracking-[-0.07em] text-[var(--paper)] text-balance">
                 Check availability for {cabin.name}.
               </h2>
-
+<div className="pt-5">
               <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-white/78 md:mt-10">
                 Choose your dates, check availability, and book {cabin.name}{" "}
                 directly through At Living Water Cabins.
               </p>
-
+</div>
               <OwnerRezCabinWidget
                 cabinName={cabin.name}
                 widgetUrl={cabin.ownerRezWidgetUrl}

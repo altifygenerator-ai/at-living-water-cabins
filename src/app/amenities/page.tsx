@@ -15,12 +15,14 @@ import Container from "@/components/ui/Container";
 export const metadata = {
   title: "Amenities",
   description:
-    "View cabin, lodge, and outdoor amenities at At Living Water Cabins near Glenwood and Mount Ida, Arkansas.",
+    "View cabin and outdoor amenities at At Living Water Cabins near Glenwood and Mount Ida, Arkansas.",
 };
 
 const cabinAmenities = [
+  "Starlink WiFi",
+  "Linens and bedding provided",
+  "Towels provided",
   "Heat and air conditioning",
-  "Central heat and air in the Family Lodge",
   "DIRECTV HD satellite TV",
   "Ceiling fans",
   "Fully equipped kitchens",
@@ -35,6 +37,7 @@ const cabinAmenities = [
   "Patio table and chairs",
   "Books, magazines, and games",
   "Iron and ironing board available",
+  "On-site management available for questions, concerns, or help during your stay",
 ];
 
 const outdoorAmenities = [
@@ -50,17 +53,17 @@ const outdoorAmenities = [
 const highlights = [
   {
     title: "Cook and settle in",
-    text: "Fully equipped kitchens make it easy to bring food, cook simple meals, and enjoy the cabin without needing to leave for every bite.",
+    text: "Fully equipped kitchens, linens, bedding, towels, and basic supplies make it easy to show up and settle in.",
     icon: FiCoffee,
   },
   {
     title: "Comfort inside",
-    text: "Heat and air, ceiling fans, satellite TV, games, and practical supplies help the cabins feel easy from the moment you arrive.",
+    text: "Heat and air, ceiling fans, Starlink WiFi, satellite TV, games, and practical supplies help the cabins feel easy from the moment you arrive.",
     icon: FiHome,
   },
   {
-    title: "Room outside",
-    text: "Porches, grills, fire rings, picnic tables, trails, and creekside air make the outdoor space part of the stay.",
+    title: "Help nearby",
+    text: "Management is available on site for questions, concerns, or help during your stay.",
     icon: FiMap,
   },
 ];
@@ -112,9 +115,9 @@ export default function AmenitiesPage() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/84 md:text-xl">
-              Kitchens, porches, grills, fire rings, trails, and simple comforts
-              that make it easier to show up, settle in, and enjoy your time
-              near the water.
+              Kitchens, porches, grills, fire rings, trails, Starlink WiFi,
+              provided linens and towels, and simple comforts that make it
+              easier to show up, settle in, and enjoy your time near the water.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -175,9 +178,9 @@ export default function AmenitiesPage() {
               </h2>
 
               <p className="mt-6 max-w-xl text-base font-medium leading-8 text-[var(--muted)]">
-                The cabins and lodge are set up for practical, comfortable
-                stays. Cook simple meals, relax inside after a day out, and keep
-                the trip easy without packing every little thing.
+                The cabins are set up for practical, comfortable stays. Cook
+                simple meals, relax inside after a day out, and keep the trip
+                easy without packing every little thing.
               </p>
 
               <div className="mt-8 grid gap-x-8 gap-y-5 sm:grid-cols-2">
@@ -237,13 +240,15 @@ export default function AmenitiesPage() {
             </p>
 
             <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[1.05] tracking-[-0.08em] text-[var(--paper)] text-balance">
-              The outdoor space is part of the stay.
-            </h2>
+  The outdoor space is part of the stay.
+</h2>
 
-            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/78">
-              Porches, grills, fire rings, picnic tables, walking trails, and
-              quiet room to spend more time outside.
-            </p>
+<div className="pt-5">
+  <p className="max-w-2xl text-lg font-medium leading-8 text-white/78">
+    Porches, grills, fire rings, picnic tables, walking trails, and
+    quiet room to spend more time outside.
+  </p>
+</div>
           </div>
         </Container>
       </section>

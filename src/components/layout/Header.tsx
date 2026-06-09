@@ -29,13 +29,22 @@ export default function Header() {
           ))}
         </nav>
 
-       <Link
-  href={site.phoneHref}
-  className="hidden items-center gap-3 rounded-full !bg-[var(--gold)] px-7 py-4 text-sm font-black !text-black shadow-[0_18px_35px_rgba(199,150,75,0.35)] transition hover:-translate-y-0.5 hover:!bg-[var(--gold)] lg:flex"
->
-  <FiPhone />
-  {site.phone}
-</Link>
+   <div className="hidden items-center gap-3 lg:flex">
+  <Link
+    href="/#book-direct"
+    className="inline-flex items-center justify-center rounded-full bg-[var(--forest)] px-7 py-4 text-sm font-black text-[var(--cream)] shadow-[0_18px_35px_rgba(38,23,15,0.28)] transition hover:-translate-y-0.5 hover:bg-[var(--wood)]"
+  >
+    Book Now
+  </Link>
+
+  <Link
+    href={site.phoneHref}
+    className="inline-flex items-center gap-3 rounded-full !bg-[var(--gold)] px-7 py-4 text-sm font-black !text-black shadow-[0_18px_35px_rgba(199,150,75,0.35)] transition hover:-translate-y-0.5 hover:!bg-[var(--gold)]"
+  >
+    <FiPhone />
+    {site.phone}
+  </Link>
+</div>
 
         <MobileNav />
       </Container>

@@ -1,4 +1,11 @@
-import { FiCoffee, FiMapPin, FiMoon, FiSun } from "react-icons/fi";
+import {
+  FiCoffee,
+  FiCompass,
+  FiMapPin,
+  FiMoon,
+  FiSun,
+  FiWifi,
+} from "react-icons/fi";
 import Container from "@/components/ui/Container";
 
 const items = [
@@ -18,12 +25,21 @@ const items = [
     text: "A quieter place to come back to when the day winds down.",
   },
   {
+    icon: FiWifi,
+    title: "Starlink WiFi",
+    text: "Stay connected when you need to, while still getting the quiet cabin feel.",
+  },
+  {
+    icon: FiCompass,
+    title: "Close to adventure",
+    text: "A good home base for exploring the Caddo River, Glenwood, Mount Ida, and the Ouachitas.",
+  },
+  {
     icon: FiMapPin,
     title: "Easy location",
     text: "Tucked into a scenic setting without feeling far removed from everything.",
   },
 ];
-
 export default function StayExperience() {
   return (
     <section className="section bg-[var(--linen)]">

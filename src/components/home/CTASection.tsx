@@ -26,14 +26,16 @@ export default function CTASection() {
                 Book Direct
               </p>
 
-              <h2 className="mt-4 max-w-3xl text-4xl font-black leading-[1.05] tracking-[-0.06em] text-[var(--paper)] md:text-6xl">
-                Ready to plan your stay?
-              </h2>
+<h2 className="mt-4 max-w-3xl text-4xl font-black leading-[1.05] tracking-[-0.06em] text-[var(--paper)] md:text-6xl">
+  Ready to plan your stay?
+</h2>
 
-              <p className="mt-5 max-w-2xl text-base font-medium leading-8 text-white/76">
-                Call to check availability, ask about the cabins or family
-                lodge, and get the details for your next quiet getaway.
-              </p>
+<div className="pt-8">
+  <p className="max-w-2xl text-base font-medium leading-8 text-white/76">
+    Check availability online, book direct, or call with questions about
+    the cabins, property, and your next quiet getaway.
+  </p>
+</div>
             </div>
 
             <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.08] p-6 backdrop-blur">

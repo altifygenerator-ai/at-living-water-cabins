@@ -17,9 +17,12 @@ export default function VideoBreakSection() {
 
         <Container className="relative z-10 flex min-h-[680px] items-end pb-14 md:pb-20">
           <div>
-            <p className="max-w-3xl text-[clamp(3rem,7vw,6.6rem)] font-black leading-[1.05] tracking-[-0.08em] text-white text-balance">
-              Scenic days outside. Quiet evenings back at the cabin.
-            </p>
+           <p className="max-w-3xl text-[clamp(3rem,7vw,6.6rem)] font-black tracking-[-0.08em] text-white">
+  <span className="block leading-[0.96]">Scenic days</span>
+  <span className="mt-2 block leading-[0.96]">outside. Quiet</span>
+  <span className="mt-2 block leading-[0.96]">evenings back</span>
+  <span className="mt-2 block leading-[0.96]">at the cabin.</span>
+</p>
 
             <p className="mt-6 max-w-xl text-lg font-medium leading-8 text-white/76">
               The kind of place that makes the stay feel like part of the trip,

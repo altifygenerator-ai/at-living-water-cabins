@@ -1,14 +1,14 @@
-import { FiHome, FiUsers, FiCoffee, FiMap } from "react-icons/fi";
+import { FiHome, FiUsers, FiCoffee, FiMap, FiWifi } from "react-icons/fi";
 import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
 
-const icons = [FiHome, FiUsers, FiCoffee, FiMap];
+const icons = [FiHome, FiUsers, FiCoffee, FiMap, FiWifi];
 
 export default function TrustBar() {
   return (
     <section className="relative z-10 -mt-4 pb-10 md:-mt-10">
       <Container>
-        <div className="card grid gap-4 p-4 md:grid-cols-4 md:p-5">
+        <div className="card grid gap-4 p-4 md:grid-cols-5 md:p-5">
           {site.trustPoints.map((point, index) => {
             const Icon = icons[index] ?? FiHome;
 

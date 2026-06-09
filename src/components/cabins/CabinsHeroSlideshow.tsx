@@ -6,7 +6,12 @@ import { useEffect, useState } from "react";
 import { FiArrowRight, FiMapPin, FiPhone } from "react-icons/fi";
 import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
-
+const cabinLinks = [
+  { name: "Love", href: "/cabins/love" },
+  { name: "Faith", href: "/cabins/faith" },
+  { name: "Hope", href: "/cabins/hope" },
+  { name: "Peace", href: "/cabins/peace" },
+];
 const heroSlides = [
   {
     image: "/images/cabins/AreaView1.jpg",
@@ -108,16 +113,17 @@ export default function CabinsHeroSlideshow() {
             </Link>
           </div>
 
-          <div className="mt-10 grid max-w-xl gap-3 sm:grid-cols-3">
-            {["Love", "Faith", "Hope", "Peace"].map((name) => (
-              <div
-                key={name}
-                className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-black text-white backdrop-blur"
-              >
-                {name} Cabin
-              </div>
-            ))}
-          </div>
+<div className="mt-10 grid max-w-xl gap-3 sm:grid-cols-3">
+  {cabinLinks.map((cabin) => (
+    <Link
+      key={cabin.href}
+      href={cabin.href}
+      className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20"
+    >
+      {cabin.name} Cabin
+    </Link>
+  ))}
+</div>
         </div>
 
         <div className="relative hidden lg:block">
