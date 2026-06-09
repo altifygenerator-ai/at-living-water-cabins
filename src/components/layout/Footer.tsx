@@ -18,8 +18,8 @@ export default function Footer() {
             </h3>
 
             <p className="mt-4 max-w-md text-base leading-7 text-white/78">
-              Quiet creekside cabin rentals and a family lodge in the Ouachita
-              Mountains near Glenwood and Mount Ida, Arkansas.
+              Quiet creekside cabin rentals in the Ouachita Mountains near
+              Glenwood and Mount Ida, Arkansas.
             </p>
 
             <div className="mt-7 grid gap-4 text-sm font-black">
@@ -69,18 +69,30 @@ export default function Footer() {
               <p>Ouachita National Forest</p>
             </div>
 
-          <Link
-  href="/contact"
-  className="mt-7 inline-flex items-center justify-center rounded-full !bg-white px-6 py-3 text-sm font-black !text-[var(--forest)] shadow-lg transition hover:-translate-y-0.5 hover:!bg-[var(--gold)] hover:!text-black"
->
-  Get Directions
-</Link>
+            <Link
+              href="/contact"
+              className="mt-7 inline-flex items-center justify-center rounded-full !bg-white px-6 py-3 text-sm font-black !text-[var(--forest)] shadow-lg transition hover:-translate-y-0.5 hover:!bg-[var(--gold)] hover:!text-black"
+            >
+              Get Directions
+            </Link>
           </div>
         </div>
 
         <div className="mt-8 flex flex-col gap-2 border-t border-white/10 pt-6 text-sm font-semibold text-white/50 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <p>Cabin rentals in Norman, Arkansas.</p>
+
+          <div className="flex flex-col gap-2 md:items-end">
+            <p>Cabin rentals in Norman, Arkansas.</p>
+
+            <Link
+              href="https://hometownwebservicesar.cc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-[var(--gold)]"
+            >
+              Website by Hometown Web Services
+            </Link>
+          </div>
         </div>
       </Container>
     </footer>
