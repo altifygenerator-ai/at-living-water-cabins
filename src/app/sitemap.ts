@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/local-activities",
     "/policies",
     "/contact",
+    "/gallery",
   ];
 
   return routes.map((route) => ({
