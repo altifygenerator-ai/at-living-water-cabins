@@ -2,86 +2,85 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { FiArrowRight, FiMapPin, FiPhone } from "react-icons/fi";
-import { site } from "@/data/site";
+import { useEffect, useMemo, useState } from "react";
+import { FiArrowRight, FiHome, FiMapPin, FiUsers } from "react-icons/fi";
+import type { Cabin } from "@/data/cabins";
 import Container from "@/components/ui/Container";
 
-const cabinLinks = [
-  { name: "Love", href: "/cabins/love" },
-  { name: "Faith", href: "/cabins/faith" },
-  { name: "Hope", href: "/cabins/hope" },
-  { name: "Peace", href: "/cabins/peace" },
-];
+type CabinSlugHeroSlideshowProps = {
+  cabin: Cabin;
+};
 
-const heroSlides = [
+const cabinHeroCopy: Record<
+  string,
   {
-    image: "/images/cabins/AreaView1.jpg",
-    cardImage: "/images/cabins/LoveScenic4.jpg",
-    label: "Creekside Cabins",
-    note: "Tucked along Collier Creek",
+    eyebrow: string;
+    title: string;
+    text: string;
+    note: string;
+  }
+> = {
+  love: {
+    eyebrow: "Love Cabin",
+    title: "A quiet creekside cabin made for slowing down.",
+    text: "A cozy one-bedroom cabin with a queen bed, pull-out sleeper sofa, full kitchen, and a peaceful setting along Collier Creek.",
+    note: "Simple, cozy, and easy to settle into",
   },
-  {
-    image: "/images/cabins/AreaView2.jpg",
-    cardImage: "/images/cabins/PeaceView2.jpg",
-    label: "Quiet Water Views",
-    note: "Porches, trees, and peaceful mornings",
+  faith: {
+    eyebrow: "Faith Cabin",
+    title: "Porch views, creek air, and a tucked-away feel.",
+    text: "A comfortable one-bedroom cabin with a queen bed, pull-out sleeper sofa, full kitchen, porch space, and quiet moments close to the water.",
+    note: "Porch time and peaceful creekside views",
   },
-  {
-    image: "/images/cabins/AreaView3.jpg",
-    cardImage: "/images/cabins/FaithScenic.jpg",
-    label: "Ouachita Mountain Setting",
-    note: "Close to Glenwood, Mount Ida, and the Caddo River",
+  hope: {
+    eyebrow: "Hope Cabin",
+    title: "A relaxed cabin stay after a day outside.",
+    text: "A peaceful one-bedroom cabin with a queen bed, pull-out sleeper sofa, full kitchen, comfortable living space, and a quiet home-base feel.",
+    note: "Cozy, comfortable, and made for easy evenings",
   },
-  {
-    image: "/images/cabins/AreaView4.jpg",
-    cardImage: "/images/cabins/HopeView.jpg",
-    label: "Simple Cabin Stays",
-    note: "Four one-bedroom cabins made for slowing down",
+  peace: {
+    eyebrow: "Peace Cabin",
+    title: "Scenic views with a little extra comfort.",
+    text: "A relaxing one-bedroom cabin with a queen bed, queen daybed, full kitchen, peaceful outdoor space, and a wheelchair ramp for easier entry.",
+    note: "Peaceful views, queen daybed, and ramp access",
   },
-  {
-    image: "/images/cabins/FaithRiverView.jpg",
-    cardImage: "/images/cabins/FaithPorch3.jpg",
-    label: "Creekside Porch Time",
-    note: "Slow mornings and quiet evenings near the water",
-  },
-  {
-    image: "/images/cabins/PeacePorchRiver.jpg",
-    cardImage: "/images/cabins/PeacePorchFull.jpg",
-    label: "Peaceful Views",
-    note: "Covered porches with room to sit and unwind",
-  },
-  {
-    image: "/images/cabins/LoveFire.jpg",
-    cardImage: "/images/cabins/fire-pit-chair1.jpg",
-    label: "Evenings Outside",
-    note: "Fire pits, fresh air, and quiet time after the day winds down",
-  },
-  {
-    image: "/images/cabins/creek-people1.jpeg",
-    cardImage: "/images/cabins/creek-people2.jpg",
-    label: "Time By The Water",
-    note: "A simple place to cool off, relax, and enjoy the creek",
-  },
-  {
-    image: "/images/cabins/creek-green.jpeg",
-    cardImage: "/images/cabins/creek-green-cabi.jpg",
-    label: "Natural Setting",
-    note: "Trees, water, and that tucked-away cabin feeling",
-  },
-  {
-    image: "/images/cabins/River3.jpg",
-    cardImage: "/images/cabins/riverflowers.jpg",
-    label: "Close To The River",
-    note: "Stay near the Caddo River and the Ouachita Mountain area",
-  },
-];
+};
 
-export default function CabinsHeroSlideshow() {
+function buildHeroSlides(cabin: Cabin) {
+  const images = cabin.images?.length ? cabin.images : [cabin.image];
+
+  const heroImages = images.slice(0, 10);
+
+  return heroImages.map((image, index) => {
+    const nextImage = heroImages[(index + 1) % heroImages.length] ?? image;
+
+    return {
+      image,
+      cardImage: nextImage,
+      label: cabin.name,
+      note:
+        index === 0
+          ? cabinHeroCopy[cabin.slug]?.note ?? cabin.summary
+          : `${cabin.name} view ${index + 1}`,
+    };
+  });
+}
+
+export default function CabinSlugHeroSlideshow({
+  cabin,
+}: CabinSlugHeroSlideshowProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const activeSlide = heroSlides[activeIndex] ?? heroSlides[0];
+  const copy = cabinHeroCopy[cabin.slug] ?? {
+    eyebrow: cabin.name,
+    title: cabin.summary,
+    text: cabin.description,
+    note: cabin.summary,
+  };
 
+  const heroSlides = useMemo(() => buildHeroSlides(cabin), [cabin]);
+
+  const activeSlide = heroSlides[activeIndex] ?? heroSlides[0];
   const nextSlide =
     heroSlides[(activeIndex + 1) % heroSlides.length] ?? heroSlides[0];
 
@@ -91,7 +90,7 @@ export default function CabinsHeroSlideshow() {
     }, 3500);
 
     return () => window.clearInterval(interval);
-  }, []);
+  }, [heroSlides.length]);
 
   return (
     <section className="relative -mt-20 min-h-[78vh] overflow-hidden bg-[var(--charcoal)] pt-20 text-white">
@@ -99,7 +98,7 @@ export default function CabinsHeroSlideshow() {
         <Image
           key={slide.image}
           src={slide.image}
-          alt="Creekside cabins in the Ouachita Mountains of Arkansas"
+          alt={`${cabin.name} at At Living Water Cabins`}
           fill
           priority={index === 0}
           sizes="100vw"
@@ -119,47 +118,57 @@ export default function CabinsHeroSlideshow() {
         <div className="max-w-4xl">
           <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.24em] text-[var(--gold)]">
             <span className="h-px w-10 bg-[var(--gold)]" />
-            The Cabins
+            {copy.eyebrow}
           </p>
 
           <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[1.05] tracking-[-0.06em] text-white md:text-7xl">
-            Four quiet cabins tucked along Collier Creek.
+            {copy.title}
           </h1>
 
           <div className="pt-5">
             <p className="max-w-2xl text-lg font-medium leading-8 text-white/88">
-              Secluded cabin rentals in the Ouachita Mountains near the Caddo
-              River, built for simple, peaceful stays in Southwest Arkansas.
+              {copy.text}
             </p>
           </div>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="/#book-direct"
+              href="#booking"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--gold)] px-6 py-4 text-sm font-black text-black shadow-lg transition hover:-translate-y-0.5"
             >
               Book Direct
             </Link>
 
             <Link
-              href="#cabins"
+              href="#gallery"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--forest)]"
             >
-              View Cabins
+              View Photos
               <FiArrowRight />
             </Link>
           </div>
 
           <div className="mt-10 grid max-w-xl gap-3 sm:grid-cols-3">
-            {cabinLinks.map((cabin) => (
-              <Link
-                key={cabin.href}
-                href={cabin.href}
-                className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20"
-              >
-                {cabin.name} Cabin
-              </Link>
-            ))}
+            <div className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-black text-white backdrop-blur">
+              <span className="flex items-center gap-2">
+                <FiUsers className="text-[var(--gold)]" />
+                {cabin.details.sleeps}
+              </span>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-black text-white backdrop-blur">
+              <span className="flex items-center gap-2">
+                <FiHome className="text-[var(--gold)]" />
+                {cabin.details.bed}
+              </span>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-black text-white backdrop-blur">
+              <span className="flex items-center gap-2">
+                <FiMapPin className="text-[var(--gold)]" />
+                Collier Creek
+              </span>
+            </div>
           </div>
         </div>
 
@@ -168,7 +177,7 @@ export default function CabinsHeroSlideshow() {
             <Image
               key={nextSlide.cardImage}
               src={nextSlide.cardImage}
-              alt={nextSlide.label}
+              alt={`${cabin.name} next view`}
               fill
               sizes="360px"
               className="object-cover opacity-80"
@@ -191,7 +200,7 @@ export default function CabinsHeroSlideshow() {
               <Image
                 key={activeSlide.cardImage}
                 src={activeSlide.cardImage}
-                alt={activeSlide.label}
+                alt={`${cabin.name} detail`}
                 fill
                 sizes="420px"
                 className="object-cover"
@@ -225,7 +234,7 @@ export default function CabinsHeroSlideshow() {
             type="button"
             onClick={() => setActiveIndex(index)}
             className="h-2 flex-1 overflow-hidden rounded-full bg-white/25"
-            aria-label={`Show hero image ${index + 1}`}
+            aria-label={`Show ${cabin.name} hero image ${index + 1}`}
           >
             <span
               className={`block h-full rounded-full bg-[var(--gold)] transition-all duration-700 ${

@@ -113,7 +113,7 @@ export default function LocalActivitiesPage() {
         <div className="absolute right-8 top-32 hidden w-[38vw] max-w-xl lg:block">
           <div className="relative ml-auto h-[390px] w-[290px] rotate-3 overflow-hidden rounded-[2rem] border border-white/12 shadow-2xl">
             <Image
-              src="/images/cabins/LoveBridge.jpg"
+              src="/images/cabins/fire-pit-chair1.jpeg"
               alt="Bridge near At Living Water Cabins"
               fill
               className="object-cover"
@@ -122,7 +122,7 @@ export default function LocalActivitiesPage() {
 
           <div className="relative -mt-20 h-[235px] w-[350px] -rotate-3 overflow-hidden rounded-[1.75rem] border border-white/12 shadow-2xl">
             <Image
-              src="/images/cabins/riverflowers.jpg"
+              src="/images/cabins/creek-people1.jpeg"
               alt="Creekside flowers near the cabins"
               fill
               className="object-cover"
@@ -289,7 +289,7 @@ export default function LocalActivitiesPage() {
 
       <section className="relative min-h-[640px] overflow-hidden bg-[var(--espresso)]">
         <Image
-          src="/images/cabins/River3.jpg"
+          src="/images/cabins/creek-green.jpeg"
           alt="River day near At Living Water Cabins"
           fill
           className="object-cover"
@@ -376,7 +376,7 @@ export default function LocalActivitiesPage() {
 
       <section className="relative min-h-[600px] overflow-hidden bg-[var(--espresso)]">
         <Image
-          src="/images/cabins/PeaceView3.jpg"
+          src="/images/cabins/creek-green-cabin.jpeg"
           alt="Cabin booking call to action"
           fill
           className="object-cover"

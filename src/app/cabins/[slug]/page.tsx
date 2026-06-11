@@ -7,6 +7,7 @@ import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
 import CabinGallery from "@/components/cabins/CabinGallery";
 import OwnerRezCabinWidget from "@/components/cabins/OwnerRezCabinWidget";
+import CabinSlugHeroSlideshow from "@/components/cabins/CabinSlugHeroSlideshow";
 
 type Props = {
   params: Promise<{
@@ -40,7 +41,7 @@ const cabinVisuals: Record<
   faith: {
     hero: "/images/cabins/FaithRiverView.jpg",
     mood: "/images/cabins/FaithPorch3.jpg",
-    accent: "/images/cabins/FaithInside.jpg",
+    accent: "/images/cabins/faith-interior4.jpeg",
     headline: "Porch views, quiet air, and a stay close to the water.",
     vibe: "Faith Cabin is a good fit for guests who want that tucked-away feeling with scenic outdoor moments close by.",
   },
@@ -68,7 +69,7 @@ export default async function CabinPage({ params }: Props) {
   if (!cabin) notFound();
 
   const galleryImages = cabin.images?.length
-    ? cabin.images.slice(0, 16)
+    ? cabin.images.slice(0, 24)
     : Array(8).fill(cabin.image);
 
   const visuals = cabinVisuals[cabin.slug] ?? {
@@ -81,77 +82,10 @@ export default async function CabinPage({ params }: Props) {
 
   const heroImage = visuals.hero ?? cabin.image;
   const moodImage = visuals.mood ?? galleryImages[1] ?? cabin.image;
-  const accentImage = visuals.accent ?? galleryImages[2] ?? cabin.image;
 
   return (
     <main>
-      <section className="relative -mt-20 min-h-screen overflow-hidden bg-[var(--espresso)] pt-20 text-white">
-        <Image
-          src={heroImage}
-          alt={cabin.name}
-          fill
-          priority
-          className="object-cover"
-        />
-
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,10,6,.92),rgba(38,23,15,.62),rgba(38,23,15,.1))]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,10,6,.16),transparent,rgba(17,10,6,.88))]" />
-
-        <div className="absolute right-8 top-32 hidden w-[38vw] max-w-xl lg:block">
-          <div className="relative ml-auto h-[390px] w-[290px] rotate-3 overflow-hidden rounded-[2rem] border border-white/12 shadow-2xl">
-            <Image
-              src={moodImage}
-              alt={`${cabin.name} cabin detail`}
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          <div className="relative -mt-20 h-[235px] w-[350px] -rotate-3 overflow-hidden rounded-[1.75rem] border border-white/12 shadow-2xl">
-            <Image
-              src={accentImage}
-              alt={`${cabin.name} interior or view`}
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-
-        <Container className="relative z-10 flex min-h-[calc(100vh-5rem)] items-center py-20">
-          <div className="max-w-4xl">
-            <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.28em] text-[var(--copper)]">
-              <span className="h-px w-10 bg-[var(--copper)]" />
-              Creekside Cabin
-            </p>
-
-            <h1 className="mt-5 text-[clamp(3.4rem,7vw,7.25rem)] font-black leading-[1.02] tracking-[-0.075em] text-[var(--paper)] text-balance">
-              {cabin.name}
-            </h1>
-
-            <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-white/84 md:mt-10 md:text-xl">
-              {visuals.headline}
-            </p>
-
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="#booking"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--paper)] px-6 py-4 text-sm font-black text-[var(--espresso)] shadow-lg transition hover:-translate-y-0.5 hover:bg-[var(--copper)] hover:text-white"
-              >
-                Check Availability
-                <FiArrowRight />
-              </Link>
-
-              <Link
-                href={site.phoneHref}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-4 text-sm font-black text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-[var(--espresso)]"
-              >
-                <FiPhone />
-                Call Now
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <CabinSlugHeroSlideshow cabin={cabin} />
 
       <section className="relative z-20 -mt-12">
         <Container>
@@ -257,11 +191,11 @@ export default async function CabinPage({ params }: Props) {
               <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[1.06] tracking-[-0.065em] text-[var(--espresso)] text-balance">
                 Take a closer look before you book.
               </h2>
-<div className="pt-5">
-              <p className="mt-8 max-w-xl text-base font-medium leading-8 text-[var(--muted)] md:mt-10">
-                Browse the cabin, views, porch spaces, and details so you know
-                what to expect when you arrive.
-              </p>
+              <div className="pt-5">
+                <p className="mt-8 max-w-xl text-base font-medium leading-8 text-[var(--muted)] md:mt-10">
+                  Browse the cabin, views, porch spaces, and details so you know
+                  what to expect when you arrive.
+                </p>
               </div>
             </div>
 
@@ -290,11 +224,11 @@ export default async function CabinPage({ params }: Props) {
             <h2 className="mt-5 text-[clamp(3rem,6vw,6.2rem)] font-black leading-[1.06] tracking-[-0.07em] text-[var(--paper)] text-balance">
               Quiet, simple, and built to slow things down.
             </h2>
-<div className="pt-5">
-            <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-white/78 md:mt-10">
-              Stay close to the creek with easy access to the Caddo River,
-              Glenwood, Mount Ida, and the surrounding Ouachita scenery.
-            </p>
+            <div className="pt-5">
+              <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-white/78 md:mt-10">
+                Stay close to the creek with easy access to the Caddo River,
+                Glenwood, Mount Ida, and the surrounding Ouachita scenery.
+              </p>
             </div>
           </div>
         </Container>
@@ -309,11 +243,11 @@ export default async function CabinPage({ params }: Props) {
               <h2 className="mt-5 text-[clamp(2.7rem,5.2vw,5.1rem)] font-black leading-[1.06] tracking-[-0.065em] text-[var(--espresso)] text-balance">
                 Simple comforts without overcomplicating the stay.
               </h2>
-<div className="pt-5">
-              <p className="mt-8 max-w-xl text-base font-medium leading-8 text-[var(--muted)] md:mt-10">
-                Each cabin includes the essentials guests need for a comfortable
-                creekside stay near the Caddo River and Ouachita Mountains.
-              </p>
+              <div className="pt-5">
+                <p className="mt-8 max-w-xl text-base font-medium leading-8 text-[var(--muted)] md:mt-10">
+                  Each cabin includes the essentials guests need for a comfortable
+                  creekside stay near the Caddo River and Ouachita Mountains.
+                </p>
               </div>
             </div>
 
@@ -357,12 +291,12 @@ export default async function CabinPage({ params }: Props) {
               <h2 className="mt-5 text-[clamp(3rem,6vw,6rem)] font-black leading-[1.06] tracking-[-0.07em] text-[var(--paper)] text-balance">
                 Check availability for {cabin.name}.
               </h2>
-<div className="pt-5">
-              <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-white/78 md:mt-10">
-                Choose your dates, check availability, and book {cabin.name}{" "}
-                directly through At Living Water Cabins.
-              </p>
-</div>
+              <div className="pt-5">
+                <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-white/78 md:mt-10">
+                  Choose your dates, check availability, and book {cabin.name}{" "}
+                  directly through At Living Water Cabins.
+                </p>
+              </div>
               <OwnerRezCabinWidget
                 cabinName={cabin.name}
                 widgetUrl={cabin.ownerRezWidgetUrl}

@@ -278,12 +278,15 @@ export default function ContactPage() {
             </div>
 
             <div className="overflow-hidden rounded-[2rem] border border-[var(--border)] shadow-[var(--shadow-soft)]">
-              <iframe
-                src="https://www.google.com/maps?q=Norman,Arkansas&output=embed"
-                className="h-[460px] w-full border-0"
-                loading="lazy"
-              />
-            </div>
+  <iframe
+    src={`https://www.google.com/maps?q=${encodeURIComponent(
+      site.address.property,
+    )}&output=embed`}
+    title="Map to At Living Water Cabins"
+    className="h-[460px] w-full border-0"
+    loading="lazy"
+  />
+</div>
           </div>
         </Container>
       </section>

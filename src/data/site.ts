@@ -8,14 +8,14 @@ export const site = {
     mailing: "271 Liberty Rd, Norman, AR 71960",
     property: "136 Living Water Dr, Norman, AR 71960",
   },
-  nav: [
-    { label: "Cabins", href: "/cabins" },
-   
-    { label: "Amenities", href: "/amenities" },
-    { label: "Activities", href: "/local-activities" },
-    { label: "Policies", href: "/policies" },
-    { label: "Contact", href: "/contact" },
-  ],
+nav: [
+  { label: "Cabins", href: "/cabins" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Amenities", href: "/amenities" },
+  { label: "Local Activities", href: "/local-activities" },
+  { label: "Policies", href: "/policies" },
+  { label: "Contact", href: "/contact" },
+],
   hero: {
     eyebrow: "Creekside Cabin Rentals in Arkansas",
     title: "Waterfront Cabins in the Ouachita Mountains",

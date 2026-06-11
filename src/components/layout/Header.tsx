@@ -7,44 +7,45 @@ import MobileNav from "@/components/layout/MobileNav";
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-[rgba(246,242,232,0.88)] shadow-sm backdrop-blur-2xl">
-      <Container className="flex h-20 items-center justify-between">
-        <Link href="/" className="group">
-          <p className="text-xl font-black leading-none tracking-[-0.04em] text-[var(--forest)]">
+      <Container className="flex h-20 items-center justify-between gap-4">
+        <Link href="/" className="group shrink-0">
+          <p className="max-w-[220px] text-lg font-black leading-none tracking-[-0.04em] text-[var(--forest)] xl:max-w-none xl:text-xl">
             {site.name}
           </p>
-          <p className="mt-2 text-[0.68rem] font-black uppercase tracking-[0.32em] text-[var(--water-dark)]">
+          <p className="mt-2 text-[0.6rem] font-black uppercase tracking-[0.22em] text-[var(--water-dark)] xl:text-[0.68rem] xl:tracking-[0.32em]">
             Between Glenwood and Mount Ida
           </p>
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-3 lg:flex xl:gap-5 2xl:gap-8">
           {site.nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="relative text-sm font-black text-[var(--charcoal)]/82 transition hover:text-[var(--forest)]"
+              className="relative whitespace-nowrap text-[0.72rem] font-black text-[var(--charcoal)]/82 transition hover:text-[var(--forest)] xl:text-sm"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-   <div className="hidden items-center gap-3 lg:flex">
-  <Link
-    href="/#book-direct"
-    className="inline-flex items-center justify-center rounded-full bg-[var(--forest)] px-7 py-4 text-sm font-black text-[var(--cream)] shadow-[0_18px_35px_rgba(38,23,15,0.28)] transition hover:-translate-y-0.5 hover:bg-[var(--wood)]"
-  >
-    Book Now
-  </Link>
+        <div className="hidden shrink-0 items-center gap-2 lg:flex">
+          <Link
+            href="/#book-direct"
+            className="inline-flex items-center justify-center rounded-full bg-[var(--forest)] px-5 py-3.5 text-xs font-black text-[var(--cream)] shadow-[0_18px_35px_rgba(38,23,15,0.28)] transition hover:-translate-y-0.5 hover:bg-[var(--wood)] xl:px-7 xl:py-4 xl:text-sm"
+          >
+            Book Now
+          </Link>
 
-  <Link
-    href={site.phoneHref}
-    className="inline-flex items-center gap-3 rounded-full !bg-[var(--gold)] px-7 py-4 text-sm font-black !text-black shadow-[0_18px_35px_rgba(199,150,75,0.35)] transition hover:-translate-y-0.5 hover:!bg-[var(--gold)]"
-  >
-    <FiPhone />
-    {site.phone}
-  </Link>
-</div>
+          <Link
+            href={site.phoneHref}
+            aria-label={`Call ${site.phone}`}
+            className="hidden items-center gap-3 rounded-full !bg-[var(--gold)] px-7 py-4 text-sm font-black !text-black shadow-[0_18px_35px_rgba(199,150,75,0.35)] transition hover:-translate-y-0.5 hover:!bg-[var(--gold)] 2xl:inline-flex"
+          >
+            <FiPhone />
+            {site.phone}
+          </Link>
+        </div>
 
         <MobileNav />
       </Container>

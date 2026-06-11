@@ -10,29 +10,37 @@ export const metadata: Metadata = {
 
   title: {
     default:
-      "At Living Water Cabins | Creekside Cabin Rentals in Norman, Arkansas",
+      "At Living Water Cabins | Creekside Cabins in Norman, Arkansas",
     template: "%s | At Living Water Cabins",
   },
 
   description:
-    "Book a quiet creekside cabin stay at At Living Water Cabins in Norman, Arkansas. Four peaceful cabins along Collier Creek between Glenwood and Mount Ida, near the Caddo River, Ouachita Mountains, Lake Ouachita, crystal mines, hiking, fishing, floating, and Hot Springs.",
+    "Book a peaceful creekside cabin in Norman, Arkansas at At Living Water Cabins. Four private cabins along Collier Creek between Glenwood and Mount Ida, near the Caddo River, Lake Ouachita, Ouachita Mountains, crystal mines, hiking, fishing, floating, and Hot Springs.",
 
   keywords: [
     "At Living Water Cabins",
+    "At Living Water Cabins Norman AR",
     "Norman Arkansas cabins",
     "cabins in Norman Arkansas",
+    "Norman AR cabin rentals",
     "Glenwood Arkansas cabin rentals",
+    "cabins near Glenwood Arkansas",
     "Mount Ida Arkansas cabins",
+    "cabins near Mount Ida Arkansas",
     "Caddo River cabins",
+    "cabins near Caddo River",
     "Collier Creek cabins",
-    "Ouachita Mountain cabins",
+    "creekside cabins Arkansas",
     "Arkansas creekside cabins",
-    "Southwest Arkansas cabin rentals",
+    "Ouachita Mountain cabins",
+    "Ouachita Mountains cabin rentals",
     "cabins near Lake Ouachita",
     "cabins near Hot Springs Arkansas",
-    "crystal mining cabins Arkansas",
+    "Southwest Arkansas cabin rentals",
+    "Arkansas cabin getaway",
     "peaceful cabin rentals Arkansas",
-    "creekside cabin rentals Arkansas",
+    "private cabin rentals Arkansas",
+    "crystal mining cabins Arkansas",
     "Love Cabin",
     "Faith Cabin",
     "Hope Cabin",
@@ -42,9 +50,17 @@ export const metadata: Metadata = {
   authors: [{ name: "At Living Water Cabins" }],
   creator: "At Living Water Cabins",
   publisher: "At Living Water Cabins",
+  applicationName: "At Living Water Cabins",
+  category: "travel",
+  classification:
+    "Creekside cabin rentals, lodging, travel, vacation rentals, Arkansas cabins",
+
+  verification: {
+    google: "Z1WKFNut0TsJsbDdJ9DCJax3uTGHw34VLDDOVSHaGEg",
+  },
 
   alternates: {
-    canonical: "https://atlivingwatercabins.com",
+    canonical: "/",
   },
 
   openGraph: {
@@ -53,9 +69,9 @@ export const metadata: Metadata = {
     url: "https://atlivingwatercabins.com",
     siteName: "At Living Water Cabins",
     title:
-      "At Living Water Cabins | Creekside Cabin Rentals in Norman, Arkansas",
+      "At Living Water Cabins | Creekside Cabins in Norman, Arkansas",
     description:
-      "Quiet creekside cabin rentals in Norman, Arkansas, between Glenwood and Mount Ida. Stay along Collier Creek near the Caddo River with full kitchens, porches, Starlink WiFi, outdoor space, and easy access to the Ouachita Mountains, Lake Ouachita, crystal mines, and Hot Springs.",
+      "Peaceful creekside cabin rentals in Norman, Arkansas, between Glenwood and Mount Ida. Stay along Collier Creek near the Caddo River with full kitchens, porches, Starlink WiFi, outdoor space, and easy access to the Ouachita Mountains, Lake Ouachita, crystal mines, and Hot Springs.",
     images: [
       {
         url: "/images/og-image.png",
@@ -69,7 +85,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "At Living Water Cabins | Creekside Cabin Rentals in Norman, Arkansas",
+      "At Living Water Cabins | Creekside Cabins in Norman, Arkansas",
     description:
       "Book a quiet creekside cabin stay along Collier Creek in Norman, Arkansas, near Glenwood, Mount Ida, the Caddo River, Lake Ouachita, and Hot Springs.",
     images: ["/images/og-image.png"],
@@ -78,21 +94,28 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       "max-image-preview": "large",
       "max-snippet": -1,
       "max-video-preview": -1,
     },
   },
 
-  category: "travel",
-
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
+  },
+
+  other: {
+    "geo.region": "US-AR",
+    "geo.placename": "Norman, Arkansas",
+    "geo.position": "34.459;-93.681",
+    ICBM: "34.459, -93.681",
   },
 };
 

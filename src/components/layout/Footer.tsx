@@ -23,19 +23,51 @@ export default function Footer() {
             </p>
 
             <div className="mt-7 grid gap-4 text-sm font-black">
-              <Link
-                href={site.phoneHref}
-                className="flex items-center gap-3 text-white transition hover:text-[var(--gold)]"
-              >
-                <FiPhone className="text-[var(--gold)]" />
-                {site.phone}
-              </Link>
+  <Link
+    href={site.phoneHref}
+    className="flex items-center gap-3 text-white transition hover:text-[var(--gold)]"
+  >
+    <FiPhone className="text-[var(--gold)]" />
+    {site.phone}
+  </Link>
 
-              <p className="flex items-start gap-3 text-white/78">
-                <FiMapPin className="mt-1 shrink-0 text-[var(--gold)]" />
-                {site.address.property}
-              </p>
-            </div>
+  <p className="flex items-start gap-3 text-white/78">
+    <FiMapPin className="mt-1 shrink-0 text-[var(--gold)]" />
+    {site.address.property}
+  </p>
+
+  <div className="mt-2 grid gap-3 border-t border-white/10 pt-5">
+    <Link
+      href="https://www.glenwoodarkansas.org"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group text-white/76 transition hover:text-[var(--gold)]"
+    >
+      <span className="block text-[0.68rem] font-black uppercase tracking-[0.2em] text-[var(--gold)]">
+        Need a guide to the area?
+      </span>
+      <span className="mt-1 inline-flex items-center gap-2 text-sm font-black">
+        Visit Glenwood Arkansas
+        <FiArrowRight className="transition group-hover:translate-x-1" />
+      </span>
+    </Link>
+
+    <Link
+      href="https://www.lynandlilistidyhouse.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group text-white/76 transition hover:text-[var(--gold)]"
+    >
+      <span className="block text-[0.68rem] font-black uppercase tracking-[0.2em] text-[var(--gold)]">
+        Need a clean stay?
+      </span>
+      <span className="mt-1 inline-flex items-center gap-2 text-sm font-black">
+        Lyn & Lili&apos;s Tidy House
+        <FiArrowRight className="transition group-hover:translate-x-1" />
+      </span>
+    </Link>
+  </div>
+</div>
           </div>
 
           <div>

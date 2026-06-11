@@ -31,7 +31,7 @@ export default function RetreatIntro() {
             <div className="grid gap-5 sm:grid-cols-2">
               <div className="relative min-h-[280px] overflow-hidden rounded-[1.6rem] shadow-[var(--shadow-soft)] sm:translate-y-10">
                 <Image
-                  src="/images/cabins/riverflowers.jpg"
+                  src="/images/cabins/creek-people1.jpeg"
                   alt="Flowers near the creek"
                   fill
                   className="object-cover"
@@ -40,7 +40,7 @@ export default function RetreatIntro() {
 
               <div className="relative min-h-[360px] overflow-hidden rounded-[1.6rem] shadow-[var(--shadow-soft)]">
                 <Image
-                  src="/images/cabins/LoveBridge.jpg"
+                  src="/images/cabins/riverflowers.jpg"
                   alt="Bridge near At Living Water Cabins"
                   fill
                   className="object-cover"
