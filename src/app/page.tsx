@@ -6,7 +6,7 @@ import VideoBreakSection from "@/components/home/VideoBreakSection";
 import StayExperience from "@/components/home/StayExperience";
 import OwnerRezBookingSection from "@/components/home/OwnerRezBookingSection";
 import CTASection from "@/components/home/CTASection";
-
+import ReviewsSection from "@/components/home/ReviewsSection";
 const homeSchema = {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
@@ -151,6 +151,7 @@ export default function HomePage() {
       <RetreatIntro />
       <FeaturedCabins />
       <VideoBreakSection />
+      <ReviewsSection />
       <StayExperience />
       <OwnerRezBookingSection />
       <CTASection />
