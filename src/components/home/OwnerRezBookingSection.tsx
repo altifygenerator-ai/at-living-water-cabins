@@ -22,7 +22,7 @@ export default function OwnerRezBookingSection() {
           </div>
         </div>
 <div className="overflow-hidden rounded-[2rem] border border-black/10 bg-white p-2 shadow-[0_24px_70px_rgba(0,0,0,0.12)] md:p-4">
-  <div className="h-[760px] overflow-hidden rounded-[1.5rem] bg-[#fff9ef] md:h-[750px]">
+  <div className="h-[760px] overflow-y-auto overflow-x-hidden rounded-[1.5rem] bg-[#fff9ef] [-webkit-overflow-scrolling:touch] md:h-[750px] md:overflow-hidden">
     <iframe
       src="https://app.ownerrez.com/widgets/8562bd8617914715aaaca067c8b0c3bb?view=form"
       title="At Living Water Cabins Availability Search"
