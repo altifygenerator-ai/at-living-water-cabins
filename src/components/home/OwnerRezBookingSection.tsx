@@ -6,32 +6,37 @@ export default function OwnerRezBookingSection() {
     >
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">
+          <p className="text-sm font-black uppercase tracking-[0.24em] text-[var(--accent)]">
             Book Direct
           </p>
 
-          <h2 className="mt-4 text-4xl font-semibold leading-tight text-[var(--forest)] md:text-6xl">
-            Check availability and book your stay.
+          <h2 className="mt-4 text-4xl font-black leading-[1.08] tracking-[-0.055em] text-[var(--forest)] md:text-6xl">
+            Check available dates.
           </h2>
 
-          <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--muted)] md:text-lg">
-            Choose your dates, compare available cabins, and book directly with
-            At Living Water Cabins.
-          </p>
+          <div className="pt-5">
+            <p className="max-w-2xl text-base font-medium leading-8 text-[var(--muted)] md:text-lg">
+              Enter your dates to see which cabins are open. You can compare
+              available cabins and continue to booking when you are ready.
+            </p>
+          </div>
         </div>
+<div className="overflow-hidden rounded-[2rem] border border-black/10 bg-white p-2 shadow-[0_24px_70px_rgba(0,0,0,0.12)] md:p-4">
+<div className="h-[370px] overflow-hidden rounded-[1.5rem] bg-[#fff9ef] md:h-[750px]">
+  <iframe
+    src="https://app.ownerrez.com/widgets/8562bd8617914715aaaca067c8b0c3bb?view=form"
+    title="At Living Water Cabins Availability Search"
+    className="-mt-[190px] h-[950px] w-full border-0 bg-[#fff9ef] md:-mt-[200px]"
+    loading="lazy"
+    scrolling="no"
+  />
+</div>
+</div>
 
-        <div className="overflow-hidden rounded-[2rem] border border-black/10 bg-white p-2 shadow-[0_24px_70px_rgba(0,0,0,0.12)] md:p-4">
-          <iframe
-            src="https://app.ownerrez.com/widgets/71bf9fd5ba614871b6d1eafa5454e2e6?view=form"
-            title="At Living Water Cabins Direct Booking"
-            className="-mt-54 h-[1250px] w-full rounded-[1.5rem] border-0 bg-white"
-            loading="lazy"
-          />
-        </div>
-
-        <p className="mt-5 text-sm leading-6 text-[var(--muted)]">
-          Booking directly helps avoid third-party booking fees and keeps your
-          reservation handled through At Living Water Cabins.
+        <p className="mt-5 text-sm font-medium leading-6 text-[var(--muted)]">
+          You can check available dates before entering guest details. Personal
+          and payment information is only needed when you continue with a
+          reservation.
         </p>
       </div>
     </section>

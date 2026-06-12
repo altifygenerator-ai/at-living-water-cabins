@@ -37,14 +37,7 @@ export default function Header() {
             Book Now
           </Link>
 
-          <Link
-            href={site.phoneHref}
-            aria-label={`Call ${site.phone}`}
-            className="hidden items-center gap-3 rounded-full !bg-[var(--gold)] px-7 py-4 text-sm font-black !text-black shadow-[0_18px_35px_rgba(199,150,75,0.35)] transition hover:-translate-y-0.5 hover:!bg-[var(--gold)] 2xl:inline-flex"
-          >
-            <FiPhone />
-            {site.phone}
-          </Link>
+         
         </div>
 
         <MobileNav />
