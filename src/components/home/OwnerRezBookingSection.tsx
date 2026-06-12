@@ -22,15 +22,15 @@ export default function OwnerRezBookingSection() {
           </div>
         </div>
 <div className="overflow-hidden rounded-[2rem] border border-black/10 bg-white p-2 shadow-[0_24px_70px_rgba(0,0,0,0.12)] md:p-4">
-<div className="h-[370px] overflow-hidden rounded-[1.5rem] bg-[#fff9ef] md:h-[750px]">
-  <iframe
-    src="https://app.ownerrez.com/widgets/8562bd8617914715aaaca067c8b0c3bb?view=form"
-    title="At Living Water Cabins Availability Search"
-    className="-mt-[190px] h-[950px] w-full border-0 bg-[#fff9ef] md:-mt-[200px]"
-    loading="lazy"
-    scrolling="no"
-  />
-</div>
+  <div className="h-[760px] overflow-hidden rounded-[1.5rem] bg-[#fff9ef] md:h-[750px]">
+    <iframe
+      src="https://app.ownerrez.com/widgets/8562bd8617914715aaaca067c8b0c3bb?view=form"
+      title="At Living Water Cabins Availability Search"
+      className="-mt-[155px] h-[1150px] w-full border-0 bg-[#fff9ef] md:-mt-[200px] md:h-[950px]"
+      loading="lazy"
+      scrolling="no"
+    />
+  </div>
 </div>
 
         <p className="mt-5 text-sm font-medium leading-6 text-[var(--muted)]">
