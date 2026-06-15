@@ -317,13 +317,13 @@ export default function ContactPage() {
             </p>
 </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/#book-direct"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--paper)] px-6 py-4 text-sm font-black text-[var(--espresso)] transition hover:bg-[var(--copper)] hover:text-white"
-              >
-                Book Direct
-                <FiArrowRight />
-              </Link>
+             <Link
+  href="/cabins"
+  className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--paper)] px-6 py-4 text-sm font-black text-[var(--espresso)] transition hover:bg-[var(--copper)] hover:text-white"
+>
+  View Cabins
+  <FiArrowRight />
+</Link>
 
               <Link
                 href="/cabins"
