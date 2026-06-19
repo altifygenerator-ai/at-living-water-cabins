@@ -7,6 +7,8 @@ import StayExperience from "@/components/home/StayExperience";
 import OwnerRezBookingSection from "@/components/home/OwnerRezBookingSection";
 import CTASection from "@/components/home/CTASection";
 import ReviewsSection from "@/components/home/ReviewsSection";
+import OwnerRezFullCalendarSection from "@/components/home/OwnerRezFullCalendarSection";
+import GoogleReviewsCarousel from "@/components/home/GoogleReviewsCarousel";
 const homeSchema = {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
@@ -151,9 +153,11 @@ export default function HomePage() {
       <RetreatIntro />
       <FeaturedCabins />
       <VideoBreakSection />
+      <GoogleReviewsCarousel />
       <ReviewsSection />
       <StayExperience />
       <OwnerRezBookingSection />
+<OwnerRezFullCalendarSection />
       <CTASection />
     </>
   );

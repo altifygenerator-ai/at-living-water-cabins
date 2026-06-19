@@ -234,6 +234,23 @@ p {
   outline: 3px solid rgba(193, 132, 85, 0.85);
   outline-offset: 4px;
 }
+@keyframes googleReviewMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.google-review-marquee {
+  animation: googleReviewMarquee 65s linear infinite;
+}
+
+.google-review-marquee:hover {
+  animation-play-state: paused;
+}
 
 @media (prefers-reduced-motion: reduce) {
   html {
