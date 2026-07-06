@@ -4,12 +4,29 @@ import Link from "next/link";
 import { FiArrowRight, FiCamera, FiHome, FiMapPin } from "react-icons/fi";
 import { cabins } from "@/data/cabins";
 import Container from "@/components/ui/Container";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  breadcrumbSchema,
+  buildPageMetadata,
+  itemListSchema,
+  webPageSchema,
+} from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Photo Gallery",
-  description:
-    "Browse photos of At Living Water Cabins in Norman, Arkansas, including creekside views, porches, outdoor spaces, cabin interiors, kitchens, bedrooms, and bathrooms.",
-};
+const pageTitle = "Photo Gallery";
+const pageDescription =
+  "Browse photos of At Living Water Cabins in Norman, Arkansas, including creekside views, porches, outdoor spaces, cabin interiors, kitchens, bedrooms, and bathrooms.";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: pageTitle,
+  description: pageDescription,
+  path: "/gallery",
+  keywords: [
+    "At Living Water Cabins photos",
+    "Norman Arkansas cabin photos",
+    "creekside cabin gallery Arkansas",
+    "Collier Creek cabins photos",
+  ],
+});
 
 type GalleryImage = {
   src: string;
@@ -80,6 +97,16 @@ const outsideImages = uniqueGalleryImages.filter(
 const insideImages = uniqueGalleryImages.filter(
   (image) => image.type === "inside",
 );
+
+const gallerySchema = itemListSchema({
+  id: "/gallery",
+  name: "At Living Water Cabins photo gallery",
+  items: uniqueGalleryImages.slice(0, 40).map((image) => ({
+    name: `${image.cabinName} ${image.label}`,
+    url: image.src,
+    image: image.src,
+  })),
+});
 
 function GalleryCard({ image, priority = false }: { image: GalleryImage; priority?: boolean }) {
   return (
@@ -164,7 +191,23 @@ function GallerySection({
 
 export default function GalleryPage() {
   return (
-    <main>
+    <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Photo Gallery", path: "/gallery" },
+          ]),
+          webPageSchema({
+            path: "/gallery",
+            title: pageTitle,
+            description: pageDescription,
+          }),
+          gallerySchema,
+        ]}
+      />
+
+      <main>
       <section className="relative -mt-20 min-h-[72vh] overflow-hidden bg-[var(--espresso)] pt-20 text-white">
         <Image
           src={outsideImages[0]?.src ?? "/images/hero/hero.jpg"}
@@ -301,6 +344,7 @@ export default function GalleryPage() {
           </div>
         </Container>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight, FiCheck, FiHome, FiPhone, FiUsers } from "react-icons/fi";
@@ -5,12 +6,40 @@ import { cabins } from "@/data/cabins";
 import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
 import CabinsHeroSlideshow from "@/components/cabins/CabinsHeroSlideshow";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  breadcrumbSchema,
+  buildPageMetadata,
+  itemListSchema,
+  webPageSchema,
+} from "@/lib/seo";
 
-export const metadata = {
-  title: "Cabins",
-  description:
-    "View creekside cabin rentals near Glenwood and Mount Ida, Arkansas. Love, Faith, Hope, and Peace cabins are tucked along Collier Creek near the Caddo River.",
-};
+const pageTitle = "Cabins";
+const pageDescription =
+  "View creekside cabin rentals in Norman, Arkansas near Glenwood and Mount Ida. Love, Faith, Hope, and Peace cabins are tucked along Collier Creek near the Caddo River.";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: pageTitle,
+  description: pageDescription,
+  path: "/cabins",
+  keywords: [
+    "cabins near Glenwood Arkansas",
+    "cabins near Mount Ida Arkansas",
+    "Collier Creek cabin rentals",
+    "Love Faith Hope Peace cabins",
+  ],
+});
+
+const cabinsSchema = itemListSchema({
+  id: "/cabins",
+  name: "Creekside cabin rentals at At Living Water Cabins",
+  items: cabins.map((cabin) => ({
+    name: cabin.name,
+    url: `/cabins/${cabin.slug}`,
+    description: cabin.summary,
+    image: cabin.image,
+  })),
+});
 
 const standardDetails = [
   "One bedroom",
@@ -46,7 +75,23 @@ const featuredImages: Record<string, { image: string; accent: string; vibe: stri
 
 export default function CabinsPage() {
   return (
-    <main>
+    <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Cabins", path: "/cabins" },
+          ]),
+          webPageSchema({
+            path: "/cabins",
+            title: pageTitle,
+            description: pageDescription,
+          }),
+          cabinsSchema,
+        ]}
+      />
+
+      <main>
       <CabinsHeroSlideshow />
 
       <section className="relative z-20 -mt-12">
@@ -329,6 +374,7 @@ export default function CabinsPage() {
           </div>
         </Container>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

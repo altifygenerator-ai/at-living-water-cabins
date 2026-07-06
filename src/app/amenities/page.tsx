@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -11,12 +12,29 @@ import {
 } from "react-icons/fi";
 import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  breadcrumbSchema,
+  buildPageMetadata,
+  itemListSchema,
+  webPageSchema,
+} from "@/lib/seo";
 
-export const metadata = {
-  title: "Amenities",
-  description:
-    "View cabin and outdoor amenities at At Living Water Cabins near Glenwood and Mount Ida, Arkansas.",
-};
+const pageTitle = "Amenities";
+const pageDescription =
+  "View cabin and outdoor amenities at At Living Water Cabins in Norman, Arkansas near Glenwood, Mount Ida, Collier Creek, and the Caddo River.";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: pageTitle,
+  description: pageDescription,
+  path: "/amenities",
+  keywords: [
+    "Arkansas cabin amenities",
+    "cabins with full kitchens Arkansas",
+    "creekside cabins with WiFi Arkansas",
+    "cabins near Caddo River amenities",
+  ],
+});
 
 const cabinAmenities = [
   "Starlink WiFi",
@@ -68,9 +86,34 @@ const highlights = [
   },
 ];
 
+const amenitiesSchema = itemListSchema({
+  id: "/amenities",
+  name: "At Living Water Cabins amenities",
+  items: [...cabinAmenities, ...outdoorAmenities].map((name) => ({
+    name,
+    url: "/amenities",
+  })),
+});
+
 export default function AmenitiesPage() {
   return (
-    <main>
+    <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Amenities", path: "/amenities" },
+          ]),
+          webPageSchema({
+            path: "/amenities",
+            title: pageTitle,
+            description: pageDescription,
+          }),
+          amenitiesSchema,
+        ]}
+      />
+
+      <main>
       <section className="relative -mt-20 min-h-[82vh] overflow-hidden bg-[var(--espresso)] pt-20 text-white">
         <Image
           src="/images/cabins/HopeLivingroom2.jpg"
@@ -352,6 +395,7 @@ export default function AmenitiesPage() {
           </div>
         </Container>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

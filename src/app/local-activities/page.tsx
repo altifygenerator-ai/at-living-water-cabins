@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -9,12 +10,30 @@ import {
 } from "react-icons/fi";
 import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  breadcrumbSchema,
+  buildPageMetadata,
+  itemListSchema,
+  webPageSchema,
+} from "@/lib/seo";
 
-export const metadata = {
-  title: "Local Activities",
-  description:
-    "Explore local activities near At Living Water Cabins including Caddo River, Ouachita River, Lake Ouachita, Hot Springs, crystal mines, hiking, fishing, ATV trails, and more.",
-};
+const pageTitle = "Local Activities";
+const pageDescription =
+  "Explore local activities near At Living Water Cabins in Norman, Arkansas, including the Caddo River, Ouachita River, Lake Ouachita, Hot Springs, crystal mines, hiking, fishing, ATV trails, and more.";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: pageTitle,
+  description: pageDescription,
+  path: "/local-activities",
+  keywords: [
+    "things to do near Norman Arkansas",
+    "things to do near Glenwood Arkansas",
+    "things to do near Mount Ida Arkansas",
+    "cabins near crystal mines Arkansas",
+    "cabins near Caddo River floating",
+  ],
+});
 
 const activityGroups = [
   {
@@ -95,9 +114,36 @@ const quickHighlights = [
   },
 ];
 
+const activitiesSchema = itemListSchema({
+  id: "/local-activities",
+  name: "Things to do near At Living Water Cabins",
+  items: activityGroups.map((group) => ({
+    name: group.title,
+    url: "/local-activities",
+    description: group.text,
+    image: group.image,
+  })),
+});
+
 export default function LocalActivitiesPage() {
   return (
-    <main>
+    <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Local Activities", path: "/local-activities" },
+          ]),
+          webPageSchema({
+            path: "/local-activities",
+            title: pageTitle,
+            description: pageDescription,
+          }),
+          activitiesSchema,
+        ]}
+      />
+
+      <main>
       <section className="relative -mt-20 min-h-[82vh] overflow-hidden bg-[var(--espresso)] pt-20 text-white">
         <Image
           src="/images/cabins/ScenicOverlook3.jpg"
@@ -418,6 +464,7 @@ export default function LocalActivitiesPage() {
           </div>
         </Container>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

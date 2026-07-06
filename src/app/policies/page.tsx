@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -10,12 +11,27 @@ import {
 } from "react-icons/fi";
 import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  breadcrumbSchema,
+  buildPageMetadata,
+  webPageSchema,
+} from "@/lib/seo";
 
-export const metadata = {
-  title: "Policies",
-  description:
-    "Reservation, cancellation, check-in, pet, smoking, and privacy policies for At Living Water Cabins in Norman, Arkansas.",
-};
+const pageTitle = "Policies";
+const pageDescription =
+  "Review reservation, cancellation, check-in, pet, smoking, and privacy policies for At Living Water Cabins in Norman, Arkansas.";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: pageTitle,
+  description: pageDescription,
+  path: "/policies",
+  keywords: [
+    "At Living Water Cabins policies",
+    "Norman Arkansas cabin policies",
+    "Arkansas cabin rental policies",
+  ],
+});
 
 const quickPolicies = [
   {
@@ -115,7 +131,22 @@ const policySections = [
 
 export default function PoliciesPage() {
   return (
-    <main>
+    <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Policies", path: "/policies" },
+          ]),
+          webPageSchema({
+            path: "/policies",
+            title: pageTitle,
+            description: pageDescription,
+          }),
+        ]}
+      />
+
+      <main>
       <section className="relative -mt-20 min-h-[78vh] overflow-hidden bg-[var(--espresso)] pt-20 text-white">
         <Image
           src="/images/cabins/PeacePorchRiver.jpg"
@@ -363,6 +394,7 @@ export default function PoliciesPage() {
           </div>
         </Container>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

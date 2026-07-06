@@ -1,7 +1,7 @@
 export const site = {
   name: "At Living Water Cabins",
   phone: "903-702-9184",
-  phoneHref: "tel:13184612650",
+  phoneHref: "tel:19037029184",
   location: "Norman, Arkansas",
   area: "Between Glenwood and Mount Ida",
   address: {

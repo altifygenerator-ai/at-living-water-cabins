@@ -9,143 +9,43 @@ import CTASection from "@/components/home/CTASection";
 import ReviewsSection from "@/components/home/ReviewsSection";
 import OwnerRezFullCalendarSection from "@/components/home/OwnerRezFullCalendarSection";
 import GoogleReviewsCarousel from "@/components/home/GoogleReviewsCarousel";
-const homeSchema = {
-  "@context": "https://schema.org",
-  "@type": "LodgingBusiness",
-  "@id": "https://atlivingwatercabins.com/#lodging",
-  name: "At Living Water Cabins",
-  url: "https://atlivingwatercabins.com",
-  image: "https://atlivingwatercabins.com/images/og-image.png",
-  description:
-    "At Living Water Cabins offers four quiet creekside cabin rentals in Norman, Arkansas, along Collier Creek between Glenwood and Mount Ida near the Caddo River and Ouachita Mountains.",
-  telephone: "+13184612650",
-  priceRange: "$$",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "136 Living Water Dr",
-    addressLocality: "Norman",
-    addressRegion: "AR",
-    postalCode: "71960",
-    addressCountry: "US",
-  },
-  areaServed: [
-    {
-      "@type": "Place",
-      name: "Norman, Arkansas",
-    },
-    {
-      "@type": "Place",
-      name: "Glenwood, Arkansas",
-    },
-    {
-      "@type": "Place",
-      name: "Mount Ida, Arkansas",
-    },
-    {
-      "@type": "Place",
-      name: "Caddo River",
-    },
-    {
-      "@type": "Place",
-      name: "Ouachita Mountains",
-    },
+import type { Metadata } from "next";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  businessSchema,
+  buildPageMetadata,
+  webPageSchema,
+  webSiteSchema,
+} from "@/lib/seo";
+const pageTitle = "Creekside Cabins in Norman, Arkansas";
+const pageDescription =
+  "Book a peaceful creekside cabin in Norman, Arkansas at At Living Water Cabins, located along Collier Creek between Glenwood and Mount Ida near the Caddo River, Lake Ouachita, and Hot Springs.";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: pageTitle,
+  description: pageDescription,
+  path: "/",
+  keywords: [
+    "creekside cabin rentals Norman Arkansas",
+    "cabins between Glenwood and Mount Ida",
+    "cabins near the Caddo River",
+    "Ouachita Mountain cabin rentals",
   ],
-  amenityFeature: [
-    {
-      "@type": "LocationFeatureSpecification",
-      name: "Creekside cabins",
-      value: true,
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      name: "Full kitchens",
-      value: true,
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      name: "Starlink WiFi",
-      value: true,
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      name: "Linens and bedding provided",
-      value: true,
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      name: "Towels provided",
-      value: true,
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      name: "Porches",
-      value: true,
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      name: "Fire rings",
-      value: true,
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      name: "Charcoal grills",
-      value: true,
-    },
-  ],
-  containsPlace: [
-    {
-      "@type": "Accommodation",
-      name: "Love Cabin",
-      url: "https://atlivingwatercabins.com/cabins/love",
-      occupancy: {
-        "@type": "QuantitativeValue",
-        maxValue: 4,
-      },
-    },
-    {
-      "@type": "Accommodation",
-      name: "Faith Cabin",
-      url: "https://atlivingwatercabins.com/cabins/faith",
-      occupancy: {
-        "@type": "QuantitativeValue",
-        maxValue: 4,
-      },
-    },
-    {
-      "@type": "Accommodation",
-      name: "Hope Cabin",
-      url: "https://atlivingwatercabins.com/cabins/hope",
-      occupancy: {
-        "@type": "QuantitativeValue",
-        maxValue: 4,
-      },
-    },
-    {
-      "@type": "Accommodation",
-      name: "Peace Cabin",
-      url: "https://atlivingwatercabins.com/cabins/peace",
-      occupancy: {
-        "@type": "QuantitativeValue",
-        maxValue: 4,
-      },
-    },
-  ],
-  makesOffer: {
-    "@type": "Offer",
-    name: "Creekside cabin rentals in Norman, Arkansas",
-    availability: "https://schema.org/InStock",
-    url: "https://atlivingwatercabins.com/#book-direct",
-  },
-};
+});
 
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(homeSchema),
-        }}
+      <JsonLd
+        data={[
+          businessSchema,
+          webSiteSchema,
+          webPageSchema({
+            path: "/",
+            title: pageTitle,
+            description: pageDescription,
+          }),
+        ]}
       />
 
       <HeroB />

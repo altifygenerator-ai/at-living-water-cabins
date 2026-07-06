@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,6 +9,16 @@ import Container from "@/components/ui/Container";
 import CabinGallery from "@/components/cabins/CabinGallery";
 import OwnerRezCabinWidget from "@/components/cabins/OwnerRezCabinWidget";
 import CabinSlugHeroSlideshow from "@/components/cabins/CabinSlugHeroSlideshow";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  absoluteUrl,
+  breadcrumbSchema,
+  buildPageMetadata,
+  businessAddress,
+  siteName,
+  siteUrl,
+  webPageSchema,
+} from "@/lib/seo";
 
 type Props = {
   params: Promise<{
@@ -19,6 +30,35 @@ export function generateStaticParams() {
   return cabins.map((cabin) => ({
     slug: cabin.slug,
   }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const cabin = cabins.find((item) => item.slug === slug);
+
+  if (!cabin) {
+    return buildPageMetadata({
+      title: "Cabin Not Found",
+      description: "Cabin details could not be found at At Living Water Cabins.",
+      path: "/cabins",
+      noIndex: true,
+    });
+  }
+
+  return buildPageMetadata({
+    title: cabin.name,
+    description: `${cabin.summary} Stay at At Living Water Cabins in Norman, Arkansas between Glenwood and Mount Ida near the Caddo River.`,
+    path: `/cabins/${cabin.slug}`,
+    image: cabin.image,
+    imageAlt: `${cabin.name} at At Living Water Cabins in Norman, Arkansas`,
+    keywords: [
+      `${cabin.name} Norman Arkansas`,
+      `${cabin.name} cabin rental`,
+      `${cabin.name} At Living Water Cabins`,
+      "one bedroom cabin rental Norman Arkansas",
+      "cabins near Glenwood and Mount Ida Arkansas",
+    ],
+  });
 }
 
 const cabinVisuals: Record<
@@ -82,9 +122,66 @@ export default async function CabinPage({ params }: Props) {
 
   const heroImage = visuals.hero ?? cabin.image;
   const moodImage = visuals.mood ?? galleryImages[1] ?? cabin.image;
+  const pagePath = `/cabins/${cabin.slug}`;
+  const pageTitle = cabin.name;
+  const pageDescription = `${cabin.summary} Stay at At Living Water Cabins in Norman, Arkansas between Glenwood and Mount Ida near the Caddo River.`;
+  const maxGuests = Number(cabin.details.sleeps.match(/\d+/)?.[0] ?? 4);
+
+  const cabinSchema = {
+    "@context": "https://schema.org",
+    "@type": "Accommodation",
+    "@id": `${absoluteUrl(pagePath)}#accommodation`,
+    name: `${cabin.name} at ${siteName}`,
+    url: absoluteUrl(pagePath),
+    description: cabin.description,
+    image: galleryImages.map((image) => absoluteUrl(image)),
+    containedInPlace: {
+      "@id": `${siteUrl}/#lodging`,
+    },
+    address: {
+      "@type": "PostalAddress",
+      ...businessAddress,
+    },
+    occupancy: {
+      "@type": "QuantitativeValue",
+      maxValue: maxGuests,
+      unitText: "guests",
+    },
+    numberOfBedrooms: cabin.details.bedrooms,
+    numberOfBathroomsTotal: cabin.details.bathrooms,
+    amenityFeature: cabin.features.map((feature) => ({
+      "@type": "LocationFeatureSpecification",
+      name: feature,
+      value: true,
+    })),
+    offers: cabin.ownerRezWidgetUrl
+      ? {
+          "@type": "Offer",
+          availability: "https://schema.org/InStock",
+          url: cabin.ownerRezWidgetUrl,
+        }
+      : undefined,
+  };
 
   return (
-    <main>
+    <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Cabins", path: "/cabins" },
+            { name: cabin.name, path: pagePath },
+          ]),
+          webPageSchema({
+            path: pagePath,
+            title: pageTitle,
+            description: pageDescription,
+          }),
+          cabinSchema,
+        ]}
+      />
+
+      <main>
       <CabinSlugHeroSlideshow cabin={cabin} />
 
       <section className="relative z-20 -mt-12">
@@ -340,6 +437,7 @@ export default async function CabinPage({ params }: Props) {
           </div>
         </Container>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

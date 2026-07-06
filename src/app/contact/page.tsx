@@ -1,18 +1,52 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FiPhone, FiMapPin, FiMail, FiArrowRight } from "react-icons/fi";
 import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  breadcrumbSchema,
+  buildPageMetadata,
+  businessSchema,
+  webPageSchema,
+} from "@/lib/seo";
 
-export const metadata = {
-  title: "Contact",
-  description:
-    "Contact At Living Water Cabins for directions, availability, and reservations in Norman, Arkansas.",
-};
+const pageTitle = "Contact";
+const pageDescription =
+  "Contact At Living Water Cabins for directions, availability, and reservations in Norman, Arkansas between Glenwood and Mount Ida.";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: pageTitle,
+  description: pageDescription,
+  path: "/contact",
+  keywords: [
+    "At Living Water Cabins contact",
+    "Norman Arkansas cabin reservations",
+    "book cabins near Glenwood Arkansas",
+    "book cabins near Mount Ida Arkansas",
+  ],
+});
 
 export default function ContactPage() {
   return (
-    <main>
+    <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ]),
+          webPageSchema({
+            path: "/contact",
+            title: pageTitle,
+            description: pageDescription,
+          }),
+          businessSchema,
+        ]}
+      />
+
+      <main>
       <section className="relative -mt-20 min-h-[82vh] overflow-hidden bg-[var(--espresso)] pt-20 text-white">
         <Image
           src="/images/cabins/PeacePorchRiver.jpg"
@@ -335,6 +369,7 @@ export default function ContactPage() {
           </div>
         </Container>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

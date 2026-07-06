@@ -1,14 +1,31 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight, FiClock, FiHome, FiPhone, FiUsers } from "react-icons/fi";
 import { site } from "@/data/site";
 import Container from "@/components/ui/Container";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  breadcrumbSchema,
+  buildPageMetadata,
+  webPageSchema,
+} from "@/lib/seo";
 
-export const metadata = {
-  title: "Family Lodge Coming Soon",
-  description:
-    "The Family Lodge at At Living Water Cabins is planned as a future larger-stay option. View current cabins or call with questions about future availability.",
-};
+const pageTitle = "Family Lodge Coming Soon";
+const pageDescription =
+  "The Family Lodge at At Living Water Cabins is planned as a future larger-stay option. View current cabins or call with questions about future availability.";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: pageTitle,
+  description: pageDescription,
+  path: "/family-lodge",
+  keywords: [
+    "At Living Water Cabins family lodge",
+    "larger cabin stays Norman Arkansas",
+    "family cabin stays near Glenwood Arkansas",
+  ],
+  noIndex: true,
+});
 
 const comingSoonDetails = [
   {
@@ -30,7 +47,22 @@ const comingSoonDetails = [
 
 export default function FamilyLodgePage() {
   return (
-    <main>
+    <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Family Lodge", path: "/family-lodge" },
+          ]),
+          webPageSchema({
+            path: "/family-lodge",
+            title: pageTitle,
+            description: pageDescription,
+          }),
+        ]}
+      />
+
+      <main>
       <section className="relative -mt-20 min-h-screen overflow-hidden bg-[var(--espresso)] pt-20 text-white">
         <Image
           src="/images/cabins/PeacePorchRiver.jpg"
@@ -241,6 +273,7 @@ export default function FamilyLodgePage() {
           </div>
         </Container>
       </section>
-    </main>
+      </main>
+    </>
   );
 }
